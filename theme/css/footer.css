@@ -1,0 +1,98 @@
+/* ==========================================================================
+   footer.css — تذييل الموقع
+   --------------------------------------------------------------------------
+   يخدم partials/footer.html.
+   ========================================================================== */
+
+.site-footer {
+  background: var(--brand-ink);
+  color: var(--text-on-dark);
+}
+
+/* --- 1. الأعمدة ----------------------------------------------------------- */
+
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  padding: 56px 0 28px;
+}
+
+/* العمود الأول: الشعار والوصف والروابط الاجتماعية */
+.site-footer__logo {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.site-footer__mark {
+  width: 56px;
+  height: 3px;
+  background: var(--brand-amber);
+  margin-top: 20px;
+}
+
+.site-footer__about {
+  margin: 18px 0 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  opacity: .75;
+  max-width: 36ch;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+}
+.site-footer__social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(244, 243, 241, .3);
+  display: grid;
+  place-items: center;
+  color: var(--text-on-dark);
+}
+.site-footer__social a:hover {
+  background: var(--brand-amber);
+  color: var(--brand-ink);
+  border-color: var(--brand-amber);
+}
+
+/* --- 2. قوائم الروابط ----------------------------------------------------- */
+
+.footer-col__title {
+  font-family: var(--font-head);
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--brand-amber);
+  margin: 0 0 16px;
+}
+
+.footer-col__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14.5px;
+  opacity: .85;
+}
+.footer-col__links a {
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.footer-col__links a:hover { color: var(--brand-amber); }
+
+/* --- 3. الشريط السفلي ----------------------------------------------------- */
+
+.site-footer__bottom {
+  padding: 18px 0 34px;
+  border-top: 1px solid rgba(244, 243, 241, .2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 12.5px;
+  opacity: .6;
+}

@@ -1,0 +1,114 @@
+/* ==========================================================================
+   pages/about.css — من نحن / اتصل بنا (about.html)
+   ========================================================================== */
+
+/* --- 1. الترويسة ---------------------------------------------------------- */
+
+.about-intro { padding-top: 40px; }
+.about-intro__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber-deep); }
+.about-intro__title  { font-size: clamp(32px, 4.8vw, 64px); margin: 12px 0 0; max-width: 24ch; }
+
+.about-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  padding: 32px 0 44px;
+  border-bottom: var(--rule-w) solid var(--rule);
+  align-items: start;
+}
+.about-intro__text {
+  margin: 0;
+  font-size: 18.5px;
+  line-height: 1.9;
+  color: var(--body-text);
+}
+
+/* --- 2. لوحة الأرقام ------------------------------------------------------ */
+
+.about-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--rule);
+}
+.about-figures__cell { background: var(--paper); padding: 22px; }
+.about-figures__cell--amber { background: var(--brand-amber); }
+.about-figures__cell--amber .about-figures__label { color: var(--body-text); }
+
+.about-figures__value { font-size: 36px; line-height: 1; }
+.about-figures__label { font-size: 13px; margin-top: 6px; color: var(--ink-62); }
+
+/* --- 3. كيف نعمل ---------------------------------------------------------- */
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 26px;
+}
+.values__item {
+  border-top: var(--rule-w) solid var(--rule);
+  padding-top: 16px;
+}
+.values__num   { font-size: 13px; color: var(--brand-amber-deep); }
+.values__title { font-size: 21px; margin: 10px 0; }
+.values__text  { margin: 0; font-size: 15.5px; line-height: 1.8; color: var(--ink-72); }
+
+/* --- 4. هيئة التحرير ------------------------------------------------------ */
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 26px;
+}
+.team__name { font-size: 18px; margin-top: 12px; }
+.team__role { font-size: 13px; color: var(--ink-62); }
+
+/* --- 5. اتصل بنا ---------------------------------------------------------- */
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  border: var(--rule-w) solid var(--rule);
+}
+
+.contact__info {
+  background: var(--brand-ink);
+  color: var(--text-on-dark);
+  padding: 34px;
+}
+.contact__info h2 { color: #fff; font-size: clamp(22px, 2.4vw, 30px); }
+.contact__info p {
+  margin: 12px 0 22px;
+  font-size: 15.5px;
+  line-height: 1.8;
+  opacity: .78;
+  max-width: 40ch;
+}
+.contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+}
+.contact__list span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact__form {
+  background: var(--paper);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact__form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}

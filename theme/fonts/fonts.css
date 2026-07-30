@@ -1,0 +1,73 @@
+/* ==========================================================================
+   fonts/fonts.css — استضافة الخطوط محليًا (اختياري)
+   --------------------------------------------------------------------------
+   الثيم يستخدم افتراضيًا خطوط Google عبر <link> في <head> كل صفحة:
+     Almarai     → المتن العربي   (--font-ar)
+     Readex Pro  → العناوين       (--font-head)
+     Archivo     → الأرقام اللاتينية (--font-lat)
+
+   لتشغيل الموقع بلا اتصال بـ Google (أسرع + أفضل للخصوصية):
+     1. نزّل ملفات woff2 وضعها بجانب هذا الملف في مجلد fonts/.
+     2. أزل التعليق عن كتل @font-face بالأسفل.
+     3. في كل صفحة HTML: احذف وسمي preconnect و<link> الخاصّين بـ Google
+        وضع مكانهما:  <link rel="stylesheet" href="fonts/fonts.css">
+   لا حاجة لأي تعديل في variables.css — أسماء العائلات نفسها.
+   ========================================================================== */
+
+/*
+@font-face {
+  font-family: "Almarai";
+  src: url("almarai-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("almarai-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url("almarai-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Readex Pro";
+  src: url("readex-pro-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Readex Pro";
+  src: url("readex-pro-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("archivo-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("archivo-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+*/

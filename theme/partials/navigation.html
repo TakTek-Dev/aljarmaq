@@ -1,0 +1,16 @@
+<!-- ==========================================================================
+     partials/navigation.html — قائمة التنقّل الرئيسية
+     --------------------------------------------------------------------------
+     تُدرَج داخل partials/header.html، ولا تُستدعى مباشرة من الصفحات.
+     الصفحة النشطة تُحدَّد من <body data-nav="…"> ويضيف js/navigation.js
+     الصنف .is-active للرابط المطابق لـ data-nav-key.
+     ========================================================================== -->
+<nav class="main-nav" aria-label="التنقّل الرئيسي">
+  <a class="main-nav__link" data-nav-key="home"    href="index.html">الرئيسية</a>
+  <a class="main-nav__link" data-nav-key="local"   href="category.html">محليات</a>
+  <a class="main-nav__link" data-nav-key="opinion" href="author.html">مقالات</a>
+  <a class="main-nav__link" data-nav-key="video"   href="video-archive.html">مرئيات</a>
+  <a class="main-nav__link" data-nav-key="album"   href="album.html">ألبومات</a>
+  <a class="main-nav__link" data-nav-key="live"    href="live.html">مباشر</a>
+  <a class="main-nav__link" data-nav-key="about"   href="about.html">من نحن</a>
+</nav>

@@ -1,0 +1,82 @@
+<!-- ==========================================================================
+     partials/footer.html — النشرة البريدية + تذييل الموقع
+     --------------------------------------------------------------------------
+     المصدر الوحيد لهذا المكوّن. بعد أي تعديل شغّل: node tools/build-partials.js
+     الأنماط: css/footer.css (+ قسم النشرة في css/components.css)
+     ========================================================================== -->
+
+<!-- النشرة البريدية -->
+<section class="newsletter" id="newsletter">
+  <div class="container newsletter__inner">
+    <div>
+      <span class="badge badge--ink">تصلك 6:30 صباحًا</span>
+      <h2 class="newsletter__title">نشرة الجرمق الصباحية: كل ما فاتك في خمس دقائق</h2>
+      <p class="newsletter__lead">تقرير واحد مختار، أهم خمسة أخبار، ورقم اليوم — كل صباح إلى بريدك.</p>
+    </div>
+    <form class="newsletter__form" action="#" method="post">
+      <div class="field-row">
+        <label class="visually-hidden" for="newsletter-email">بريدك الإلكتروني</label>
+        <input class="field" id="newsletter-email" name="email" type="email" placeholder="بريدك الإلكتروني" required>
+        <button class="btn btn--ink" type="submit">
+          <span>اشترك</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+        </button>
+      </div>
+      <span class="newsletter__note">28,600 مشترك — يمكنك إلغاء الاشتراك في أي وقت.</span>
+    </form>
+  </div>
+</section>
+
+<!-- التذييل -->
+<footer class="site-footer">
+  <div class="container site-footer__cols">
+
+    <div>
+      <img class="site-footer__logo" src="images/logo-light.png" alt="الجرمق الاخباري" width="172" height="52">
+      <div class="site-footer__mark"></div>
+      <p class="site-footer__about">صحافة محلية مستقلة من الجليل والمثلث والنقب — تقارير، تحقيقات، ومواد بصرية.</p>
+      <div class="site-footer__social">
+        <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+        <a href="about.html" aria-label="إكس"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
+        <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+      </div>
+    </div>
+
+    <nav aria-label="الأقسام">
+      <h3 class="footer-col__title">الأقسام</h3>
+      <div class="footer-col__links">
+        <a href="category.html">محليات</a>
+        <a href="category.html">سياسة</a>
+        <a href="category.html">اقتصاد</a>
+        <a href="category.html">رياضة</a>
+      </div>
+    </nav>
+
+    <nav aria-label="عن الجرمق">
+      <h3 class="footer-col__title">الجرمق</h3>
+      <div class="footer-col__links">
+        <a href="about.html">من نحن</a>
+        <a href="author.html">فريق التحرير</a>
+        <a href="about.html">سياسة التحرير</a>
+        <a href="about.html">إعلن معنا</a>
+      </div>
+    </nav>
+
+    <nav aria-label="خدمات">
+      <h3 class="footer-col__title">خدمات</h3>
+      <div class="footer-col__links">
+        <a href="search.html">البحث في الأرشيف</a>
+        <a href="tag.html">الوسوم</a>
+        <a href="live.html">التغطيات المباشرة</a>
+        <a href="about.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصات الأخبار</span></a>
+      </div>
+    </nav>
+
+  </div>
+
+  <div class="container site-footer__bottom">
+    <span>© 2026 الجرمق الاخباري — جميع الحقوق محفوظة</span>
+    <span class="lat">الجرمق — تأسّس 2011</span>
+  </div>
+</footer>

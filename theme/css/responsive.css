@@ -1,0 +1,320 @@
+/* ==========================================================================
+   responsive.css — كل نقاط الاستجابة في ملف واحد
+   --------------------------------------------------------------------------
+   يجب أن يبقى آخر ملف في style.css حتى تسبق قواعده ما قبلها بلا !important.
+   النقاط: 1180px · 980px · 680px · 420px  (منهج mobile-last / desktop-first)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1180px — اللابتوب الصغير: تصغير الهامش وطيّ الأعمدة غير المتساوية
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+
+  :root { --gut: 24px; }
+
+  /* كل الأعمدة المزدوجة تصبح عمودًا واحدًا */
+  .split,
+  .hero,
+  .lead-story,
+  .about-intro__grid,
+  .author-profile,
+  .newsletter__inner,
+  .error-page {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .lead-story { gap: 0; }
+
+  /* الهيرو: الخطّ الفاصل ينتقل من الجانب إلى الأسفل */
+  .hero__main {
+    padding: 32px 0 36px;
+    border-left: 0;
+    border-bottom: var(--rule-w) solid var(--rule);
+  }
+  .live-feed__head,
+  .live-feed__item { padding-right: 0; padding-left: 0; }
+
+  .figure-panel {
+    padding: 26px 24px 28px;
+    margin-top: 24px;
+  }
+
+  .latest__list { gap: 0 32px; }
+
+  .bento { grid-auto-rows: auto; }
+
+  .slider__item { flex: 0 0 calc((100% - 48px) / 3); }
+}
+
+
+/* ==========================================================================
+   980px — التابلت: إخفاء التنقّل الأفقي وإظهار القائمة الجانبية
+   ========================================================================== */
+
+@media (max-width: 980px) {
+
+  /* --- الهيدر --- */
+  .main-nav  { display: none; }
+  .header-cta { display: none; }
+  .burger    { display: grid; }
+
+  .site-header__inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+  }
+  .site-header__logo { height: 40px; }
+
+  /* الشريط العلوي يحتفظ بـ"بث مباشر" فقط */
+  .topbar__side > span:first-child,
+  .topbar__side > span:nth-child(2) { display: none; }
+
+  /* --- الشبكات: من 3/4/5 أعمدة إلى عمودين --- */
+  .grid--4,
+  .bento,
+  .trend,
+  .cat-index,
+  .picks,
+  .pattern-grid,
+  .values,
+  .team,
+  .video-grid,
+  .album-others,
+  .guide-cards,
+  .site-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .bento__item,
+  .bento__item--wide,
+  .bento__item--tall {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 230px;
+  }
+
+  /* الألبومات المتداخلة تصبح عمودين متساويين بلا إزاحة */
+  .albums__a,
+  .albums__b,
+  .albums__c,
+  .albums__d {
+    grid-column: auto / span 6;
+    margin-top: 0;
+  }
+
+  .latest__list { grid-template-columns: minmax(0, 1fr); }
+
+  /* بطاقة الصفّ: الصورة تصغر وعمود التوقيت ينزل لسطر كامل */
+  .posts--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .posts--list .post-card {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .posts--list .post-card__aside {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-right: 0;
+    padding-right: 0;
+    text-align: right;
+  }
+  .posts--list .post-card__read { margin-top: 0; }
+
+  .overlap-card__panel { width: 100%; margin-top: -40px; }
+
+  .slider__item { flex: 0 0 calc((100% - 24px) / 2); }
+
+  .player__title { inset: auto 20px 66px 20px; }
+
+  /* --- صفحة الخبر --- */
+  .article__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .share-rail {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    border-right: 0;
+    padding: 0 0 20px;
+  }
+  .article__body { max-width: none; }
+
+  /* --- التغطية المباشرة وصفحة الوسم --- */
+  .split--sidebar { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { position: static; }
+}
+
+
+/* ==========================================================================
+   680px — الموبايل: عمود واحد في كل مكان
+   ========================================================================== */
+
+@media (max-width: 680px) {
+
+  :root { --gut: 16px; }
+
+  body { font-size: 15.5px; }
+
+  /* --- الشريط العلوي --- */
+  .topbar__inner {
+    height: auto;
+    padding-block: 8px;
+    font-size: 11.5px;
+  }
+  .topbar__side { display: none; }
+
+  /* --- كل الشبكات إلى عمود واحد --- */
+  .grid--4,
+  .bento,
+  .trend,
+  .cat-index,
+  .picks,
+  .pattern-grid,
+  .values,
+  .team,
+  .video-grid,
+  .mosaic,
+  .album-others,
+  .guide-cards,
+  .figure-box__grid,
+  .contact,
+  .contact__form-row,
+  .site-footer__cols { grid-template-columns: minmax(0, 1fr); }
+
+  .site-footer__cols { gap: 28px; }
+
+  .bento__item,
+  .bento__item--wide,
+  .bento__item--tall {
+    grid-column: 1 / -1;
+    min-height: 210px;
+  }
+
+  .albums { gap: 20px; }
+  .albums__a,
+  .albums__b,
+  .albums__c,
+  .albums__d { grid-column: auto / span 12; margin-top: 0; }
+
+  /* --- قائمة آخر الأخبار --- */
+  .latest__item {
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+  }
+  .latest__cat { display: none; }
+
+  /* --- بطاقة المادة --- */
+  .posts--grid { grid-template-columns: minmax(0, 1fr); }
+
+  .posts--list .post-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .overlap-card__panel { margin-top: -24px; padding: 20px; }
+
+  .slider__item { flex: 0 0 100%; }
+
+  /* --- المشغّل --- */
+  .player__big-play span { width: 64px; height: 64px; }
+  .player__big-play span svg { width: 24px; height: 24px; }
+  .player__row { gap: 10px; flex-wrap: nowrap; }
+  .player__cc { display: none; }
+  .player__title { inset: auto 16px 60px 16px; }
+  .player-meta__sep { display: none; }
+  .playlist__item { grid-template-columns: 84px 1fr; gap: 12px; }
+
+  /* --- صفحة الخبر --- */
+  .article__title { font-size: clamp(26px, 7vw, 34px); }
+
+  /* --- التغطية المباشرة --- */
+  .live-update {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .live-update__stamp {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    border-right: 0;
+    border-bottom: var(--rule-w) solid var(--line-30);
+    padding: 0 0 10px;
+  }
+
+  /* --- الأرشيف والبحث --- */
+  .search-filters,
+  .filter-bar__group { gap: 12px; }
+  .tag-hero { padding: 28px 22px; }
+  .tag-hero__stats { gap: 22px; }
+  .contact__info,
+  .contact__form { padding: 24px; }
+  .lead-story__body { padding: 24px; }
+  .gallery-thumbs button { flex-basis: 96px; }
+}
+
+
+/* ==========================================================================
+   420px — شاشات صغيرة جدًا
+   ========================================================================== */
+
+@media (max-width: 420px) {
+
+  .latest__item { grid-template-columns: 46px 1fr; }
+  .player__time { font-size: 11px; }
+  .pagination a { width: 38px; height: 38px; }
+}
+
+
+/* ==========================================================================
+   تقليل الحركة — بدائل ثابتة للمكوّنات التي تعتمد على الحركة
+   --------------------------------------------------------------------------
+   القاعدة العامة في base.css توقف كل الحركات. الشريط العاجل أعرض من الشاشة
+   بثلاثة أضعاف، فبلا حركة يبقى ثلثاه غير مقروء — لذا نحوّله هنا إلى شريط
+   يُمرَّر يدويًا (باللمس أو بعجلة الفأرة) ونخفي النسخة المكرّرة التي لم تعد
+   لها وظيفة. باقي الحركات زخرفية ولا تحتاج بديلًا.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* لفرض حركة الشريط حتى مع تفعيل «تقليل الحركة» في نظام الزائر:
+     احذف السطر التالي وحده. الباقي (التمرير اليدوي وإخفاء النسخة المكرّرة)
+     يجب أن يبقى محذوفًا معه وإلا ظهرت العناوين مرّتين. */
+  .ticker__track { animation: none; }
+
+  .ticker__viewport {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  .ticker__group[aria-hidden="true"] { display: none; }
+}
+
+
+/* ==========================================================================
+   الطباعة — إخفاء عناصر التصفّح وترك المحتوى فقط
+   ========================================================================== */
+
+@media print {
+
+  .topbar,
+  .site-header,
+  .ticker,
+  .drawer,
+  .drawer-scrim,
+  .share-rail,
+  .ad-slot,
+  .pagination,
+  .newsletter,
+  .site-footer { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .article__grid { display: block; }
+}

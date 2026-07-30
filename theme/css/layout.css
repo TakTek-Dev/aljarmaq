@@ -1,0 +1,124 @@
+/* ==========================================================================
+   layout.css — الحاويات والشبكات وهيكل الأقسام
+   --------------------------------------------------------------------------
+   كل ما يخصّ توزيع المساحة فقط. الألوان والزخرفة في components.css.
+   ========================================================================== */
+
+/* --- 1. الحاوية الأساسية -------------------------------------------------- */
+
+/* كل قسم في الموقع يلتزم بعرض واحد وهامش جانبي واحد */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+
+/* غلاف الصفحة كاملة */
+.page {
+  background: var(--paper);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- 2. الأقسام ----------------------------------------------------------- */
+
+.section--pt-sm { padding-top: 36px; }
+.section--pt-md { padding-top: 56px; }
+.section--pt-lg { padding-top: 72px; }
+.section--mt-md { margin-top: 56px; }
+.section--mt-lg { margin-top: 72px; }
+.section--mt-xl { margin-top: 80px; }
+.section--pb-lg { padding-bottom: 72px; }
+
+/* شريط داكن/ملوّن يمتدّ بعرض الشاشة مع محتوى محصور بالحاوية */
+.band {
+  border-top: var(--rule-w) solid var(--rule);
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.band--muted { background: var(--paper-2); }
+
+/* --- 3. ترويسة القسم (عنوان + رابط "المزيد") ------------------------------ */
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.section-head--baseline {
+  align-items: baseline;
+  gap: 14px;
+}
+
+.section-head--ruled {
+  border-top: var(--rule-w) solid var(--rule);
+  padding-top: 22px;
+}
+
+.section-kicker {
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--brand-amber-deep);
+  font-weight: 800;
+}
+
+.section-title { font-size: clamp(26px, 3vw, 40px); margin-top: 8px; }
+.section-title--sm { font-size: 20px; margin-top: 0; }
+.section-title--md { font-size: clamp(22px, 2.6vw, 32px); margin-top: 0; }
+
+.section-note {
+  margin: 0;
+  max-width: 44ch;
+  font-size: 14.5px;
+  color: var(--ink-62);
+}
+
+/* --- 4. شبكات قابلة لإعادة الاستخدام -------------------------------------- */
+/* الأسماء تُستخدم أيضًا في responsive.css لتغيير عدد الأعمدة */
+
+.grid { display: grid; }
+
+.grid--4      { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid--gap-sm { gap: 24px; }
+
+/* عمودان غير متساويين — ينهاران إلى عمود واحد على الشاشات الصغيرة */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.split--lead    { grid-template-columns: minmax(0, 1.9fr)  minmax(0, 1fr); }
+.split--article { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+.split--picks   { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+.split--sidebar { grid-template-columns: minmax(0, 1fr) 340px; }
+
+.split--gap-sm { gap: 28px; }
+.split--gap-md { gap: 40px; }
+.split--gap-lg { gap: 44px; }
+
+/* --- 5. نِسَب الصور -------------------------------------------------------- */
+
+.ratio { overflow: hidden; }
+.ratio > img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); }
+
+.ratio--1-1   { aspect-ratio: 1 / 1; }
+.ratio--4-3   { aspect-ratio: 4 / 3; }
+.ratio--3-2   { aspect-ratio: 3 / 2; }
+.ratio--4-5   { aspect-ratio: 4 / 5; }
+.ratio--16-9  { aspect-ratio: 16 / 9; }
+.ratio--16-10 { aspect-ratio: 16 / 10; }
+
+/* --- 6. عمود جانبي لاصق ---------------------------------------------------- */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: sticky;
+  top: 110px;
+}

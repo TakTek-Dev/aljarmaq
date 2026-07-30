@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-7a2a6d04-e9d1-44d1-9b96-d3c95af5eabd/styles.css">
+  <script src="_ds/modernist-7a2a6d04-e9d1-44d1-9b96-d3c95af5eabd/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Readex+Pro:wght@300;400;500;600;700&family=Archivo:wght@500;600;800&display=swap">
+  <style>
+    :root{
+      --brand-ink:#232f47; --brand-amber:#e8a12a; --brand-amber-deep:#8a5c07;
+      --gut:32px; --paper:#f4f3f1; --paper-2:#ebe9e6; --rule:#232f47;
+      --font-ar:"Almarai", system-ui, sans-serif; --font-head:"Readex Pro","Almarai",sans-serif;
+    }
+    html,body{margin:0;background:var(--paper);}
+    body{font-family:var(--font-ar);color:var(--brand-ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-head);font-weight:600;letter-spacing:-.015em;line-height:1.24;margin:0;}
+    blockquote{font-family:var(--font-head);margin:0;}
+    a{color:var(--brand-ink);text-decoration:none;}
+    a:hover{color:var(--brand-amber-deep);}
+    .lat{font-family:"Archivo",sans-serif;font-weight:600;font-feature-settings:"tnum" 1;direction:ltr;unicode-bidi:isolate;}
+    ::selection{background:color-mix(in srgb,var(--brand-amber) 45%, transparent);}
+    :focus-visible{outline:2px solid var(--brand-amber);outline-offset:2px;}
+    @media (max-width:1180px){:root{--gut:24px}[data-g="split"]{grid-template-columns:minmax(0,1fr)!important;gap:36px!important}}
+    @media (max-width:980px){
+      [data-g="g3"],[data-g="g4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      [data-g="rowB"]{grid-template-columns:180px minmax(0,1fr)!important}
+      [data-g="share"]{position:static!important;flex-direction:row!important;width:auto!important;border-right:0!important;padding:0 0 20px!important}
+      [data-g="artgrid"]{grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+    }
+    @media (max-width:680px){
+      :root{--gut:16px}
+      [data-g="g3"],[data-g="g4"],[data-g="g2"]{grid-template-columns:minmax(0,1fr)!important}
+      [data-g="rowB"]{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+      [data-g="hero-title"]{font-size:clamp(26px,7vw,34px)!important}
+    }
+  </style>
+</helmet>
+<div dir="rtl" style="background:var(--paper);min-height:100vh;overflow-x:hidden">
+<dc-import name="Site Header" active="ألبومات" hint-size="100%,150px"></dc-import>
+  <div style="max-width:1400px;margin:0 auto;padding:18px var(--gut) 0;display:flex;align-items:center;gap:10px;font-size:13px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">
+    <a href="Aljarmaq Home.dc.html">الرئيسية</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+    <a href="Aljarmaq Home.dc.html">ألبومات</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+    <span style="font-weight:600;color:var(--brand-ink)">موسم الزيتون في دير حنا</span>
+  </div>
+  <section style="max-width:1400px;margin:0 auto;padding:0 var(--gut)">
+    <div style="padding:24px 0 28px;border-bottom:2px solid var(--rule)">
+      <span style="font-size:12px;font-weight:700;color:var(--brand-amber-deep)">ألبوم مصوّر — 19 صورة</span>
+      <h1 style="font-size:clamp(30px,4.2vw,56px);margin:10px 0 16px;max-width:26ch">موسم الزيتون في دير حنا: يوم كامل بين الأشجار</h1>
+      <p style="margin:0;font-size:17px;line-height:1.85;max-width:62ch;color:color-mix(in srgb,var(--brand-ink) 74%,transparent)">من الفجر حتى المعصرة — رصد مصوّرو الجرمق يومًا كاملًا في كروم الزيتون، حيث تعمل ثلاث عائلات على أرض مشتركة منذ أربعة عقود.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px;font-size:13.5px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">
+        <span style="font-weight:700;color:var(--brand-ink)">تصوير: سائد عابد</span><span style="width:22px;height:1px;background:currentColor"></span><span class="lat">28 تموز 2026</span>
+      </div>
+    </div>
+    <div style="position:relative;margin-top:2px;background:#000">
+      <div style="aspect-ratio:16/9;overflow:hidden"><img src="{{ curImg }}" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      <button onClick="{{ prev }}" style="position:absolute;top:50%;right:16px;transform:translateY(-50%);width:48px;height:48px;border:2px solid #fff;background:rgba(0,0,0,.4);color:#fff;cursor:pointer;display:grid;place-items:center" style-hover="background:var(--brand-amber);border-color:var(--brand-amber);color:var(--brand-ink)" aria-label="السابق"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+      <button onClick="{{ next }}" style="position:absolute;top:50%;left:16px;transform:translateY(-50%);width:48px;height:48px;border:2px solid #fff;background:rgba(0,0,0,.4);color:#fff;cursor:pointer;display:grid;place-items:center" style-hover="background:var(--brand-amber);border-color:var(--brand-amber);color:var(--brand-ink)" aria-label="التالي"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+      <div style="position:absolute;inset:auto 0 0 0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);padding:26px 24px 20px;color:#fff;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;pointer-events:none">
+        <p style="margin:0;font-size:15.5px;line-height:1.7;max-width:60ch">{{ curCaption }}</p>
+        <span class="lat" style="font-size:13px;background:rgba(0,0,0,.5);padding:5px 10px">{{ curIdx }} / 19</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:14px 0 4px;border-bottom:1px solid color-mix(in srgb,var(--brand-ink) 20%,transparent)">
+      <span style="font-size:13px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">استخدم الأسهم للتنقّل بين الصور</span>
+      <div style="display:flex;gap:2px">
+        <button onClick="{{ prev }}" aria-label="السابق" style="width:38px;height:38px;border:1px solid color-mix(in srgb,var(--brand-ink) 30%,transparent);background:transparent;color:var(--brand-ink);cursor:pointer;display:grid;place-items:center" style-hover="background:var(--brand-ink);color:var(--paper)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+        <button onClick="{{ next }}" aria-label="التالي" style="width:38px;height:38px;border:1px solid color-mix(in srgb,var(--brand-ink) 30%,transparent);background:transparent;color:var(--brand-ink);cursor:pointer;display:grid;place-items:center" style-hover="background:var(--brand-ink);color:var(--paper)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+        <button onClick="{{ full }}" aria-label="شاشة كاملة" style="width:38px;height:38px;border:1px solid color-mix(in srgb,var(--brand-ink) 30%,transparent);background:transparent;color:var(--brand-ink);cursor:pointer;display:grid;place-items:center" style-hover="background:var(--brand-ink);color:var(--paper)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></button>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="8">
+        <button onClick="{{ t.on }}" style="flex:0 0 116px;aspect-ratio:4/3;border:2px solid {{ t.bd }};padding:0;cursor:pointer;overflow:hidden;background:transparent"><img src="{{ t.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:{{ t.op }}"></button>
+      </sc-for>
+    </div>
+    <div data-g="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--rule);margin-top:44px">
+      <sc-for list="{{ mosaic }}" as="m" hint-placeholder-count="6">
+        <button onClick="{{ m.on }}" style="border:0;padding:0;cursor:pointer;background:var(--paper);display:block;aspect-ratio:1/1;overflow:hidden"><img src="{{ m.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:2px solid var(--rule);margin-top:44px;padding:22px 0 0">
+      <h2 style="font-size:22px">ألبومات أخرى</h2>
+      <a href="Aljarmaq Home.dc.html#albums" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;border-bottom:2px solid var(--brand-amber);padding-bottom:2px">كل الألبومات<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a>
+    </div>
+    <div data-g="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:22px 0 72px">
+      <sc-for list="{{ others }}" as="o" hint-placeholder-count="3">
+        <a href="Aljarmaq Album.dc.html" style="display:block">
+          <div style="aspect-ratio:4/3;overflow:hidden"><img src="{{ o.img }}" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <h3 style="font-size:18px;margin-top:12px;line-height:1.45">{{ o.title }}</h3>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--brand-ink) 60%,transparent)">{{ o.n }} صورة</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+<dc-import name="Site Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { i: 0 };
+  shots = [
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400', cap: 'الفجر الأول في الكروم: العمل يبدأ قبل أن ترتفع الحرارة.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400', cap: 'الكروم تمتدّ على سفح التلة، والأرض مشتركة بين ثلاث عائلات.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400', cap: 'الطريق إلى المعصرة يمرّ بحرش قديم على حدود القرية.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400', cap: 'صناديق الحصاد تُنقل على دفعات حتى نهاية النهار.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400', cap: 'وقفة قصيرة عند حدّ الأرض، حيث تنتهي ملكية العائلة.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400', cap: 'المساء في البلدة: الزيت الأول يوزّع على الجيران.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400', cap: 'أطفال العائلة يتعلّمون فرز الحبّ قبل العصر.' },
+    { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400', cap: 'من أعلى التلة تبدو البلدة كاملة بين الكروم.' }
+  ];
+  onKey = (e) => {
+    if (e.key === 'ArrowLeft') this.setState(s => ({ i: (s.i + 1) % this.shots.length }));
+    if (e.key === 'ArrowRight') this.setState(s => ({ i: (s.i - 1 + this.shots.length) % this.shots.length }));
+  };
+  componentDidMount() { window.addEventListener('keydown', this.onKey); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
+  renderVals() {
+    const i = this.state.i, s = this.shots[i];
+    return {
+      curImg: s.img, curCaption: s.cap, curIdx: String(i + 1),
+      prev: () => this.setState(st => ({ i: (st.i - 1 + this.shots.length) % this.shots.length })),
+      next: () => this.setState(st => ({ i: (st.i + 1) % this.shots.length })),
+      full: () => { const el = document.querySelector('img[src="' + s.img + '"]'); if (el && el.requestFullscreen) el.requestFullscreen(); },
+      thumbs: this.shots.map((x, k) => ({ img: x.img, on: () => this.setState({ i: k }), bd: k === i ? 'var(--brand-amber)' : 'transparent', op: k === i ? '1' : '.62' })),
+      mosaic: this.shots.slice(0, 6).map((x, k) => ({ img: x.img, on: () => { this.setState({ i: k }); window.scrollTo({ top: 0, behavior: 'smooth' }); } })),
+      others: [
+        { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400', title: 'الجليل الأعلى: قرى على حدود الغابة', n: '26' },
+        { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400', title: 'طرق ترابية في الجليل الأعلى', n: '9' },
+        { img: 'https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400', title: 'الناصرة القديمة: السوق والمسجد الأبيض', n: '28' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

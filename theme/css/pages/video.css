@@ -1,0 +1,152 @@
+/* ==========================================================================
+   pages/video.css — أرشيف المرئيات (video-archive.html)
+   --------------------------------------------------------------------------
+   المشغّل وقائمة التشغيل الأساسيان معرّفان في pages/home.css ويُعاد
+   استخدامهما هنا؛ هذا الملف يضيف ترويسة الأرشيف وشبكة المرئيات فقط.
+   ========================================================================== */
+
+/* --- 1. الترويسة الداكنة -------------------------------------------------- */
+
+.video-archive { background: var(--surface-dark); color: var(--text-on-dark); }
+.video-archive__inner { padding: 40px 0 48px; }
+
+.video-archive__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
+  border-bottom: 1px solid var(--line-on-dark);
+  padding-bottom: 20px;
+}
+.video-archive__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber); }
+.video-archive__title  { color: #fff; font-size: clamp(30px, 4vw, 52px); margin-top: 10px; }
+
+.video-archive__stage { padding-top: 28px; }
+
+/* شارة النوع أعلى المشغّل */
+.video-archive__flag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+/* زرّ التشغيل الكبير في هذه الصفحة أصغر قليلًا */
+.video-archive .player__big-play span { width: 84px; height: 84px; backdrop-filter: none; }
+.video-archive .player__title { inset: auto 22px 64px 22px; }
+.video-archive .player__title h2 {
+  color: #fff;
+  font-size: clamp(20px, 2.2vw, 30px);
+  max-width: 26ch;
+  line-height: 1.32;
+}
+.video-archive .player__controls { padding: 0 18px 14px; }
+.video-archive .player__views { font-size: 12.5px; opacity: .75; }
+
+/* في هذه الصفحة اسم النوع ملوّن بالعنبري وبوزن كامل، لا رمادي باهت */
+.video-archive .playlist__kicker { opacity: 1; font-weight: 700; }
+
+/* --- 2. شريط أدوات الأرشيف ------------------------------------------------ */
+
+.video-tools {
+  border-top: var(--rule-w) solid var(--rule);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.video-tools__right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.video-tools__count { font-size: 13px; color: var(--ink-62); }
+
+/* حقل بحث مضمّن بأيقونة */
+.search-inline {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--line-30);
+  padding: 9px 13px;
+  background: #fff;
+}
+.search-inline input {
+  font-family: var(--font-ar);
+  font-size: 13.5px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--brand-ink);
+  width: 180px;
+}
+
+/* --- 3. شبكة المرئيات ----------------------------------------------------- */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.video-card {
+  text-align: right;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-ar);
+  color: var(--brand-ink);
+  display: block;
+  border-top: var(--rule-w) solid var(--rule);
+  padding-top: 14px;
+}
+.video-card:hover { border-top-color: var(--brand-amber); }
+
+.video-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 13px;
+}
+.video-card__media img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); }
+
+.video-card__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(18, 24, 42, .18);
+}
+.video-card__play span {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.video-card__dur {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .72);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 7px;
+}
+
+.video-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+.video-card__views { font-size: 11.5px; opacity: .55; }
+.video-card__title { font-size: 18px; line-height: 1.45; }

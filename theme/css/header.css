@@ -1,0 +1,280 @@
+/* ==========================================================================
+   header.css — الشريط العلوي، الهيدر، قائمة التنقّل، والقائمة الجانبية للموبايل
+   --------------------------------------------------------------------------
+   يخدم partials/header.html و partials/navigation.html.
+   السلوك (فتح/إغلاق القائمة) في js/navigation.js.
+   ========================================================================== */
+
+/* --- 0. رابط التخطّي إلى المحتوى ------------------------------------------ */
+/* مخفي حتى يصله التركيز بالكيبورد — يوفّر على مستخدم Tab المرور بالقائمة كلها */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  right: var(--gut);
+  z-index: 100;
+  background: var(--brand-ink);
+  color: var(--paper);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: top .15s ease;
+}
+.skip-link:focus {
+  top: 0;
+  color: var(--paper);
+}
+
+/* --- 1. الشريط العلوي (التاريخ / الطقس / بث مباشر) ------------------------ */
+
+.topbar {
+  background: var(--brand-ink);
+  color: var(--text-on-dark);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 38px;
+  font-size: 12px;
+  letter-spacing: .02em;
+}
+
+.topbar__group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar__live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--brand-amber);
+  font-weight: 600;
+}
+
+.topbar__date { opacity: .65; }
+
+.topbar__side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: .8;
+}
+
+.topbar__divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, .25);
+}
+
+/* --- 2. الهيدر اللاصق ------------------------------------------------------ */
+
+.site-header {
+  border-bottom: var(--rule-w) solid var(--rule);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding-block: 18px;
+}
+
+.site-header__logo { height: 46px; width: auto; }
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* زرّ "اشترك في النشرة" في الهيدر */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-ink);
+  color: var(--paper);
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.header-cta:hover { background: var(--brand-amber); color: var(--brand-ink); }
+
+/* زرّ القائمة (البرغر) — مخفي على الديسكتوب، يظهر في responsive.css */
+.burger { display: none; }
+
+/* --- 3. قائمة التنقّل الأفقية ---------------------------------------------- */
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.main-nav__link {
+  padding-bottom: 3px;
+  border-bottom: var(--rule-w) solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.main-nav__link:hover { border-bottom-color: var(--brand-amber); color: var(--brand-ink); }
+
+/* الصفحة الحالية — تُضاف يدويًا في ملف كل صفحة */
+.main-nav__link.is-active { border-bottom-color: var(--brand-amber); }
+
+/* --- 4. شريط الأخبار العاجلة ---------------------------------------------- */
+
+.ticker {
+  background: var(--brand-red);
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.ticker__label {
+  background: var(--brand-ink);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.ticker__label .dot { width: 7px; height: 7px; }
+
+.ticker__viewport {
+  overflow: hidden;
+  padding-block: 11px;
+}
+
+/* القائمة مكرّرة مرّتين في HTML حتى تبدو الحركة لا نهائية.
+   النسخة الثانية تحمل aria-hidden فلا تُقرأ مرّتين على قارئ الشاشة. */
+.ticker__track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: ticker-run 46s linear infinite;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+/* المجموعة شفّافة تخطيطيًا: العناصر تدخل مباشرة في flex الشريط
+   فتبقى المسافة 48px موحّدة بين كل العناوين. */
+.ticker__group { display: contents; }
+
+/* WCAG 2.2.2 — إيقاف التمرير عند المرور أو التركيز بالكيبورد */
+.ticker:hover .ticker__track,
+.ticker:focus-within .ticker__track { animation-play-state: paused; }
+
+/* --- 5. القائمة الجانبية للموبايل ----------------------------------------- */
+
+/* الطبقة المعتمة خلف القائمة */
+.drawer-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 24, 42, .55);
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  border: 0;
+  padding: 0;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: min(86vw, 340px);
+  background: var(--paper);
+  border-left: var(--rule-w) solid var(--rule);
+  z-index: 61;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform .3s var(--ease-out), visibility .3s;
+}
+
+/* الحالة المفتوحة — تُضاف على <body> من js/navigation.js */
+body.is-menu-open .drawer-scrim { opacity: 1; pointer-events: auto; }
+body.is-menu-open .drawer { transform: translateX(0); visibility: visible; }
+
+.drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+.drawer__logo { height: 34px; width: auto; }
+
+.drawer__nav {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line-18);
+}
+.drawer__link:hover { background: var(--paper-2); color: var(--brand-amber-deep); }
+
+.drawer__foot {
+  padding: 18px 20px;
+  border-top: var(--rule-w) solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--brand-ink);
+  color: var(--paper);
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.drawer__cta:hover { background: var(--brand-amber); color: var(--brand-ink); }
+
+.drawer__social { display: flex; gap: 8px; }
+.drawer__social a {
+  flex: 1;
+  height: 40px;
+  border: 1px solid var(--line-30);
+  display: grid;
+  place-items: center;
+}
+.drawer__social a:hover { background: var(--brand-ink); color: var(--paper); }

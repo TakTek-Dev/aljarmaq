@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-7a2a6d04-e9d1-44d1-9b96-d3c95af5eabd/styles.css">
+  <script src="_ds/modernist-7a2a6d04-e9d1-44d1-9b96-d3c95af5eabd/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Readex+Pro:wght@300;400;500;600;700&family=Archivo:wght@500;600;800&display=swap">
+  <style>
+    :root{
+      --brand-ink:#232f47; --brand-amber:#e8a12a; --brand-amber-deep:#8a5c07;
+      --gut:32px; --paper:#f4f3f1; --paper-2:#ebe9e6; --rule:#232f47;
+      --font-ar:"Almarai", system-ui, sans-serif; --font-head:"Readex Pro","Almarai",sans-serif;
+    }
+    html,body{margin:0;background:var(--paper);}
+    body{font-family:var(--font-ar);color:var(--brand-ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-head);font-weight:600;letter-spacing:-.015em;line-height:1.24;margin:0;}
+    blockquote{font-family:var(--font-head);margin:0;}
+    a{color:var(--brand-ink);text-decoration:none;}
+    a:hover{color:var(--brand-amber-deep);}
+    .lat{font-family:"Archivo",sans-serif;font-weight:600;font-feature-settings:"tnum" 1;direction:ltr;unicode-bidi:isolate;}
+    ::selection{background:color-mix(in srgb,var(--brand-amber) 45%, transparent);}
+    :focus-visible{outline:2px solid var(--brand-amber);outline-offset:2px;}
+    @media (max-width:1180px){:root{--gut:24px}[data-g="split"]{grid-template-columns:minmax(0,1fr)!important;gap:36px!important}}
+    @media (max-width:980px){
+      [data-g="g3"],[data-g="g4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      [data-g="rowB"]{grid-template-columns:180px minmax(0,1fr)!important}
+      [data-g="share"]{position:static!important;flex-direction:row!important;width:auto!important;border-right:0!important;padding:0 0 20px!important}
+      [data-g="artgrid"]{grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+    }
+    @media (max-width:680px){
+      :root{--gut:16px}
+      [data-g="g3"],[data-g="g4"],[data-g="g2"]{grid-template-columns:minmax(0,1fr)!important}
+      [data-g="rowB"]{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+      [data-g="hero-title"]{font-size:clamp(26px,7vw,34px)!important}
+    }
+  </style>
+</helmet>
+<div dir="rtl" style="background:var(--paper);min-height:100vh;overflow-x:hidden">
+<dc-import name="Site Header" active="من نحن" hint-size="100%,150px"></dc-import>
+  <section style="max-width:1400px;margin:0 auto;padding:40px var(--gut) 0">
+    <span style="font-size:12px;font-weight:700;color:var(--brand-amber-deep)">من نحن</span>
+    <h1 style="font-size:clamp(32px,4.8vw,64px);margin:12px 0 0;max-width:24ch">صحافة محلية تكتب من داخل البلدات، لا عنها</h1>
+    <div data-g="split" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;padding:32px 0 44px;border-bottom:2px solid var(--rule);align-items:start">
+      <p style="margin:0;font-size:18.5px;line-height:1.9;color:#2b3550">تأسّس «الجرمق» عام 2011 كموقع إخباري مستقل يغطّي الجليل والمثلث والنقب. نشتغل على ما تتركه التغطية المركزية في الهامش: المخططات الهيكلية، ميزانيات المجالس، المدارس، الصحة، والحياة الثقافية في البلدات. لدينا قاعدة واحدة: الخبر يُنشر بعد التحقّق منه، والوثيقة تُعرض كما هي.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--rule)">
+        <div style="background:var(--paper);padding:22px"><div class="lat" style="font-size:36px;line-height:1">2011</div><div style="font-size:13px;margin-top:6px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">سنة التأسيس</div></div>
+        <div style="background:var(--paper);padding:22px"><div class="lat" style="font-size:36px;line-height:1">24</div><div style="font-size:13px;margin-top:6px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">صحافيًا ومصوّرًا</div></div>
+        <div style="background:var(--paper);padding:22px"><div class="lat" style="font-size:36px;line-height:1">38K</div><div style="font-size:13px;margin-top:6px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">مادة منشورة</div></div>
+        <div style="background:var(--brand-amber);padding:22px"><div class="lat" style="font-size:36px;line-height:1">1.2M</div><div style="font-size:13px;margin-top:6px;color:#2b3550">قارئ شهريًا</div></div>
+      </div>
+    </div>
+  </section>
+  <section style="max-width:1400px;margin:0 auto;padding:44px var(--gut) 0">
+    <h2 style="font-size:clamp(24px,2.8vw,36px)">كيف نعمل</h2>
+    <div data-g="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:26px">
+      <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+        <div style="border-top:2px solid var(--rule);padding-top:16px">
+          <span class="lat" style="font-size:13px;color:var(--brand-amber-deep)">{{ v.n }}</span>
+          <h3 style="font-size:21px;margin:10px 0 10px">{{ v.t }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;color:color-mix(in srgb,var(--brand-ink) 72%,transparent)">{{ v.d }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  <section style="max-width:1400px;margin:56px auto 0;padding:0 var(--gut)">
+    <div style="border-top:2px solid var(--rule);padding-top:20px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px">
+      <h2 style="font-size:clamp(24px,2.8vw,36px)">هيئة التحرير</h2>
+      <a href="Aljarmaq Author.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;border-bottom:2px solid var(--brand-amber);padding-bottom:2px">كل الفريق<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a>
+    </div>
+    <div data-g="g4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:26px">
+      <sc-for list="{{ team }}" as="p" hint-placeholder-count="4">
+        <a href="Aljarmaq Author.dc.html" style="display:block">
+          <div style="aspect-ratio:4/5;overflow:hidden"><img src="{{ p.img }}" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <h3 style="font-size:18px;margin-top:12px">{{ p.name }}</h3>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--brand-ink) 62%,transparent)">{{ p.role }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+  <section style="max-width:1400px;margin:56px auto 72px;padding:0 var(--gut)">
+    <div data-g="split" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px;background:var(--rule);border:2px solid var(--rule)">
+      <div style="background:var(--brand-ink);color:#f4f3f1;padding:34px">
+        <h2 style="color:#fff;font-size:clamp(22px,2.4vw,30px)">اتصل بنا</h2>
+        <p style="margin:12px 0 22px;font-size:15.5px;line-height:1.8;opacity:.78;max-width:40ch">عندك وثيقة، شهادة، أو خبر؟ اكتب لنا. نتعامل مع كل مادة بسرّية، ولا ننشر أي اسم دون موافقة.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:15px">
+          <span style="display:flex;align-items:center;gap:10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg><span class="lat">news@aljarmaq.net</span></span>
+          <span style="display:flex;align-items:center;gap:10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"></path></svg><span class="lat">+972 4 000 0000</span></span>
+          <span style="display:flex;align-items:center;gap:10px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>الناصرة — شارع بولس السادس</span></span>
+        </div>
+      </div>
+      <form onSubmit="{{ noSubmit }}" style="background:var(--paper);padding:34px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+          <input placeholder="الاسم" style="font-family:var(--font-ar);font-size:15px;padding:14px;border:2px solid var(--rule);background:#fff;outline:none;color:var(--brand-ink)">
+          <input placeholder="البريد الإلكتروني" style="font-family:var(--font-ar);font-size:15px;padding:14px;border:2px solid var(--rule);background:#fff;outline:none;color:var(--brand-ink)">
+        </div>
+        <input placeholder="الموضوع" style="font-family:var(--font-ar);font-size:15px;padding:14px;border:2px solid var(--rule);background:#fff;outline:none;color:var(--brand-ink)">
+        <textarea rows="5" placeholder="نصّ الرسالة…" style="font-family:var(--font-ar);font-size:15px;padding:14px;border:2px solid var(--rule);background:#fff;outline:none;resize:vertical;color:var(--brand-ink)"></textarea>
+        <button type="button" style="align-self:flex-start;font-family:var(--font-ar);font-size:15px;font-weight:700;padding:14px 30px;background:var(--brand-ink);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;gap:9px" style-hover="background:var(--brand-amber);color:var(--brand-ink)"><span>أرسل</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></button>
+      </form>
+    </div>
+  </section>
+<dc-import name="Site Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      noSubmit: (e) => e.preventDefault(),
+      values: [
+        { n: '01', t: 'الوثيقة قبل الرأي', d: 'كل تحقيق يبدأ من مستند أو شهادة موثّقة. ننشر ما نستطيع عرضه، ونشير بوضوح إلى ما لم نتمكّن من التحقّق منه.' },
+        { n: '02', t: 'حقّ الردّ دائمًا', d: 'نتوجّه لكل جهة يُذكر اسمها قبل النشر، ونُدرج ردّها كما ورد، حتى لو تأخّر عن الموعد.' },
+        { n: '03', t: 'استقلال التمويل', d: 'لا نقبل تمويلًا يشترط تغطية أو يقيّد ملفًا. مصادر التمويل تُنشر سنويًا في تقرير مفتوح.' }
+      ],
+      team: [
+        { name: 'رنا خطيب', role: 'تخطيط وأرض', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400' },
+        { name: 'أمير حجازي', role: 'اقتصاد', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400' },
+        { name: 'هدى مصاروة', role: 'صحة ومجتمع', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400' },
+        { name: 'سائد عابد', role: 'تصوير صحافي', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

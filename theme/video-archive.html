@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أرشيف المرئيات | الجرمق الاخباري</title>
+<meta name="description" content="أفلام وثائقية، مقابلات، وتقارير مصوّرة من إنتاج وحدة المرئيات في الجرمق.">
+
+<!-- المشاركة على الشبكات الاجتماعية — بدّل og:url و og:image بروابط موقعك -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="الجرمق الاخباري">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="أرشيف المرئيات | الجرمق الاخباري">
+<meta property="og:description" content="أفلام وثائقية، مقابلات، وتقارير مصوّرة من إنتاج وحدة المرئيات في الجرمق.">
+<meta property="og:image" content="images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#232f47">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/logo.png">
+
+<script src="js/navigation.js" defer></script>
+<script src="js/filters.js" defer></script>
+<script src="js/video-player.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
+
+<body data-nav="video">
+<div class="page">
+
+  <!-- #include partials/header.html -->
+  <!-- رابط التخطّي: أول عنصر يصله زرّ Tab، يقفز فوق الشريط والقائمة إلى المحتوى -->
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- الشريط العلوي: بث مباشر + التاريخ + الطقس -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span class="topbar__live"><span class="dot dot--amber"></span>بث مباشر</span>
+        <span class="topbar__date">الثلاثاء 28 تموز 2026 — 13 صفر 1448</span>
+      </div>
+      <div class="topbar__side">
+        <span>الناصرة 31°</span>
+        <span class="topbar__divider"></span>
+        <span>تواصل معنا</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- الهيدر اللاصق -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" aria-label="الجرمق الاخباري — الصفحة الرئيسية">
+        <img class="site-header__logo" src="images/logo.png" alt="الجرمق الاخباري" width="152" height="46">
+      </a>
+
+      <!-- #include partials/navigation.html -->
+      <nav class="main-nav" aria-label="التنقّل الرئيسي">
+        <a class="main-nav__link" data-nav-key="home"    href="index.html">الرئيسية</a>
+        <a class="main-nav__link" data-nav-key="local"   href="category.html">محليات</a>
+        <a class="main-nav__link" data-nav-key="opinion" href="author.html">مقالات</a>
+        <a class="main-nav__link" data-nav-key="video"   href="video-archive.html">مرئيات</a>
+        <a class="main-nav__link" data-nav-key="album"   href="album.html">ألبومات</a>
+        <a class="main-nav__link" data-nav-key="live"    href="live.html">مباشر</a>
+        <a class="main-nav__link" data-nav-key="about"   href="about.html">من نحن</a>
+      </nav>
+      <!-- /include -->
+
+      <div class="site-header__actions">
+        <a class="icon-btn" href="search.html" aria-label="بحث">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </a>
+        <button class="icon-btn burger" type="button" data-menu-open aria-label="القائمة" aria-expanded="false" aria-controls="site-drawer">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
+        <a class="header-cta" href="index.html#newsletter">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
+          <span>اشترك في النشرة</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- الطبقة المعتمة خلف القائمة الجانبية -->
+  <button class="drawer-scrim" type="button" data-menu-close tabindex="-1" aria-hidden="true"></button>
+
+  <!-- القائمة الجانبية للموبايل -->
+  <aside class="drawer" id="site-drawer" aria-hidden="true" aria-label="قائمة التنقّل">
+    <div class="drawer__head">
+      <img class="drawer__logo" src="images/logo.png" alt="الجرمق الاخباري" width="112" height="34">
+      <button class="icon-btn icon-btn--sm" type="button" data-menu-close aria-label="إغلاق">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="drawer__nav">
+      <a class="drawer__link" href="index.html" data-menu-close><span>الرئيسية</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="category.html" data-menu-close><span>محليات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="author.html" data-menu-close><span>مقالات ورأي</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="video-archive.html" data-menu-close><span>مرئيات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="album.html" data-menu-close><span>ألبومات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="live.html" data-menu-close><span>تغطية مباشرة</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="about.html" data-menu-close><span>من نحن</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    </div>
+
+    <div class="drawer__foot">
+      <a class="drawer__cta" href="index.html#newsletter" data-menu-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
+        <span>اشترك في النشرة</span>
+      </a>
+      <div class="drawer__social">
+        <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+        <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+      </div>
+    </div>
+  </aside>
+  <!-- /include -->
+
+  <main id="main">
+
+  <!-- ===== المشغّل وقائمة التشغيل ====================================== -->
+  <section class="video-archive">
+    <div class="container video-archive__inner">
+
+      <div class="video-archive__head">
+        <div>
+          <span class="video-archive__kicker">قناة الجرمق</span>
+          <h1 class="video-archive__title">أرشيف المرئيات</h1>
+        </div>
+        <div class="tab-row" data-tabs>
+          <button class="tab tab--on-dark is-active" type="button" aria-pressed="true">الكل</button>
+          <button class="tab tab--on-dark" type="button" aria-pressed="false">أفلام وثائقية</button>
+          <button class="tab tab--on-dark" type="button" aria-pressed="false">مقابلات</button>
+          <button class="tab tab--on-dark" type="button" aria-pressed="false">تقارير مصوّرة</button>
+        </div>
+      </div>
+
+      <div class="split split--lead split--gap-sm video-archive__stage">
+        <div>
+          <div class="player" data-player data-seconds="760">
+            <img class="player__poster" data-player-poster src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="eager">
+            <div class="player__scrim"></div>
+
+            <span class="badge badge--red video-archive__flag" data-player-kicker>فيلم وثائقي</span>
+
+            <button class="player__big-play" type="button" data-player-toggle aria-label="تشغيل">
+              <span><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </button>
+
+            <div class="player__title">
+              <h2 data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h2>
+            </div>
+
+            <div class="player__controls">
+              <div class="player__bar" data-player-bar>
+                <div class="player__bar-track"></div>
+                <div class="player__bar-fill" data-player-fill></div>
+              </div>
+              <div class="player__row">
+                <button class="player__btn" type="button" data-player-toggle aria-label="تشغيل/إيقاف">
+                  <svg class="icon-play"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg>
+                  <svg class="icon-pause" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+                <span class="player__time lat"><span data-player-elapsed>00:00</span> / <span data-player-duration>12:40</span></span>
+                <span class="spacer"></span>
+                <span class="player__views" data-player-views>147 ألف مشاهدة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="playlist">
+          <div class="playlist__head">
+            <h3>قائمة التشغيل</h3>
+            <span class="playlist__count lat">6 مواد</span>
+          </div>
+
+          <button class="playlist__item is-active" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400"
+                  data-title="«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق"
+                  data-kicker="فيلم وثائقي" data-duration="12:40" data-seconds="760" data-views="147 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">12:40</span></div>
+            <div><div class="playlist__kicker kicker--amber">فيلم وثائقي</div><div class="playlist__title">«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</div></div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400"
+                  data-title="جولة في سوق الناصرة القديم قبل ساعة الإغلاق"
+                  data-kicker="تقرير مصوّر" data-duration="04:12" data-seconds="252" data-views="62 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">04:12</span></div>
+            <div><div class="playlist__kicker kicker--amber">تقرير مصوّر</div><div class="playlist__title">جولة في سوق الناصرة القديم قبل ساعة الإغلاق</div></div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400"
+                  data-title="رئيس لجنة المتابعة يردّ على أسئلة الجرمق"
+                  data-kicker="مقابلة" data-duration="09:58" data-seconds="598" data-views="88 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">09:58</span></div>
+            <div><div class="playlist__kicker kicker--amber">مقابلة</div><div class="playlist__title">رئيس لجنة المتابعة يردّ على أسئلة الجرمق</div></div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400"
+                  data-title="كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق"
+                  data-kicker="شرح" data-duration="06:31" data-seconds="391" data-views="41 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">06:31</span></div>
+            <div><div class="playlist__kicker kicker--amber">شرح</div><div class="playlist__title">كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق</div></div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400"
+                  data-title="موسم الزيتون: يوم كامل مع عائلة في دير حنا"
+                  data-kicker="تقرير مصوّر" data-duration="07:45" data-seconds="465" data-views="73 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">07:45</span></div>
+            <div><div class="playlist__kicker kicker--amber">تقرير مصوّر</div><div class="playlist__title">موسم الزيتون: يوم كامل مع عائلة في دير حنا</div></div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400"
+                  data-title="مهندسة تخطيط تشرح ماذا يعني «حرم بيئي»"
+                  data-kicker="مقابلة" data-duration="05:18" data-seconds="318" data-views="29 ألف">
+            <div class="playlist__thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"><span class="playlist__dur lat">05:18</span></div>
+            <div><div class="playlist__kicker kicker--amber">مقابلة</div><div class="playlist__title">مهندسة تخطيط تشرح ماذا يعني «حرم بيئي»</div></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== شبكة كل المرئيات =========================================== -->
+  <section class="container section--mt-md section--pb-lg">
+    <div class="video-tools">
+      <h2 class="section-title--md">كل المرئيات</h2>
+      <div class="video-tools__right">
+        <div class="search-inline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <label class="visually-hidden" for="video-q">ابحث في المرئيات</label>
+          <input id="video-q" type="search" placeholder="ابحث في المرئيات…">
+        </div>
+        <label class="select-label">
+          <span>ترتيب</span>
+          <select class="select-field" name="sort">
+            <option>الأحدث</option>
+            <option>الأكثر مشاهدة</option>
+            <option>الأطول</option>
+            <option>الأقصر</option>
+          </select>
+        </label>
+        <span class="video-tools__count">6 مواد</span>
+      </div>
+    </div>
+
+    <div class="video-grid">
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400"
+              data-title="«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق"
+              data-kicker="فيلم وثائقي" data-duration="12:40" data-seconds="760" data-views="147 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">12:40</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">فيلم وثائقي</span><span class="video-card__views">147 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h3>
+      </button>
+
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400"
+              data-title="جولة في سوق الناصرة القديم قبل ساعة الإغلاق"
+              data-kicker="تقرير مصوّر" data-duration="04:12" data-seconds="252" data-views="62 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">04:12</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">تقرير مصوّر</span><span class="video-card__views">62 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">جولة في سوق الناصرة القديم قبل ساعة الإغلاق</h3>
+      </button>
+
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400"
+              data-title="رئيس لجنة المتابعة يردّ على أسئلة الجرمق"
+              data-kicker="مقابلة" data-duration="09:58" data-seconds="598" data-views="88 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">09:58</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">مقابلة</span><span class="video-card__views">88 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">رئيس لجنة المتابعة يردّ على أسئلة الجرمق</h3>
+      </button>
+
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400"
+              data-title="كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق"
+              data-kicker="شرح" data-duration="06:31" data-seconds="391" data-views="41 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">06:31</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">شرح</span><span class="video-card__views">41 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق</h3>
+      </button>
+
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400"
+              data-title="موسم الزيتون: يوم كامل مع عائلة في دير حنا"
+              data-kicker="تقرير مصوّر" data-duration="07:45" data-seconds="465" data-views="73 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">07:45</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">تقرير مصوّر</span><span class="video-card__views">73 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">موسم الزيتون: يوم كامل مع عائلة في دير حنا</h3>
+      </button>
+
+      <button class="video-card" type="button" data-video data-video-scroll
+              data-src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400"
+              data-title="مهندسة تخطيط تشرح ماذا يعني «حرم بيئي»"
+              data-kicker="مقابلة" data-duration="05:18" data-seconds="318" data-views="29 ألف">
+        <div class="video-card__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy">
+          <span class="video-card__play"><span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span></span>
+          <span class="video-card__dur lat">05:18</span>
+        </div>
+        <div class="video-card__meta"><span class="kicker">مقابلة</span><span class="video-card__views">29 ألف مشاهدة</span></div>
+        <h3 class="video-card__title">مهندسة تخطيط تشرح ماذا يعني «حرم بيئي»</h3>
+      </button>
+    </div>
+  </section>
+
+
+  </main>
+
+  <!-- #include partials/footer.html -->
+  <!-- النشرة البريدية -->
+  <section class="newsletter" id="newsletter">
+    <div class="container newsletter__inner">
+      <div>
+        <span class="badge badge--ink">تصلك 6:30 صباحًا</span>
+        <h2 class="newsletter__title">نشرة الجرمق الصباحية: كل ما فاتك في خمس دقائق</h2>
+        <p class="newsletter__lead">تقرير واحد مختار، أهم خمسة أخبار، ورقم اليوم — كل صباح إلى بريدك.</p>
+      </div>
+      <form class="newsletter__form" action="#" method="post">
+        <div class="field-row">
+          <label class="visually-hidden" for="newsletter-email">بريدك الإلكتروني</label>
+          <input class="field" id="newsletter-email" name="email" type="email" placeholder="بريدك الإلكتروني" required>
+          <button class="btn btn--ink" type="submit">
+            <span>اشترك</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </button>
+        </div>
+        <span class="newsletter__note">28,600 مشترك — يمكنك إلغاء الاشتراك في أي وقت.</span>
+      </form>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="site-footer">
+    <div class="container site-footer__cols">
+
+      <div>
+        <img class="site-footer__logo" src="images/logo-light.png" alt="الجرمق الاخباري" width="172" height="52">
+        <div class="site-footer__mark"></div>
+        <p class="site-footer__about">صحافة محلية مستقلة من الجليل والمثلث والنقب — تقارير، تحقيقات، ومواد بصرية.</p>
+        <div class="site-footer__social">
+          <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+          <a href="about.html" aria-label="إكس"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
+          <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+        </div>
+      </div>
+
+      <nav aria-label="الأقسام">
+        <h3 class="footer-col__title">الأقسام</h3>
+        <div class="footer-col__links">
+          <a href="category.html">محليات</a>
+          <a href="category.html">سياسة</a>
+          <a href="category.html">اقتصاد</a>
+          <a href="category.html">رياضة</a>
+        </div>
+      </nav>
+
+      <nav aria-label="عن الجرمق">
+        <h3 class="footer-col__title">الجرمق</h3>
+        <div class="footer-col__links">
+          <a href="about.html">من نحن</a>
+          <a href="author.html">فريق التحرير</a>
+          <a href="about.html">سياسة التحرير</a>
+          <a href="about.html">إعلن معنا</a>
+        </div>
+      </nav>
+
+      <nav aria-label="خدمات">
+        <h3 class="footer-col__title">خدمات</h3>
+        <div class="footer-col__links">
+          <a href="search.html">البحث في الأرشيف</a>
+          <a href="tag.html">الوسوم</a>
+          <a href="live.html">التغطيات المباشرة</a>
+          <a href="about.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصات الأخبار</span></a>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="container site-footer__bottom">
+      <span>© 2026 الجرمق الاخباري — جميع الحقوق محفوظة</span>
+      <span class="lat">الجرمق — تأسّس 2011</span>
+    </div>
+  </footer>
+  <!-- /include -->
+
+</div>
+</body>
+</html>

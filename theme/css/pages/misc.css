@@ -1,0 +1,121 @@
+/* ==========================================================================
+   pages/misc.css — صفحة 404 ودليل الثيم
+   404.html · theme-index.html
+   ========================================================================== */
+
+/* --- 1. صفحة 404 ---------------------------------------------------------- */
+
+.error-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 52px;
+  align-items: center;
+  padding: 64px 0 56px;
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.error-page__code {
+  font-size: clamp(90px, 16vw, 190px);
+  line-height: .85;
+  color: var(--brand-amber);
+  display: block;
+}
+.error-page__title { font-size: clamp(26px, 3.2vw, 42px); margin: 22px 0 14px; max-width: 22ch; }
+.error-page__lead {
+  margin: 0 0 26px;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 48ch;
+  color: var(--ink-72);
+}
+.error-page__form { max-width: 460px; }
+
+.error-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 26px;
+}
+.error-page__links a {
+  border: var(--rule-w) solid var(--rule);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.error-page__links a:hover { background: var(--brand-ink); color: var(--paper); }
+
+.error-page__media { aspect-ratio: 4 / 3; overflow: hidden; }
+.error-page__media img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); }
+
+/* --- 2. دليل الثيم -------------------------------------------------------- */
+
+.guide-header {
+  border-bottom: var(--rule-w) solid var(--rule);
+  background: var(--paper);
+}
+.guide-header__inner {
+  padding: 26px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.guide-header__note { font-size: 13px; font-weight: 600; color: var(--ink-62); }
+
+.guide-intro { padding: 44px 0 0; }
+.guide-intro__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber-deep); }
+.guide-intro__title  { font-size: clamp(32px, 4.6vw, 60px); margin: 12px 0 16px; max-width: 26ch; }
+.guide-intro__lead {
+  margin: 0;
+  font-size: 17.5px;
+  line-height: 1.85;
+  max-width: 64ch;
+  color: var(--ink-72);
+}
+.guide-intro__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  margin: 32px 0 40px;
+  padding-bottom: 34px;
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.guide-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  padding-bottom: 72px;
+}
+
+.guide-card {
+  background: var(--paper);
+  outline: 1px solid var(--rule);
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 180px;
+}
+.guide-card:hover { background: var(--brand-ink); color: var(--paper); }
+.guide-card__num  { font-size: 12px; color: var(--brand-amber-deep); }
+.guide-card h2    { font-size: 22px; }
+.guide-card p     { margin: 0; font-size: 14.5px; line-height: 1.75; opacity: .78; }
+.guide-card__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+/* بطاقة الهوية الأخيرة — ليست رابطًا */
+.guide-card--brand {
+  background: var(--brand-amber);
+  outline: 0;
+}
+.guide-card--brand span { font-size: 12px; font-weight: 700; color: var(--body-text); }
+.guide-card--brand h2   { color: #1b2338; }
+.guide-card--brand p    { color: var(--body-text); opacity: 1; }

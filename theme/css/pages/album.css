@@ -1,0 +1,157 @@
+/* ==========================================================================
+   pages/album.css — ألبوم الصور (album.html)
+   --------------------------------------------------------------------------
+   السلوك (التنقّل بالأسهم والكيبورد) في js/gallery.js.
+   ========================================================================== */
+
+/* --- 1. ترويسة الألبوم ---------------------------------------------------- */
+
+.album-head {
+  padding: 24px 0 28px;
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+.album-head__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber-deep); }
+.album-head__title  { font-size: clamp(30px, 4.2vw, 56px); margin: 10px 0 16px; max-width: 26ch; }
+.album-head__lead {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 62ch;
+  color: var(--ink-72);
+}
+.album-head__meta { margin-top: 22px; }
+
+/* --- 2. عارض الصورة الكبيرة ---------------------------------------------- */
+
+.gallery {
+  position: relative;
+  margin-top: 2px;
+  background: #000;
+}
+.gallery__stage { aspect-ratio: 16 / 9; overflow: hidden; }
+.gallery__stage img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); }
+
+/* أزرار التنقّل فوق الصورة */
+.gallery__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: var(--rule-w) solid #fff;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.gallery__nav:hover {
+  background: var(--brand-amber);
+  border-color: var(--brand-amber);
+  color: var(--brand-ink);
+}
+.gallery__nav--prev { right: 16px; }
+.gallery__nav--next { left: 16px; }
+
+.gallery__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .85), transparent);
+  padding: 26px 24px 20px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+.gallery__caption p { margin: 0; font-size: 15.5px; line-height: 1.7; max-width: 60ch; }
+.gallery__counter {
+  font-size: 13px;
+  background: rgba(0, 0, 0, .5);
+  padding: 5px 10px;
+}
+
+/* --- 3. شريط الأدوات أسفل العارض ----------------------------------------- */
+
+.gallery-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0 4px;
+  border-bottom: 1px solid var(--line-20);
+}
+.gallery-bar__hint { font-size: 13px; color: var(--ink-62); }
+
+/* --- 4. الشرائط المصغّرة -------------------------------------------------- */
+
+.gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 14px 0 6px;
+}
+.gallery-thumbs button {
+  flex: 0 0 116px;
+  aspect-ratio: 4 / 3;
+  border: var(--rule-w) solid transparent;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+}
+.gallery-thumbs button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: .62;
+}
+.gallery-thumbs button.is-active { border-color: var(--brand-amber); }
+.gallery-thumbs button.is-active img { opacity: 1; }
+
+/* --- 5. موزاييك الصور ----------------------------------------------------- */
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--rule);
+  margin-top: 44px;
+}
+.mosaic button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: var(--paper);
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.mosaic button img { width: 100%; height: 100%; object-fit: cover; display: block; filter: var(--photo-filter); }
+
+/* --- 6. ألبومات أخرى ------------------------------------------------------ */
+
+.album-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: var(--rule-w) solid var(--rule);
+  margin-top: 44px;
+  padding-top: 22px;
+}
+
+.album-others {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 22px 0 72px;
+}
+.album-others h3 { font-size: 18px; margin-top: 12px; line-height: 1.45; }
+.album-others span { font-size: 13px; color: var(--ink-62); }

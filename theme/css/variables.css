@@ -1,0 +1,58 @@
+/* ==========================================================================
+   variables.css — متغيّرات التصميم (Design Tokens)
+   --------------------------------------------------------------------------
+   كل الألوان والخطوط والمقاسات المشتركة معرّفة هنا فقط.
+   لتغيير هوية الثيم بالكامل عدّل هذا الملف ولا تلمس باقي الملفات.
+   ========================================================================== */
+
+:root {
+
+  /* --- الألوان الأساسية (مشتقّة من الشعار) ------------------------------ */
+  --brand-ink:        #232f47;   /* الكحلي — لون النص والخطوط الأساسية      */
+  --brand-ink-2:      #38486b;   /* كحلي أفتح — استخدام ثانوي               */
+  --brand-ink-deep:   #0f1729;   /* كحلي غامق — حالة الضغط على الأزرار      */
+  --brand-amber:      #e8a12a;   /* العنبري — لون التمييز (accent)          */
+  --brand-amber-deep: #8a5c07;   /* عنبري غامق — للنصوص الصغيرة على فاتح    */
+  --brand-red:        #ec3013;   /* الأحمر — عاجل / مباشر فقط               */
+  --brand-red-deep:   #b3260f;
+
+  /* --- ألوان الأسطح ----------------------------------------------------- */
+  --paper:      #f4f3f1;   /* خلفية الصفحة                                  */
+  --paper-2:    #ebe9e6;   /* خلفية ثانوية / حالة hover                     */
+  --paper-3:    #fdfdfc;   /* خلفية الحقول                                  */
+  --surface-dark: #12182a; /* خلفية أقسام المرئيات الداكنة                  */
+  --rule:       #232f47;   /* لون كل الخطوط الفاصلة 2px                     */
+
+  /* --- نصوص مشتقّة (شفافيّات جاهزة بدل تكرار color-mix) ------------------ */
+  --ink-90: color-mix(in srgb, var(--brand-ink) 90%, transparent);
+  --ink-78: color-mix(in srgb, var(--brand-ink) 78%, transparent);
+  --ink-72: color-mix(in srgb, var(--brand-ink) 72%, transparent);
+  --ink-66: color-mix(in srgb, var(--brand-ink) 66%, transparent);
+  --ink-62: color-mix(in srgb, var(--brand-ink) 62%, transparent);
+  --ink-55: color-mix(in srgb, var(--brand-ink) 55%, transparent);
+  --body-text: #2b3550;    /* لون متن المقالات الطويلة                      */
+
+  /* --- الحدود ----------------------------------------------------------- */
+  --line-30: color-mix(in srgb, var(--brand-ink) 30%, transparent);
+  --line-25: color-mix(in srgb, var(--brand-ink) 25%, transparent);
+  --line-20: color-mix(in srgb, var(--brand-ink) 20%, transparent);
+  --line-18: color-mix(in srgb, var(--brand-ink) 18%, transparent);
+  --line-on-dark:      rgba(244, 243, 241, .22);
+  --line-on-dark-soft: rgba(244, 243, 241, .14);
+  --text-on-dark:      #f4f3f1;
+
+  /* --- الخطوط ----------------------------------------------------------- */
+  --font-ar:   "Almarai", system-ui, sans-serif;              /* المتن       */
+  --font-head: "Readex Pro", "Almarai", sans-serif;           /* العناوين    */
+  --font-lat:  "Archivo", sans-serif;                         /* الأرقام     */
+
+  /* --- المقاسات والمسافات ----------------------------------------------- */
+  --container: 1400px;  /* أقصى عرض للمحتوى                                 */
+  --gut: 32px;          /* الهامش الجانبي — يصغر في responsive.css          */
+  --rule-w: 2px;        /* سماكة الخطوط الفاصلة المميّزة للثيم              */
+  --radius: 0;          /* الثيم بلا زوايا دائرية — لا تغيّرها إلا عمدًا     */
+
+  /* --- تأثيرات ---------------------------------------------------------- */
+  --photo-filter: none;                 /* اجعلها grayscale(1) لصور أبيض/أسود */
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+}

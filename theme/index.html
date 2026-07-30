@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الجرمق الاخباري — صحافة محلية من الجليل والمثلث والنقب</title>
+<meta name="description" content="موقع الجرمق الاخباري: تحقيقات وتقارير ومواد بصرية من الجليل والمثلث والنقب.">
+
+<!-- المشاركة على الشبكات الاجتماعية — بدّل og:url و og:image بروابط موقعك -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="الجرمق الاخباري">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="الجرمق الاخباري — صحافة محلية من الجليل والمثلث والنقب">
+<meta property="og:description" content="موقع الجرمق الاخباري: تحقيقات وتقارير ومواد بصرية من الجليل والمثلث والنقب.">
+<meta property="og:image" content="images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#232f47">
+
+<!-- الخطوط: Almarai للمتن، Readex Pro للعناوين، Archivo للأرقام.
+     لاستضافتها محليًا بلا اتصال بـ Google راجع fonts/fonts.css -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
+
+<!-- أنماط الثيم: ملف واحد يستدعي باقي ملفات css -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/logo.png">
+
+<!-- سكربتات الثيم — defer: تحميل متوازٍ وتنفيذ مرتّب بعد بناء الصفحة.
+     main.js يبقى الأخير لأنه يشغّل باقي الوحدات. -->
+<script src="js/navigation.js" defer></script>
+<script src="js/filters.js" defer></script>
+<script src="js/slider.js" defer></script>
+<script src="js/video-player.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
+
+<body data-nav="home">
+<div class="page">
+
+  <!-- #include partials/header.html -->
+  <!-- رابط التخطّي: أول عنصر يصله زرّ Tab، يقفز فوق الشريط والقائمة إلى المحتوى -->
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- الشريط العلوي: بث مباشر + التاريخ + الطقس -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span class="topbar__live"><span class="dot dot--amber"></span>بث مباشر</span>
+        <span class="topbar__date">الثلاثاء 28 تموز 2026 — 13 صفر 1448</span>
+      </div>
+      <div class="topbar__side">
+        <span>الناصرة 31°</span>
+        <span class="topbar__divider"></span>
+        <span>تواصل معنا</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- الهيدر اللاصق -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" aria-label="الجرمق الاخباري — الصفحة الرئيسية">
+        <img class="site-header__logo" src="images/logo.png" alt="الجرمق الاخباري" width="152" height="46">
+      </a>
+
+      <!-- #include partials/navigation.html -->
+      <nav class="main-nav" aria-label="التنقّل الرئيسي">
+        <a class="main-nav__link" data-nav-key="home"    href="index.html">الرئيسية</a>
+        <a class="main-nav__link" data-nav-key="local"   href="category.html">محليات</a>
+        <a class="main-nav__link" data-nav-key="opinion" href="author.html">مقالات</a>
+        <a class="main-nav__link" data-nav-key="video"   href="video-archive.html">مرئيات</a>
+        <a class="main-nav__link" data-nav-key="album"   href="album.html">ألبومات</a>
+        <a class="main-nav__link" data-nav-key="live"    href="live.html">مباشر</a>
+        <a class="main-nav__link" data-nav-key="about"   href="about.html">من نحن</a>
+      </nav>
+      <!-- /include -->
+
+      <div class="site-header__actions">
+        <a class="icon-btn" href="search.html" aria-label="بحث">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </a>
+        <button class="icon-btn burger" type="button" data-menu-open aria-label="القائمة" aria-expanded="false" aria-controls="site-drawer">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
+        <a class="header-cta" href="index.html#newsletter">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
+          <span>اشترك في النشرة</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- الطبقة المعتمة خلف القائمة الجانبية -->
+  <button class="drawer-scrim" type="button" data-menu-close tabindex="-1" aria-hidden="true"></button>
+
+  <!-- القائمة الجانبية للموبايل -->
+  <aside class="drawer" id="site-drawer" aria-hidden="true" aria-label="قائمة التنقّل">
+    <div class="drawer__head">
+      <img class="drawer__logo" src="images/logo.png" alt="الجرمق الاخباري" width="112" height="34">
+      <button class="icon-btn icon-btn--sm" type="button" data-menu-close aria-label="إغلاق">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="drawer__nav">
+      <a class="drawer__link" href="index.html" data-menu-close><span>الرئيسية</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="category.html" data-menu-close><span>محليات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="author.html" data-menu-close><span>مقالات ورأي</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="video-archive.html" data-menu-close><span>مرئيات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="album.html" data-menu-close><span>ألبومات</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="live.html" data-menu-close><span>تغطية مباشرة</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <a class="drawer__link" href="about.html" data-menu-close><span>من نحن</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    </div>
+
+    <div class="drawer__foot">
+      <a class="drawer__cta" href="index.html#newsletter" data-menu-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
+        <span>اشترك في النشرة</span>
+      </a>
+      <div class="drawer__social">
+        <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+        <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+      </div>
+    </div>
+  </aside>
+  <!-- /include -->
+
+  <main id="main">
+
+  <!-- ===== شريط الأخبار العاجلة =========================================
+       المجموعة الثانية نسخة طبق الأصل: وجودها هو ما يجعل الحركة تبدو
+       متّصلة بلا انقطاع. تحمل aria-hidden فلا يقرأ قارئ الشاشة العناوين
+       مرّتين، وتُخفى تمامًا في وضع «تقليل الحركة».
+       ==================================================================== -->
+  <aside class="ticker" aria-label="أخبار عاجلة">
+    <div class="ticker__label"><span class="dot dot--amber"></span>عاجل</div>
+    <div class="ticker__viewport" tabindex="0">
+      <div class="ticker__track">
+        <div class="ticker__group">
+          <span>لجنة المتابعة تدعو إلى يوم إضراب شامل احتجاجًا على مخططات الهدم في النقب</span>
+          <span>الشرطة تفرض حصارًا على مدخل قرية عارة بعد اعتداء ليلي</span>
+          <span>وزارة الصحة: انخفاض بنسبة 12% في قوائم انتظار العمليات</span>
+          <span>الجرمق يحصل على وثائق تكشف تفاصيل مخطط التوسع في المنطقة الصناعية</span>
+        </div>
+        <div class="ticker__group" aria-hidden="true">
+          <span>لجنة المتابعة تدعو إلى يوم إضراب شامل احتجاجًا على مخططات الهدم في النقب</span>
+          <span>الشرطة تفرض حصارًا على مدخل قرية عارة بعد اعتداء ليلي</span>
+          <span>وزارة الصحة: انخفاض بنسبة 12% في قوائم انتظار العمليات</span>
+          <span>الجرمق يحصل على وثائق تكشف تفاصيل مخطط التوسع في المنطقة الصناعية</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== الهيرو: التحقيق الرئيسي + آخر التطورات + رقم اليوم =========== -->
+  <section class="container" id="top">
+    <div class="hero">
+
+      <article class="hero__main">
+        <div class="hero__flag">
+          <span class="badge">تحقيق الجرمق</span>
+          <span class="hero__file-no lat">ملف رقم 07</span>
+        </div>
+        <h1 class="hero__title">وثائق تكشف: مخطط لتوسيع منطقة صناعية على أراضٍ زراعية في الجليل</h1>
+        <p class="hero__lead">حصل «الجرمق» على مراسلات داخلية تُظهر أن المخطط جرى تعديله ثلاث مرات قبل إيداعه، وأن اعتراضات المجالس المحلية لم تُدرج في الملف النهائي.</p>
+        <div class="meta hero__meta">
+          <span class="meta__strong">رنا خطيب</span>
+          <span class="meta__sep"></span>
+          <span class="meta__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span>قراءة 7 دقائق</span></span>
+          <span class="meta__sep"></span>
+          <span class="lat">14:32</span>
+        </div>
+        <div class="hero__media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="أراضٍ زراعية على مشارف شعب في الجليل الأسفل" loading="eager">
+        </div>
+      </article>
+
+      <div class="hero__aside">
+        <div class="live-feed__head">
+          <h2 class="live-feed__title">آخر التطورات</h2>
+          <span class="live-feed__auto"><span class="dot dot--red"></span>يُحدَّث تلقائيًا</span>
+        </div>
+
+        <div class="live-feed__list">
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">14:02</span><span class="live-feed__text">المحكمة المركزية تؤجل النظر في التماس أهالي دهمش للشهر القادم</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">13:26</span><span class="live-feed__text">اتفاق مبدئي بين نقابة المعلمين والوزارة على تقليص عدد الطلاب في الصفوف</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">12:48</span><span class="live-feed__text">ارتفاع حاد في حوادث الطرق داخل البلدات العربية خلال حزيران</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">11:35</span><span class="live-feed__text">مجلس شفاعمرو يعلن حالة تأهب بعد انقطاع المياه عن حيّين</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">10:52</span><span class="live-feed__text">لجنة التخطيط تؤجل مناقشة مخطط عرابة الجديد إلى أيلول</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">10:14</span><span class="live-feed__text">وزارة المواصلات تصادق على خطّ باصات جديد بين عرعرة وأم الفحم</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">09:31</span><span class="live-feed__text">نقابة الأطباء: نقص 40 طبيبًا في مستشفيات الشمال قبل موسم الشتاء</span></a>
+          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">08:47</span><span class="live-feed__text">مصادرة أراضٍ في وادي عارة لصالح مشروع سكة الحديد تصل المحكمة</span></a>
+        </div>
+
+        <div class="figure-panel">
+          <span class="figure-panel__kicker lat">رقم اليوم</span>
+          <div class="figure-panel__value lat">43.7</div>
+          <p class="figure-panel__note">ألف دونم من الأراضي الزراعية شملها التعديل الأخير على المخططات الهيكلية في الشمال.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ملفات مفتوحة (شبكة بنتو) ==================================== -->
+  <section class="container section--pt-md">
+    <div class="section-head">
+      <div>
+        <span class="section-kicker lat">تحقيقات وملفات</span>
+        <h2 class="section-title">ملفات مفتوحة</h2>
+      </div>
+      <a class="more-link" href="category.html">كل الملفات<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg></a>
+    </div>
+
+    <div class="bento">
+      <article class="bento__item bento__item--tall">
+        <img class="bento__img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="بانوراما الناصرة" loading="lazy">
+        <div class="bento__caption">
+          <span class="badge badge--sm">ملف خاص</span>
+          <h3>السكن في البلدات العربية: عشر سنوات من الانتظار وقائمة تطول</h3>
+        </div>
+      </article>
+
+      <article class="bento__item bento__item--wide bento__text">
+        <span class="bento__label lat">اقتصاد</span>
+        <h3 class="bento__title">الشركات الناشئة العربية تضاعف حصتها من التمويل خلال عامين</h3>
+        <span class="bento__byline">أمير حجازي — تحليل</span>
+      </article>
+
+      <article class="bento__item bento__text bento__text--ink">
+        <span class="bento__label bento__label--amber lat">بيانات وخرائط</span>
+        <h3>خريطة تفاعلية: مخططات الهدم منذ 2020</h3>
+        <span class="bento__note">14 بلدة — 380 إخطارًا</span>
+      </article>
+
+      <article class="bento__item">
+        <img class="bento__img" src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="المسجد الأبيض في الناصرة" loading="lazy">
+        <div class="bento__caption bento__caption--full">ثقافة: معرض يجمع أرشيف يافا في مكان واحد</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== آخر الأخبار ================================================== -->
+  <section class="container section--pt-lg" id="latest">
+    <div class="latest__head">
+      <h2 class="latest__title">آخر الأخبار</h2>
+      <div class="tab-row" data-tabs>
+        <button class="tab is-active" type="button" aria-pressed="true">كل الأخبار</button>
+        <button class="tab" type="button" aria-pressed="false">محليات</button>
+        <button class="tab" type="button" aria-pressed="false">سياسة</button>
+        <button class="tab" type="button" aria-pressed="false">اقتصاد</button>
+        <button class="tab" type="button" aria-pressed="false">ثقافة</button>
+        <button class="tab" type="button" aria-pressed="false">رياضة</button>
+      </div>
+    </div>
+
+    <div class="latest__list">
+      <a class="latest__item" href="article.html"><span class="latest__time lat">14:32</span><span class="latest__text">بلدية الناصرة تعتمد خطة تطوير البلدة القديمة على ثلاث مراحل</span><span class="latest__cat">محليات</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">13:10</span><span class="latest__text">ارتفاع أسعار الإسكان في الشمال يدفع العائلات الشابة إلى الأطراف</span><span class="latest__cat">اقتصاد</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">12:45</span><span class="latest__text">جلسة طارئة للجنة المتابعة العليا لمناقشة مخططات الهدم</span><span class="latest__cat">سياسة</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">11:20</span><span class="latest__text">نتائج البجروت: تحسّن ملحوظ في مدارس المثلث الجنوبي</span><span class="latest__cat">تعليم</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">10:05</span><span class="latest__text">مهرجان حيفا للأفلام العربية يفتح باب التسجيل للدورة الحادية عشرة</span><span class="latest__cat">ثقافة</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">09:40</span><span class="latest__text">أبناء سخنين يتعاقد مع مدرب جديد قبل انطلاق الموسم</span><span class="latest__cat">رياضة</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">08:55</span><span class="latest__text">حملة فحوصات مجانية في عشر قرى بالجليل الأعلى</span><span class="latest__cat">صحة</span></a>
+      <a class="latest__item" href="article.html"><span class="latest__time lat">08:15</span><span class="latest__text">مجلس أم الفحم يصادق على ميزانية الطرق للعام القادم</span><span class="latest__cat">محليات</span></a>
+    </div>
+  </section>
+
+  <!-- ===== الأكثر تداولًا ============================================== -->
+  <section class="band band--muted section--mt-lg">
+    <div class="container section--pt-sm section--pb-lg">
+      <div class="section-head section-head--baseline">
+        <h2 class="section-title--sm">الأكثر تداولًا الآن</h2>
+        <span class="trend__stamp lat">آخر تحديث 14:40</span>
+      </div>
+      <div class="trend">
+        <a class="trend__item" href="article.html"><span class="trend__num lat">01</span><span class="trend__text">إضراب شامل في البلدات العربية غدًا</span></a>
+        <a class="trend__item" href="article.html"><span class="trend__num lat">02</span><span class="trend__text">شهادات من داخل مستشفى الناصرة الحكومي</span></a>
+        <a class="trend__item" href="article.html"><span class="trend__num lat">03</span><span class="trend__text">ماذا يعني قرار المحكمة لأصحاب البيوت غير المرخصة؟</span></a>
+        <a class="trend__item" href="article.html"><span class="trend__num lat">04</span><span class="trend__text">سخنين تتصدر جدول الدوري بعد فوز مثير</span></a>
+        <a class="trend__item" href="article.html"><span class="trend__num lat">05</span><span class="trend__text">أسعار الخضار ترتفع 18% خلال أسبوعين</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== رأي وتحليل ================================================== -->
+  <section class="opinion" id="opinion">
+    <div class="container opinion__inner">
+      <div class="split">
+        <div>
+          <span class="opinion__kicker lat">أقلام الجرمق</span>
+          <h2 class="opinion__title">رأي وتحليل</h2>
+          <blockquote class="opinion__quote">لا يمكن قراءة أزمة السكن بمعزل عن الجغرافيا: الأرض هي أصل الحكاية، والتخطيط هو أداتها.</blockquote>
+          <div class="opinion__author">
+            <div class="opinion__avatar"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="د. سامي زعبي" loading="lazy"></div>
+            <div>
+              <div class="opinion__name">د. سامي زعبي</div>
+              <div class="opinion__role">باحث في التخطيط العمراني</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="opinion__list">
+          <a class="opinion__row" href="article.html">
+            <div>
+              <div class="opinion__row-by">هدى مصاروة</div>
+              <div class="opinion__row-title">عن الحقّ في المدينة: حين تصبح المواصلات قضية سياسية</div>
+            </div>
+            <span class="opinion__row-time lat">5 د</span>
+          </a>
+          <a class="opinion__row" href="article.html">
+            <div>
+              <div class="opinion__row-by">وليد الأسدي</div>
+              <div class="opinion__row-title">المدرسة العربية بين ميزانية ناقصة ومنهج لا يشبه طلابها</div>
+            </div>
+            <span class="opinion__row-time lat">7 د</span>
+          </a>
+          <a class="opinion__row" href="article.html">
+            <div>
+              <div class="opinion__row-by">ليان صالح</div>
+              <div class="opinion__row-title">اقتصاد الأحياء: المشاريع الصغيرة التي تحمل بلداتنا</div>
+            </div>
+            <span class="opinion__row-time lat">4 د</span>
+          </a>
+          <a class="opinion__row" href="article.html">
+            <div>
+              <div class="opinion__row-by">نبيل حداد</div>
+              <div class="opinion__row-title">لماذا نحتاج صحافة محلية أكثر من أي وقت مضى؟</div>
+            </div>
+            <span class="opinion__row-time lat">6 د</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== مرئيات الجرمق =============================================== -->
+  <section class="videos section--mt-lg" id="video">
+    <div class="container videos__inner">
+      <div class="videos__head">
+        <div>
+          <span class="videos__kicker lat">قناة الجرمق</span>
+          <h2 class="videos__title">مرئيات الجرمق</h2>
+        </div>
+        <span class="videos__count">4 مواد مرئية — تحديث اليوم 14:40</span>
+      </div>
+
+      <div class="split split--lead split--gap-sm">
+        <div>
+          <!-- المشغّل: عرض تقديمي بمؤقّت — راجع js/video-player.js لربط فيديو حقيقي -->
+          <div class="player" data-player data-seconds="760">
+            <img class="player__poster" data-player-poster src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy">
+            <div class="player__scrim"></div>
+
+            <div class="player__flags">
+              <span class="badge badge--red" data-player-kicker>فيلم وثائقي</span>
+            </div>
+
+            <button class="player__big-play" type="button" data-player-toggle aria-label="تشغيل">
+              <span><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </button>
+
+            <div class="player__title">
+              <h3 data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h3>
+            </div>
+
+            <div class="player__controls">
+              <div class="player__bar" data-player-bar>
+                <div class="player__bar-track"></div>
+                <div class="player__bar-fill" data-player-fill></div>
+                <div class="player__bar-knob" data-player-knob></div>
+              </div>
+
+              <div class="player__row">
+                <button class="player__btn" type="button" data-player-toggle aria-label="تشغيل/إيقاف">
+                  <svg class="icon-play"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg>
+                  <svg class="icon-pause" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+                <button class="player__btn player__btn--ghost" type="button" data-player-mute aria-label="الصوت">
+                  <svg class="icon-sound" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6a1.4 1.4 0 0 1-1 .4H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"></path><path d="M16 9a5 5 0 0 1 0 6"></path><path d="M19.4 5.6a9 9 0 0 1 0 12.7"></path></svg>
+                  <svg class="icon-muted" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6a1.4 1.4 0 0 1-1 .4H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"></path><path d="m16 9 6 6"></path><path d="m22 9-6 6"></path></svg>
+                </button>
+                <span class="player__time lat"><span data-player-elapsed>00:00</span> / <span data-player-duration>12:40</span></span>
+                <span class="spacer"></span>
+                <span class="player__cc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16"></rect><path d="M7 15h4"></path><path d="M15 15h2"></path><path d="M7 11h2"></path><path d="M13 11h4"></path></svg><span>ترجمة</span></span>
+                <button class="player__btn player__btn--ghost" type="button" aria-label="شاشة كاملة">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-meta">
+            <span>إنتاج: وحدة المرئيات — الجرمق</span>
+            <span class="player-meta__sep"></span>
+            <span>تصوير: سائد عابد</span>
+            <span class="player-meta__sep"></span>
+            <span class="lat">147 ألف مشاهدة</span>
+          </div>
+        </div>
+
+        <!-- قائمة التشغيل: كل زرّ يحمل بيانات المادة ويحمّلها في المشغّل -->
+        <div class="playlist">
+          <div class="playlist__head">
+            <h3>قائمة التشغيل</h3>
+            <span class="playlist__count lat">4 مواد</span>
+          </div>
+
+          <button class="playlist__item is-active" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400"
+                  data-title="«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق"
+                  data-kicker="فيلم وثائقي" data-duration="12:40" data-seconds="760">
+            <div class="playlist__thumb">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy">
+              <span class="playlist__dur lat">12:40</span>
+              <span class="playlist__now"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </div>
+            <div>
+              <div class="playlist__head-row"><span class="playlist__num lat">01</span><span class="playlist__kicker">فيلم وثائقي</span></div>
+              <div class="playlist__title">«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</div>
+            </div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400"
+                  data-title="جولة في سوق الناصرة القديم قبل ساعة الإغلاق"
+                  data-kicker="تقرير مصوّر" data-duration="04:12" data-seconds="252">
+            <div class="playlist__thumb">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy">
+              <span class="playlist__dur lat">04:12</span>
+              <span class="playlist__now"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </div>
+            <div>
+              <div class="playlist__head-row"><span class="playlist__num lat">02</span><span class="playlist__kicker">تقرير مصوّر</span></div>
+              <div class="playlist__title">جولة في سوق الناصرة القديم قبل ساعة الإغلاق</div>
+            </div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400"
+                  data-title="رئيس لجنة المتابعة يردّ على أسئلة الجرمق"
+                  data-kicker="مقابلة" data-duration="09:58" data-seconds="598">
+            <div class="playlist__thumb">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy">
+              <span class="playlist__dur lat">09:58</span>
+              <span class="playlist__now"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </div>
+            <div>
+              <div class="playlist__head-row"><span class="playlist__num lat">03</span><span class="playlist__kicker">مقابلة</span></div>
+              <div class="playlist__title">رئيس لجنة المتابعة يردّ على أسئلة الجرمق</div>
+            </div>
+          </button>
+
+          <button class="playlist__item" type="button" data-video
+                  data-src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400"
+                  data-title="كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق"
+                  data-kicker="شرح" data-duration="06:31" data-seconds="391">
+            <div class="playlist__thumb">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy">
+              <span class="playlist__dur lat">06:31</span>
+              <span class="playlist__now"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
+            </div>
+            <div>
+              <div class="playlist__head-row"><span class="playlist__num lat">04</span><span class="playlist__kicker">شرح</span></div>
+              <div class="playlist__title">كيف تُقرأ خرائط التخطيط؟ دليل مبسّط في ست دقائق</div>
+            </div>
+          </button>
+
+          <a class="playlist__all" href="video-archive.html">
+            <span>كل المرئيات</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قصص بالصورة ================================================= -->
+  <section class="container section--pt-lg" id="albums">
+    <div class="section-head">
+      <div>
+        <span class="section-kicker lat">أرشيف المصوّرين</span>
+        <h2 class="section-title">قصص بالصورة</h2>
+      </div>
+      <p class="section-note">مواد بصرية من مصوّري الجرمق في الجليل والمثلث والنقب.</p>
+    </div>
+
+    <div class="albums">
+      <figure class="albums__a">
+        <a class="ratio ratio--4-5" href="album.html"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400" alt="موسم الزيتون في دير حنا" loading="lazy"></a>
+        <figcaption>موسم الزيتون في دير حنا — 19 صورة</figcaption>
+      </figure>
+      <figure class="albums__b">
+        <a class="ratio ratio--16-9" href="album.html"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="قرى الجليل الأعلى" loading="lazy"></a>
+        <figcaption>الجليل الأعلى: قرى على حدود الغابة — 26 صورة</figcaption>
+      </figure>
+      <figure class="albums__c">
+        <a class="ratio ratio--1-1" href="album.html"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="طرق ترابية في الجليل الأعلى" loading="lazy"></a>
+        <figcaption>طرق ترابية في الجليل الأعلى — 9 صور</figcaption>
+      </figure>
+      <figure class="albums__d">
+        <a class="ratio ratio--3-2" href="album.html"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="الناصرة القديمة" loading="lazy"></a>
+        <figcaption>الناصرة القديمة: السوق والمسجد الأبيض — 28 صورة</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== اختيار المحرر + الأكثر قراءة ================================ -->
+  <section class="container section--mt-lg">
+    <div class="split split--picks section-head--ruled">
+      <div>
+        <div class="section-head section-head--baseline">
+          <h2 class="section-title--sm">اختيار المحرر</h2>
+          <span class="trend__stamp lat">بتوصية هيئة التحرير</span>
+        </div>
+        <div class="picks">
+          <a class="picks__item" href="article.html">
+            <span class="picks__num lat">01</span>
+            <h3 class="picks__title">حكاية عائلة انتقلت من النقب إلى الشمال بحثًا عن بيت</h3>
+            <p class="picks__note">مقابلة مطوّلة</p>
+          </a>
+          <a class="picks__item" href="article.html">
+            <span class="picks__num lat">02</span>
+            <h3 class="picks__title">من يملك أرض الجليل؟ قراءة في سجلات التسوية</h3>
+            <p class="picks__note">ملف بيانات</p>
+          </a>
+          <a class="picks__item" href="article.html">
+            <span class="picks__num lat">03</span>
+            <h3 class="picks__title">شبّان يعيدون ترميم بيوت قديمة في الرامة</h3>
+            <p class="picks__note">تقرير مصوّر</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head section-head--baseline">
+          <h2 class="section-title--sm">الأكثر قراءة</h2>
+          <span class="trend__stamp lat">هذا الأسبوع</span>
+        </div>
+        <a class="most-read__item" href="article.html">
+          <div class="most-read__line"><span class="most-read__num lat">01</span><span class="most-read__text">تفاصيل قرار وزارة الداخلية بشأن المجالس المحلية</span></div>
+          <div class="most-read__bar"></div>
+        </a>
+        <a class="most-read__item" href="article.html">
+          <div class="most-read__line"><span class="most-read__num lat">02</span><span class="most-read__text">مواعيد امتحانات البجروت الشتوية</span></div>
+          <div class="most-read__bar"></div>
+        </a>
+        <a class="most-read__item" href="article.html">
+          <div class="most-read__line"><span class="most-read__num lat">03</span><span class="most-read__text">لائحة اتهام في قضية إطلاق النار في كفر قاسم</span></div>
+          <div class="most-read__bar"></div>
+        </a>
+        <a class="most-read__item" href="article.html">
+          <div class="most-read__line"><span class="most-read__num lat">04</span><span class="most-read__text">دراسة: ثلث الشباب العرب يفكرون بالهجرة للعمل</span></div>
+          <div class="most-read__bar"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== أنماط عرض الأخبار الأربعة =================================== -->
+  <section class="container section--mt-xl" id="patterns">
+    <div class="section-head section-head--ruled">
+      <div>
+        <span class="section-kicker lat">أربعة تنظيمات جاهزة</span>
+        <h2 class="section-title">أنماط عرض الأخبار بالصور</h2>
+      </div>
+      <p class="section-note">أربعة تنظيمات جاهزة لنفس المحتوى — يمكن للمحرّر تبديل نمط أي قسم في الموقع بينها.</p>
+    </div>
+  </section>
+
+  <!-- النمط الأول: صورة كاملة والعنوان فوقها -->
+  <section class="container section--mt-md">
+    <div class="pattern-head">
+      <span class="badge badge--ink">النمط الأول</span>
+      <span class="pattern-head__name">الصورة كاملة والعنوان فوقها</span>
+      <span class="pattern-head__rule"></span>
+    </div>
+    <div class="pattern-grid">
+      <a class="card-overlay ratio ratio--4-5" href="article.html">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy">
+        <div class="card-overlay__scrim"></div>
+        <div class="card-overlay__body">
+          <div class="card-overlay__head"><span class="badge badge--sm">محليات</span><span class="lat">14:20</span></div>
+          <h3 class="card-overlay__title">جلسة استماع في لجنة التخطيط تنتهي دون قرار بشأن مخطط عرابة</h3>
+          <p class="card-overlay__excerpt">أصحاب الأراضي قدّموا 47 اعتراضًا، واللجنة أعطت مهلة شهرين لاستكمال المستندات.</p>
+        </div>
+      </a>
+      <a class="card-overlay ratio ratio--4-5" href="article.html">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy">
+        <div class="card-overlay__scrim"></div>
+        <div class="card-overlay__body">
+          <div class="card-overlay__head"><span class="badge badge--sm">تعليم</span><span class="lat">12:55</span></div>
+          <h3 class="card-overlay__title">ميزانية الترميم تصل 14 مدرسة فقط من أصل 40 طلبًا</h3>
+          <p class="card-overlay__excerpt">وثائق الوزارة تكشف أن معايير التوزيع تغيّرت مرتين خلال السنة المالية.</p>
+        </div>
+      </a>
+      <a class="card-overlay ratio ratio--4-5" href="article.html">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy">
+        <div class="card-overlay__scrim"></div>
+        <div class="card-overlay__body">
+          <div class="card-overlay__head"><span class="badge badge--sm">اقتصاد</span><span class="lat">11:30</span></div>
+          <h3 class="card-overlay__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</h3>
+          <p class="card-overlay__excerpt">جولة في أسواق الجليل ترصد فروقات تصل إلى 4 شواقل للكيلو بين بلدة وأخرى.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- النمط الثاني: صفوف أفقية -->
+  <section class="container section--mt-md">
+    <div class="pattern-head">
+      <span class="badge badge--ink">النمط الثاني</span>
+      <span class="pattern-head__name">صفوف أفقية: صورة + ملخّص + بيانات</span>
+      <span class="pattern-head__rule"></span>
+    </div>
+
+    <div class="posts posts--list">
+      <a class="post-card" href="article.html">
+        <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
+        <div class="post-card__body">
+          <div class="post-card__head"><span class="kicker kicker--boxed">رياضة</span><span class="post-card__by">محمود زيدان</span><span class="post-card__stamp lat">10:15</span></div>
+          <h3 class="post-card__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</h3>
+          <p class="post-card__excerpt">الإدارة تعوّل على الجمهور لتغطية ثلث ميزانية الموسم القادم.</p>
+        </div>
+        <div class="post-card__aside">
+          <div class="post-card__time lat">10:15</div>
+          <div class="post-card__read">قراءة 4 د</div>
+        </div>
+      </a>
+
+      <a class="post-card" href="article.html">
+        <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
+        <div class="post-card__body">
+          <div class="post-card__head"><span class="kicker kicker--boxed">ثقافة</span><span class="post-card__by">ليان صالح</span><span class="post-card__stamp lat">09:40</span></div>
+          <h3 class="post-card__title">مهرجان حيفا للأفلام العربية يفتح باب التسجيل لدورته الحادية عشرة</h3>
+          <p class="post-card__excerpt">أكثر من 200 فيلم تقدّم العام الماضي، ونصفها من إنتاج مستقل.</p>
+        </div>
+        <div class="post-card__aside">
+          <div class="post-card__time lat">09:40</div>
+          <div class="post-card__read">قراءة 4 د</div>
+        </div>
+      </a>
+
+      <a class="post-card" href="article.html">
+        <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
+        <div class="post-card__body">
+          <div class="post-card__head"><span class="kicker kicker--boxed">صحة</span><span class="post-card__by">هدى مصاروة</span><span class="post-card__stamp lat">08:50</span></div>
+          <h3 class="post-card__title">عيادة متنقلة تصل عشر قرى في النقب بعد سنوات من المطالبات</h3>
+          <p class="post-card__excerpt">الخدمة تعمل ثلاثة أيام أسبوعيًا وتغطي فحوصات السكري والضغط.</p>
+        </div>
+        <div class="post-card__aside">
+          <div class="post-card__time lat">08:50</div>
+          <div class="post-card__read">قراءة 4 د</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- النمط الثالث: لوحة متراكبة + قائمة مصغّرة -->
+  <section class="container section--mt-md">
+    <div class="pattern-head">
+      <span class="badge badge--ink">النمط الثالث</span>
+      <span class="pattern-head__name">خبر رئيسي بلوحة متراكبة + قائمة مصغّرة</span>
+      <span class="pattern-head__rule"></span>
+    </div>
+
+    <div class="split split--article split--gap-md">
+      <article class="overlap-card">
+        <div class="ratio ratio--16-10"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy"></div>
+        <div class="overlap-card__panel">
+          <div class="overlap-card__head">
+            <span class="badge badge--red">محليات</span>
+            <span class="mini-list__time lat">14:20</span>
+          </div>
+          <h3 class="overlap-card__title">جلسة استماع في لجنة التخطيط تنتهي دون قرار بشأن مخطط عرابة</h3>
+          <p class="overlap-card__excerpt">أصحاب الأراضي قدّموا 47 اعتراضًا، واللجنة أعطت مهلة شهرين لاستكمال المستندات.</p>
+          <div class="overlap-card__by">رنا خطيب</div>
+        </div>
+      </article>
+
+      <div>
+        <a class="mini-list__item" href="article.html">
+          <div>
+            <div class="mini-list__head"><span class="mini-list__time lat">12:55</span><span class="mini-list__cat">تعليم</span></div>
+            <div class="mini-list__title">ميزانية الترميم تصل 14 مدرسة فقط من أصل 40 طلبًا</div>
+          </div>
+          <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy"></div>
+        </a>
+        <a class="mini-list__item" href="article.html">
+          <div>
+            <div class="mini-list__head"><span class="mini-list__time lat">11:30</span><span class="mini-list__cat">اقتصاد</span></div>
+            <div class="mini-list__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</div>
+          </div>
+          <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy"></div>
+        </a>
+        <a class="mini-list__item" href="article.html">
+          <div>
+            <div class="mini-list__head"><span class="mini-list__time lat">10:15</span><span class="mini-list__cat">رياضة</span></div>
+            <div class="mini-list__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</div>
+          </div>
+          <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- النمط الرابع: عرض متحرّك بأسهم -->
+  <section class="band band--muted section--mt-lg">
+    <div class="container section--pt-sm section--pb-lg" data-slider>
+      <div class="pattern-head">
+        <span class="badge badge--ink">النمط الرابع</span>
+        <span class="pattern-head__name">عرض متحرّك بأسهم</span>
+        <span class="pattern-head__rule"></span>
+        <div class="btn-group">
+          <button class="icon-btn" type="button" data-slider-prev aria-label="السابق"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+          <button class="icon-btn" type="button" data-slider-next aria-label="التالي"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+        </div>
+      </div>
+
+      <div class="slider">
+        <div class="slider__track" data-slider-track>
+          <a class="slider__item card-top" href="article.html">
+            <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy"></div>
+            <div class="card-top__meta"><span class="kicker">اقتصاد</span><span class="lat">11:30</span></div>
+            <h3 class="card-top__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</h3>
+            <p class="card-top__excerpt">جولة في أسواق الجليل ترصد فروقات تصل إلى 4 شواقل للكيلو بين بلدة وأخرى.</p>
+          </a>
+          <a class="slider__item card-top" href="article.html">
+            <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
+            <div class="card-top__meta"><span class="kicker">رياضة</span><span class="lat">10:15</span></div>
+            <h3 class="card-top__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</h3>
+            <p class="card-top__excerpt">الإدارة تعوّل على الجمهور لتغطية ثلث ميزانية الموسم القادم.</p>
+          </a>
+          <a class="slider__item card-top" href="article.html">
+            <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
+            <div class="card-top__meta"><span class="kicker">ثقافة</span><span class="lat">09:40</span></div>
+            <h3 class="card-top__title">مهرجان حيفا للأفلام العربية يفتح باب التسجيل لدورته الحادية عشرة</h3>
+            <p class="card-top__excerpt">أكثر من 200 فيلم تقدّم العام الماضي، ونصفها من إنتاج مستقل.</p>
+          </a>
+          <a class="slider__item card-top" href="article.html">
+            <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
+            <div class="card-top__meta"><span class="kicker">صحة</span><span class="lat">08:50</span></div>
+            <h3 class="card-top__title">عيادة متنقلة تصل عشر قرى في النقب بعد سنوات من المطالبات</h3>
+            <p class="card-top__excerpt">الخدمة تعمل ثلاثة أيام أسبوعيًا وتغطي فحوصات السكري والضغط.</p>
+          </a>
+          <a class="slider__item card-top" href="article.html">
+            <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy"></div>
+            <div class="card-top__meta"><span class="kicker">محليات</span><span class="lat">07:45</span></div>
+            <h3 class="card-top__title">انقطاع المياه عن حيّين في شفاعمرو يفتح ملف الشبكة القديمة</h3>
+            <p class="card-top__excerpt">المجلس يقول إن استبدال الأنابيب يحتاج 12 مليون شيكل.</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="slider__dots" data-slider-dots></div>
+    </div>
+  </section>
+
+  <!-- ===== فهرس الأقسام ================================================ -->
+  <section class="container section--mt-lg" id="cats">
+    <div class="section-head section-head--baseline section-head--ruled">
+      <h2 class="section-title--sm">الأقسام</h2>
+      <span class="trend__stamp lat">الفهرس الكامل</span>
+    </div>
+    <div class="cat-index">
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">محليات</span><span class="cat-index__count lat">1238</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">سياسة</span><span class="cat-index__count lat">849</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">اقتصاد</span><span class="cat-index__count lat">431</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">ثقافة وفنون</span><span class="cat-index__count lat">397</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">رياضة</span><span class="cat-index__count lat">526</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">تعليم</span><span class="cat-index__count lat">274</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">صحة</span><span class="cat-index__count lat">190</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">تكنولوجيا</span><span class="cat-index__count lat">146</span></a>
+      <a class="cat-index__item" href="category.html"><span class="cat-index__name">عالم</span><span class="cat-index__count lat">603</span></a>
+    </div>
+  </section>
+
+  <div class="section--mt-xl"></div>
+
+
+  </main>
+
+  <!-- #include partials/footer.html -->
+  <!-- النشرة البريدية -->
+  <section class="newsletter" id="newsletter">
+    <div class="container newsletter__inner">
+      <div>
+        <span class="badge badge--ink">تصلك 6:30 صباحًا</span>
+        <h2 class="newsletter__title">نشرة الجرمق الصباحية: كل ما فاتك في خمس دقائق</h2>
+        <p class="newsletter__lead">تقرير واحد مختار، أهم خمسة أخبار، ورقم اليوم — كل صباح إلى بريدك.</p>
+      </div>
+      <form class="newsletter__form" action="#" method="post">
+        <div class="field-row">
+          <label class="visually-hidden" for="newsletter-email">بريدك الإلكتروني</label>
+          <input class="field" id="newsletter-email" name="email" type="email" placeholder="بريدك الإلكتروني" required>
+          <button class="btn btn--ink" type="submit">
+            <span>اشترك</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </button>
+        </div>
+        <span class="newsletter__note">28,600 مشترك — يمكنك إلغاء الاشتراك في أي وقت.</span>
+      </form>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="site-footer">
+    <div class="container site-footer__cols">
+
+      <div>
+        <img class="site-footer__logo" src="images/logo-light.png" alt="الجرمق الاخباري" width="172" height="52">
+        <div class="site-footer__mark"></div>
+        <p class="site-footer__about">صحافة محلية مستقلة من الجليل والمثلث والنقب — تقارير، تحقيقات، ومواد بصرية.</p>
+        <div class="site-footer__social">
+          <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+          <a href="about.html" aria-label="إكس"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
+          <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+        </div>
+      </div>
+
+      <nav aria-label="الأقسام">
+        <h3 class="footer-col__title">الأقسام</h3>
+        <div class="footer-col__links">
+          <a href="category.html">محليات</a>
+          <a href="category.html">سياسة</a>
+          <a href="category.html">اقتصاد</a>
+          <a href="category.html">رياضة</a>
+        </div>
+      </nav>
+
+      <nav aria-label="عن الجرمق">
+        <h3 class="footer-col__title">الجرمق</h3>
+        <div class="footer-col__links">
+          <a href="about.html">من نحن</a>
+          <a href="author.html">فريق التحرير</a>
+          <a href="about.html">سياسة التحرير</a>
+          <a href="about.html">إعلن معنا</a>
+        </div>
+      </nav>
+
+      <nav aria-label="خدمات">
+        <h3 class="footer-col__title">خدمات</h3>
+        <div class="footer-col__links">
+          <a href="search.html">البحث في الأرشيف</a>
+          <a href="tag.html">الوسوم</a>
+          <a href="live.html">التغطيات المباشرة</a>
+          <a href="about.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصات الأخبار</span></a>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="container site-footer__bottom">
+      <span>© 2026 الجرمق الاخباري — جميع الحقوق محفوظة</span>
+      <span class="lat">الجرمق — تأسّس 2011</span>
+    </div>
+  </footer>
+  <!-- /include -->
+
+</div>
+</body>
+</html>

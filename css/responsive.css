@@ -364,6 +364,8 @@
   .error-page__links a { min-height: 44px; display: inline-flex; align-items: center; }
   .tab { padding-block: 10px; }
 
+  .btn { min-height: 44px; }
+
   .select-field { min-height: 44px; }
 
   .player__btn { width: 40px; height: 40px; }

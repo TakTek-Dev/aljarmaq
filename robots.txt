@@ -1,0 +1,12 @@
+# robots.txt — الجرمق الاخباري
+# بدّل النطاق أدناه بنطاق موقعك قبل النشر.
+
+User-agent: *
+Allow: /
+
+# صفحات داخلية لا تُفهرس
+Disallow: /theme-index.html
+Disallow: /search.html
+Disallow: /search-empty.html
+
+Sitemap: https://aljarmaq.net/sitemap.xml

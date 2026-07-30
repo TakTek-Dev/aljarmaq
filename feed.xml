@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  feed.xml — خلاصة RSS 2.0
+  ملف عيّنة: بدّل النطاق والعناصر بمخرجات نظام إدارة المحتوى عندك.
+  مربوط في <head> كل صفحة بوسم <link rel="alternate" type="application/rss+xml">.
+-->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>الجرمق الاخباري</title>
+    <link>https://aljarmaq.net/</link>
+    <atom:link href="https://aljarmaq.net/feed.xml" rel="self" type="application/rss+xml" />
+    <description>صحافة محلية مستقلة من الجليل والمثلث والنقب — تقارير، تحقيقات، ومواد بصرية.</description>
+    <language>ar</language>
+    <copyright>© 2026 الجرمق الاخباري</copyright>
+    <lastBuildDate>Tue, 28 Jul 2026 14:32:00 +0300</lastBuildDate>
+    <image>
+      <url>https://aljarmaq.net/images/icon-512.png</url>
+      <title>الجرمق الاخباري</title>
+      <link>https://aljarmaq.net/</link>
+    </image>
+
+    <item>
+      <title>وثائق تكشف: مخطط لتوسيع منطقة صناعية على أراضٍ زراعية في الجليل</title>
+      <link>https://aljarmaq.net/article.html</link>
+      <guid isPermaLink="true">https://aljarmaq.net/article.html</guid>
+      <category>محليات</category>
+      <author>news@aljarmaq.net (رنا خطيب)</author>
+      <pubDate>Tue, 28 Jul 2026 14:32:00 +0300</pubDate>
+      <description>مراسلات داخلية تُظهر أن المخطط جرى تعديله ثلاث مرات قبل إيداعه، وأن اعتراضات المجالس المحلية لم تُدرج في الملف النهائي.</description>
+    </item>
+
+    <item>
+      <title>جلسة استماع في لجنة التخطيط تنتهي دون قرار بشأن مخطط عرابة</title>
+      <link>https://aljarmaq.net/article.html</link>
+      <guid isPermaLink="false">aljarmaq-2026-07-28-araba</guid>
+      <category>محليات</category>
+      <pubDate>Tue, 28 Jul 2026 14:20:00 +0300</pubDate>
+      <description>أصحاب الأراضي قدّموا 47 اعتراضًا، واللجنة أعطت مهلة شهرين لاستكمال المستندات.</description>
+    </item>
+
+    <item>
+      <title>ميزانية الترميم تصل 14 مدرسة فقط من أصل 40 طلبًا</title>
+      <link>https://aljarmaq.net/article.html</link>
+      <guid isPermaLink="false">aljarmaq-2026-07-28-schools</guid>
+      <category>تعليم</category>
+      <pubDate>Tue, 28 Jul 2026 12:55:00 +0300</pubDate>
+      <description>وثائق الوزارة تكشف أن معايير التوزيع تغيّرت مرتين خلال السنة المالية.</description>
+    </item>
+
+    <item>
+      <title>أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</title>
+      <link>https://aljarmaq.net/article.html</link>
+      <guid isPermaLink="false">aljarmaq-2026-07-28-prices</guid>
+      <category>اقتصاد</category>
+      <pubDate>Tue, 28 Jul 2026 11:30:00 +0300</pubDate>
+      <description>جولة في أسواق الجليل ترصد فروقات تصل إلى 4 شواقل للكيلو بين بلدة وأخرى.</description>
+    </item>
+
+  </channel>
+</rss>

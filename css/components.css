@@ -491,7 +491,39 @@ textarea.field { resize: vertical; }
 .ad-slot--square      { height: 300px; }
 .ad-slot--square-lg   { height: 320px; }
 
-/* --- 10. النشرة البريدية --------------------------------------------------- */
+/* --- 10. حالة فارغة (لا نتائج / لا مواد) --------------------------------- */
+
+.empty-state {
+  border: var(--rule-w) dashed var(--line-30);
+  padding: 56px var(--gut);
+  text-align: center;
+  margin: 8px 0 40px;
+}
+.empty-state__icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border: var(--rule-w) solid var(--rule);
+  color: var(--brand-ink);
+}
+.empty-state__title { font-size: clamp(22px, 2.6vw, 30px); margin-bottom: 12px; }
+.empty-state__text {
+  margin: 0 auto 24px;
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 52ch;
+  color: var(--ink-72);
+}
+.empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* --- 11. النشرة البريدية --------------------------------------------------- */
 
 .newsletter { background: var(--brand-amber); color: var(--brand-ink); }
 

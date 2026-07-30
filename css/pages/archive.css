@@ -160,7 +160,107 @@
 }
 .search-summary__count { font-size: 15px; font-weight: 700; }
 
-/* --- 6. صفحة الكاتب (author.html) --------------------------------------- */
+/* --- 6. ترويسة صفحات الفهارس -------------------------------------------- */
+/* تخدم: tags.html · authors.html · albums.html · live-index.html
+   وصفحات المحتوى الثابت (سياسة التحرير / الخصوصية / إعلن معنا) */
+
+.page-head {
+  padding: 30px 0 28px;
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+.page-head__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber-deep); }
+.page-head__title  { font-size: clamp(30px, 4.2vw, 56px); margin: 10px 0 0; max-width: 26ch; }
+.page-head__lead {
+  margin: 16px 0 0;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 62ch;
+  color: var(--ink-72);
+}
+
+/* --- 7. سحابة الوسوم (tags.html) ---------------------------------------- */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 26px 0 0;
+}
+
+.tag-cloud__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  border: 1px solid var(--line-25);
+  padding: 11px 16px;
+  font-weight: 600;
+}
+.tag-cloud__item:hover {
+  background: var(--brand-ink);
+  color: var(--paper);
+  border-color: var(--brand-ink);
+}
+.tag-cloud__count { font-size: 12px; opacity: .55; }
+
+/* حجم الوسم يعكس عدد مواده — تدرّج بصري بدل قائمة رتيبة */
+.tag-cloud__item--lg { font-size: 20px; padding: 14px 20px; }
+.tag-cloud__item--md { font-size: 16px; }
+.tag-cloud__item--sm { font-size: 14px; padding: 9px 14px; }
+
+/* حرف الترتيب الأبجدي */
+.tag-letter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 36px 0 4px;
+}
+.tag-letter__char {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--brand-amber-deep);
+}
+.tag-letter__rule { flex: 1; height: 1px; background: var(--line-20); }
+
+/* --- 8. فهرس التغطيات المباشرة (live-index.html) ------------------------- */
+
+.live-card {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line-20);
+}
+.live-card:hover { background: linear-gradient(to left, var(--paper-2), transparent); }
+
+.live-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.live-card__title   { font-size: clamp(19px, 2vw, 25px); line-height: 1.4; max-width: 42ch; }
+.live-card__excerpt { margin: 10px 0 0; font-size: 14.5px; line-height: 1.75; max-width: 62ch; color: var(--ink-72); }
+.live-card__stats   { text-align: left; }
+.live-card__count   { font-size: 24px; line-height: 1; }
+.live-card__label   { font-size: 12px; color: var(--ink-55); margin-top: 5px; }
+
+/* شارة الحالة */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+}
+.status--live   { background: var(--brand-red); color: #fff; border-color: var(--brand-red); }
+.status--closed { color: var(--ink-55); }
+
+/* --- 9. صفحة الكاتب (author.html) --------------------------------------- */
 
 .author-profile {
   display: grid;

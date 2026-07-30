@@ -47,7 +47,42 @@
 .error-page__media { aspect-ratio: 4 / 3; overflow: hidden; }
 .error-page__media img { width: 100%; height: 100%; object-fit: cover; filter: var(--photo-filter); }
 
-/* --- 2. دليل الثيم -------------------------------------------------------- */
+/* --- 2. صفحات المحتوى الثابت --------------------------------------------
+   editorial-policy.html · privacy.html · advertise.html
+   تستعير طباعة متن المقال، مع فهرس جانبي لاصق. */
+
+.static-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 56px;
+  align-items: start;
+  padding: 40px 0 72px;
+}
+
+.static-page__toc {
+  position: sticky;
+  top: 110px;
+  border-top: var(--rule-w) solid var(--rule);
+  padding-top: 16px;
+}
+.static-page__toc h2 { font-size: 13px; letter-spacing: .04em; margin-bottom: 14px; }
+.static-page__toc a {
+  display: block;
+  padding: 9px 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line-18);
+}
+.static-page__toc a:hover { color: var(--brand-amber-deep); }
+
+/* تاريخ آخر تحديث أعلى الصفحة */
+.static-page__updated {
+  font-size: 13px;
+  color: var(--ink-55);
+  margin-top: 14px;
+}
+
+/* --- 3. دليل الثيم -------------------------------------------------------- */
 
 .guide-header {
   border-bottom: var(--rule-w) solid var(--rule);

@@ -147,6 +147,14 @@
   /* --- التغطية المباشرة وصفحة الوسم --- */
   .split--sidebar { grid-template-columns: minmax(0, 1fr); }
   .sidebar { position: static; }
+
+  /* --- صفحات الفهارس والمحتوى الثابت --- */
+  .live-card { grid-template-columns: 180px minmax(0, 1fr); gap: 20px; }
+  .live-card__stats { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; text-align: right; }
+  .live-card__label { margin-top: 0; }
+
+  .static-page { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .static-page__toc { position: static; }
 }
 
 
@@ -255,6 +263,10 @@
   .tag-hero__stats { gap: 22px; }
   .contact__info,
   .contact__form { padding: 24px; }
+
+  .live-card { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 18px 0; }
+  .empty-state { padding: 40px 20px; }
+  .tag-cloud__item--lg { font-size: 17px; padding: 11px 16px; }
   .lead-story__body { padding: 24px; }
   .gallery-thumbs button { flex-basis: 96px; }
 }

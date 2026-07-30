@@ -8,7 +8,7 @@
 /* --- 1. الترويسة الداكنة -------------------------------------------------- */
 
 .video-archive { background: var(--surface-dark); color: var(--text-on-dark); }
-.video-archive__inner { padding: 40px 0 48px; }
+.video-archive__inner { padding-block: 40px 48px; }
 
 .video-archive__head {
   display: flex;

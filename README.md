@@ -20,7 +20,19 @@
 ├── live.html               تغطية مباشرة
 ├── about.html              من نحن / اتصل بنا
 ├── 404.html                صفحة الخطأ
+│
+├── tags.html               فهرس كل الوسوم
+├── authors.html            فهرس فريق التحرير
+├── albums.html             فهرس الألبومات
+├── live-index.html         فهرس التغطيات المباشرة
+├── search-empty.html       حالة «لا نتائج» للبحث
+├── editorial-policy.html   سياسة التحرير
+├── privacy.html            سياسة الخصوصية
+├── advertise.html          إعلن معنا
 ├── theme-index.html        دليل داخلي بكل الصفحات (احذفه قبل النشر)
+│
+├── robots.txt · sitemap.xml · feed.xml · site.webmanifest
+├── favicon.ico · apple-touch-icon.png
 │
 ├── css/
 │   ├── style.css           الملف الوحيد المربوط في <head> — يستدعي الباقي
@@ -222,8 +234,11 @@ node tools/build-partials.js --check
 
 ## قبل النشر
 
-- [ ] استبدل صور العيّنات بصور حقيقية
-- [ ] حدّث وسوم `og:url` و`og:image` في `<head>` كل صفحة بروابط موقعك المطلقة
+- [ ] **بدّل النطاق `https://aljarmaq.net`** بنطاقك في: `robots.txt` · `sitemap.xml` ·
+      `feed.xml` · ووسوم `canonical` و`og:url` في `<head>` كل صفحة
+- [ ] استبدل صور العيّنات بصور حقيقية، وحدّث `og:image`
+- [ ] املأ `privacy.html` بمراجعة قانونية — الملف نموذج لا وثيقة نهائية
+- [ ] اربط `feed.xml` و`sitemap.xml` بمخرجات نظام إدارة المحتوى بدل النسخ الثابتة
 - [ ] احذف `theme-index.html` (دليل داخلي)
 - [ ] اربط نماذج النشرة والتعليقات والتواصل بالـ backend (كلها `action="#"` حاليًا)
 - [ ] اضبط صفحة الخطأ 404 في إعدادات الخادم لتشير إلى `404.html`

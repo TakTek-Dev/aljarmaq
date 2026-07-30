@@ -12,7 +12,8 @@
 <meta property="og:locale" content="ar_AR">
 <meta property="og:title" content="الجرمق الاخباري — صحافة محلية من الجليل والمثلث والنقب">
 <meta property="og:description" content="موقع الجرمق الاخباري: تحقيقات وتقارير ومواد بصرية من الجليل والمثلث والنقب.">
-<meta property="og:image" content="images/logo.png">
+<meta property="og:url" content="https://aljarmaq.net/index.html">
+<meta property="og:image" content="https://aljarmaq.net/images/icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#232f47">
 
@@ -24,7 +25,12 @@
 
 <!-- أنماط الثيم: ملف واحد يستدعي باقي ملفات css -->
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="images/logo.png">
+<link rel="canonical" href="https://aljarmaq.net/index.html">
+<link rel="alternate" type="application/rss+xml" title="خلاصة الجرمق" href="feed.xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 
 <!-- سكربتات الثيم — defer: تحميل متوازٍ وتنفيذ مرتّب بعد بناء الصفحة.
      main.js يبقى الأخير لأنه يشغّل باقي الوحدات. -->
@@ -33,6 +39,47 @@
 <script src="js/slider.js" defer></script>
 <script src="js/video-player.js" defer></script>
 <script src="js/main.js" defer></script>
+
+<!-- بيانات منظَّمة لمحرّكات البحث (schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "الجرمق الاخباري",
+  "url": "https://aljarmaq.net/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://aljarmaq.net/images/icon-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "foundingDate": "2011",
+  "email": "news@aljarmaq.net",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "الناصرة",
+    "streetAddress": "شارع بولس السادس"
+  },
+  "ethicsPolicy": "https://aljarmaq.net/editorial-policy.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "الجرمق الاخباري",
+  "url": "https://aljarmaq.net/",
+  "inLanguage": "ar",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://aljarmaq.net/search.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
 
 <body data-nav="home">
@@ -47,7 +94,7 @@
     <div class="container topbar__inner">
       <div class="topbar__group">
         <span class="topbar__live"><span class="dot dot--amber"></span>بث مباشر</span>
-        <span class="topbar__date">الثلاثاء 28 تموز 2026 — 13 صفر 1448</span>
+        <time class="topbar__date" datetime="2026-07-28">الثلاثاء 28 تموز 2026 — 13 صفر 1448</time>
       </div>
       <div class="topbar__side">
         <span>الناصرة 31°</span>
@@ -170,7 +217,7 @@
           <span class="meta__sep"></span>
           <span class="meta__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span>قراءة 7 دقائق</span></span>
           <span class="meta__sep"></span>
-          <span class="lat">14:32</span>
+          <time class="lat" datetime="2026-07-28T14:32">14:32</time>
         </div>
         <div class="hero__media">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="أراضٍ زراعية على مشارف شعب في الجليل الأسفل" loading="eager">
@@ -184,14 +231,14 @@
         </div>
 
         <div class="live-feed__list">
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">14:02</span><span class="live-feed__text">المحكمة المركزية تؤجل النظر في التماس أهالي دهمش للشهر القادم</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">13:26</span><span class="live-feed__text">اتفاق مبدئي بين نقابة المعلمين والوزارة على تقليص عدد الطلاب في الصفوف</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">12:48</span><span class="live-feed__text">ارتفاع حاد في حوادث الطرق داخل البلدات العربية خلال حزيران</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">11:35</span><span class="live-feed__text">مجلس شفاعمرو يعلن حالة تأهب بعد انقطاع المياه عن حيّين</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">10:52</span><span class="live-feed__text">لجنة التخطيط تؤجل مناقشة مخطط عرابة الجديد إلى أيلول</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">10:14</span><span class="live-feed__text">وزارة المواصلات تصادق على خطّ باصات جديد بين عرعرة وأم الفحم</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">09:31</span><span class="live-feed__text">نقابة الأطباء: نقص 40 طبيبًا في مستشفيات الشمال قبل موسم الشتاء</span></a>
-          <a class="live-feed__item" href="article.html"><span class="live-feed__time lat">08:47</span><span class="live-feed__text">مصادرة أراضٍ في وادي عارة لصالح مشروع سكة الحديد تصل المحكمة</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T14:02">14:02</time><span class="live-feed__text">المحكمة المركزية تؤجل النظر في التماس أهالي دهمش للشهر القادم</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T13:26">13:26</time><span class="live-feed__text">اتفاق مبدئي بين نقابة المعلمين والوزارة على تقليص عدد الطلاب في الصفوف</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T12:48">12:48</time><span class="live-feed__text">ارتفاع حاد في حوادث الطرق داخل البلدات العربية خلال حزيران</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T11:35">11:35</time><span class="live-feed__text">مجلس شفاعمرو يعلن حالة تأهب بعد انقطاع المياه عن حيّين</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T10:52">10:52</time><span class="live-feed__text">لجنة التخطيط تؤجل مناقشة مخطط عرابة الجديد إلى أيلول</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T10:14">10:14</time><span class="live-feed__text">وزارة المواصلات تصادق على خطّ باصات جديد بين عرعرة وأم الفحم</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T09:31">09:31</time><span class="live-feed__text">نقابة الأطباء: نقص 40 طبيبًا في مستشفيات الشمال قبل موسم الشتاء</span></a>
+          <a class="live-feed__item" href="article.html"><time class="live-feed__time lat" datetime="2026-07-28T08:47">08:47</time><span class="live-feed__text">مصادرة أراضٍ في وادي عارة لصالح مشروع سكة الحديد تصل المحكمة</span></a>
         </div>
 
         <div class="figure-panel">
@@ -257,14 +304,14 @@
     </div>
 
     <div class="latest__list">
-      <a class="latest__item" href="article.html"><span class="latest__time lat">14:32</span><span class="latest__text">بلدية الناصرة تعتمد خطة تطوير البلدة القديمة على ثلاث مراحل</span><span class="latest__cat">محليات</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">13:10</span><span class="latest__text">ارتفاع أسعار الإسكان في الشمال يدفع العائلات الشابة إلى الأطراف</span><span class="latest__cat">اقتصاد</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">12:45</span><span class="latest__text">جلسة طارئة للجنة المتابعة العليا لمناقشة مخططات الهدم</span><span class="latest__cat">سياسة</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">11:20</span><span class="latest__text">نتائج البجروت: تحسّن ملحوظ في مدارس المثلث الجنوبي</span><span class="latest__cat">تعليم</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">10:05</span><span class="latest__text">مهرجان حيفا للأفلام العربية يفتح باب التسجيل للدورة الحادية عشرة</span><span class="latest__cat">ثقافة</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">09:40</span><span class="latest__text">أبناء سخنين يتعاقد مع مدرب جديد قبل انطلاق الموسم</span><span class="latest__cat">رياضة</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">08:55</span><span class="latest__text">حملة فحوصات مجانية في عشر قرى بالجليل الأعلى</span><span class="latest__cat">صحة</span></a>
-      <a class="latest__item" href="article.html"><span class="latest__time lat">08:15</span><span class="latest__text">مجلس أم الفحم يصادق على ميزانية الطرق للعام القادم</span><span class="latest__cat">محليات</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T14:32">14:32</time><span class="latest__text">بلدية الناصرة تعتمد خطة تطوير البلدة القديمة على ثلاث مراحل</span><span class="latest__cat">محليات</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T13:10">13:10</time><span class="latest__text">ارتفاع أسعار الإسكان في الشمال يدفع العائلات الشابة إلى الأطراف</span><span class="latest__cat">اقتصاد</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T12:45">12:45</time><span class="latest__text">جلسة طارئة للجنة المتابعة العليا لمناقشة مخططات الهدم</span><span class="latest__cat">سياسة</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T11:20">11:20</time><span class="latest__text">نتائج البجروت: تحسّن ملحوظ في مدارس المثلث الجنوبي</span><span class="latest__cat">تعليم</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T10:05">10:05</time><span class="latest__text">مهرجان حيفا للأفلام العربية يفتح باب التسجيل للدورة الحادية عشرة</span><span class="latest__cat">ثقافة</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T09:40">09:40</time><span class="latest__text">أبناء سخنين يتعاقد مع مدرب جديد قبل انطلاق الموسم</span><span class="latest__cat">رياضة</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T08:55">08:55</time><span class="latest__text">حملة فحوصات مجانية في عشر قرى بالجليل الأعلى</span><span class="latest__cat">صحة</span></a>
+      <a class="latest__item" href="article.html"><time class="latest__time lat" datetime="2026-07-28T08:15">08:15</time><span class="latest__text">مجلس أم الفحم يصادق على ميزانية الطرق للعام القادم</span><span class="latest__cat">محليات</span></a>
     </div>
   </section>
 
@@ -582,7 +629,7 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="" loading="lazy">
         <div class="card-overlay__scrim"></div>
         <div class="card-overlay__body">
-          <div class="card-overlay__head"><span class="badge badge--sm">محليات</span><span class="lat">14:20</span></div>
+          <div class="card-overlay__head"><span class="badge badge--sm">محليات</span><time class="lat" datetime="2026-07-28T14:20">14:20</time></div>
           <h3 class="card-overlay__title">جلسة استماع في لجنة التخطيط تنتهي دون قرار بشأن مخطط عرابة</h3>
           <p class="card-overlay__excerpt">أصحاب الأراضي قدّموا 47 اعتراضًا، واللجنة أعطت مهلة شهرين لاستكمال المستندات.</p>
         </div>
@@ -591,7 +638,7 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy">
         <div class="card-overlay__scrim"></div>
         <div class="card-overlay__body">
-          <div class="card-overlay__head"><span class="badge badge--sm">تعليم</span><span class="lat">12:55</span></div>
+          <div class="card-overlay__head"><span class="badge badge--sm">تعليم</span><time class="lat" datetime="2026-07-28T12:55">12:55</time></div>
           <h3 class="card-overlay__title">ميزانية الترميم تصل 14 مدرسة فقط من أصل 40 طلبًا</h3>
           <p class="card-overlay__excerpt">وثائق الوزارة تكشف أن معايير التوزيع تغيّرت مرتين خلال السنة المالية.</p>
         </div>
@@ -600,7 +647,7 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy">
         <div class="card-overlay__scrim"></div>
         <div class="card-overlay__body">
-          <div class="card-overlay__head"><span class="badge badge--sm">اقتصاد</span><span class="lat">11:30</span></div>
+          <div class="card-overlay__head"><span class="badge badge--sm">اقتصاد</span><time class="lat" datetime="2026-07-28T11:30">11:30</time></div>
           <h3 class="card-overlay__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</h3>
           <p class="card-overlay__excerpt">جولة في أسواق الجليل ترصد فروقات تصل إلى 4 شواقل للكيلو بين بلدة وأخرى.</p>
         </div>
@@ -620,7 +667,7 @@
       <a class="post-card" href="article.html">
         <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
         <div class="post-card__body">
-          <div class="post-card__head"><span class="kicker kicker--boxed">رياضة</span><span class="post-card__by">محمود زيدان</span><span class="post-card__stamp lat">10:15</span></div>
+          <div class="post-card__head"><span class="kicker kicker--boxed">رياضة</span><span class="post-card__by">محمود زيدان</span><time class="post-card__stamp lat" datetime="2026-07-28T10:15">10:15</time></div>
           <h3 class="post-card__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</h3>
           <p class="post-card__excerpt">الإدارة تعوّل على الجمهور لتغطية ثلث ميزانية الموسم القادم.</p>
         </div>
@@ -633,7 +680,7 @@
       <a class="post-card" href="article.html">
         <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
         <div class="post-card__body">
-          <div class="post-card__head"><span class="kicker kicker--boxed">ثقافة</span><span class="post-card__by">ليان صالح</span><span class="post-card__stamp lat">09:40</span></div>
+          <div class="post-card__head"><span class="kicker kicker--boxed">ثقافة</span><span class="post-card__by">ليان صالح</span><time class="post-card__stamp lat" datetime="2026-07-28T09:40">09:40</time></div>
           <h3 class="post-card__title">مهرجان حيفا للأفلام العربية يفتح باب التسجيل لدورته الحادية عشرة</h3>
           <p class="post-card__excerpt">أكثر من 200 فيلم تقدّم العام الماضي، ونصفها من إنتاج مستقل.</p>
         </div>
@@ -646,7 +693,7 @@
       <a class="post-card" href="article.html">
         <div class="ratio ratio--3-2"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
         <div class="post-card__body">
-          <div class="post-card__head"><span class="kicker kicker--boxed">صحة</span><span class="post-card__by">هدى مصاروة</span><span class="post-card__stamp lat">08:50</span></div>
+          <div class="post-card__head"><span class="kicker kicker--boxed">صحة</span><span class="post-card__by">هدى مصاروة</span><time class="post-card__stamp lat" datetime="2026-07-28T08:50">08:50</time></div>
           <h3 class="post-card__title">عيادة متنقلة تصل عشر قرى في النقب بعد سنوات من المطالبات</h3>
           <p class="post-card__excerpt">الخدمة تعمل ثلاثة أيام أسبوعيًا وتغطي فحوصات السكري والضغط.</p>
         </div>
@@ -672,7 +719,7 @@
         <div class="overlap-card__panel">
           <div class="overlap-card__head">
             <span class="badge badge--red">محليات</span>
-            <span class="mini-list__time lat">14:20</span>
+            <time class="mini-list__time lat" datetime="2026-07-28T14:20">14:20</time>
           </div>
           <h3 class="overlap-card__title">جلسة استماع في لجنة التخطيط تنتهي دون قرار بشأن مخطط عرابة</h3>
           <p class="overlap-card__excerpt">أصحاب الأراضي قدّموا 47 اعتراضًا، واللجنة أعطت مهلة شهرين لاستكمال المستندات.</p>
@@ -683,21 +730,21 @@
       <div>
         <a class="mini-list__item" href="article.html">
           <div>
-            <div class="mini-list__head"><span class="mini-list__time lat">12:55</span><span class="mini-list__cat">تعليم</span></div>
+            <div class="mini-list__head"><time class="mini-list__time lat" datetime="2026-07-28T12:55">12:55</time><span class="mini-list__cat">تعليم</span></div>
             <div class="mini-list__title">ميزانية الترميم تصل 14 مدرسة فقط من أصل 40 طلبًا</div>
           </div>
           <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2011-08_Nazaret_Geb%C3%A4ude.jpg?width=1400" alt="" loading="lazy"></div>
         </a>
         <a class="mini-list__item" href="article.html">
           <div>
-            <div class="mini-list__head"><span class="mini-list__time lat">11:30</span><span class="mini-list__cat">اقتصاد</span></div>
+            <div class="mini-list__head"><time class="mini-list__time lat" datetime="2026-07-28T11:30">11:30</time><span class="mini-list__cat">اقتصاد</span></div>
             <div class="mini-list__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</div>
           </div>
           <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy"></div>
         </a>
         <a class="mini-list__item" href="article.html">
           <div>
-            <div class="mini-list__head"><span class="mini-list__time lat">10:15</span><span class="mini-list__cat">رياضة</span></div>
+            <div class="mini-list__head"><time class="mini-list__time lat" datetime="2026-07-28T10:15">10:15</time><span class="mini-list__cat">رياضة</span></div>
             <div class="mini-list__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</div>
           </div>
           <div class="ratio ratio--1-1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
@@ -723,31 +770,31 @@
         <div class="slider__track" data-slider-track>
           <a class="slider__item card-top" href="article.html">
             <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="" loading="lazy"></div>
-            <div class="card-top__meta"><span class="kicker">اقتصاد</span><span class="lat">11:30</span></div>
+            <div class="card-top__meta"><span class="kicker">اقتصاد</span><time class="lat" datetime="2026-07-28T11:30">11:30</time></div>
             <h3 class="card-top__title">أسعار الخضار ترتفع 18% خلال أسبوعين والتجار يحمّلون النقل المسؤولية</h3>
             <p class="card-top__excerpt">جولة في أسواق الجليل ترصد فروقات تصل إلى 4 شواقل للكيلو بين بلدة وأخرى.</p>
           </a>
           <a class="slider__item card-top" href="article.html">
             <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="" loading="lazy"></div>
-            <div class="card-top__meta"><span class="kicker">رياضة</span><span class="lat">10:15</span></div>
+            <div class="card-top__meta"><span class="kicker">رياضة</span><time class="lat" datetime="2026-07-28T10:15">10:15</time></div>
             <h3 class="card-top__title">أبناء سخنين يستعد للموسم بمعسكر مغلق وثلاث صفقات جديدة</h3>
             <p class="card-top__excerpt">الإدارة تعوّل على الجمهور لتغطية ثلث ميزانية الموسم القادم.</p>
           </a>
           <a class="slider__item card-top" href="article.html">
             <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
-            <div class="card-top__meta"><span class="kicker">ثقافة</span><span class="lat">09:40</span></div>
+            <div class="card-top__meta"><span class="kicker">ثقافة</span><time class="lat" datetime="2026-07-28T09:40">09:40</time></div>
             <h3 class="card-top__title">مهرجان حيفا للأفلام العربية يفتح باب التسجيل لدورته الحادية عشرة</h3>
             <p class="card-top__excerpt">أكثر من 200 فيلم تقدّم العام الماضي، ونصفها من إنتاج مستقل.</p>
           </a>
           <a class="slider__item card-top" href="article.html">
             <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="" loading="lazy"></div>
-            <div class="card-top__meta"><span class="kicker">صحة</span><span class="lat">08:50</span></div>
+            <div class="card-top__meta"><span class="kicker">صحة</span><time class="lat" datetime="2026-07-28T08:50">08:50</time></div>
             <h3 class="card-top__title">عيادة متنقلة تصل عشر قرى في النقب بعد سنوات من المطالبات</h3>
             <p class="card-top__excerpt">الخدمة تعمل ثلاثة أيام أسبوعيًا وتغطي فحوصات السكري والضغط.</p>
           </a>
           <a class="slider__item card-top" href="article.html">
             <div class="ratio ratio--4-3 card-top__media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_28738_Mount_of_Precipice.JPG?width=1400" alt="" loading="lazy"></div>
-            <div class="card-top__meta"><span class="kicker">محليات</span><span class="lat">07:45</span></div>
+            <div class="card-top__meta"><span class="kicker">محليات</span><time class="lat" datetime="2026-07-28T07:45">07:45</time></div>
             <h3 class="card-top__title">انقطاع المياه عن حيّين في شفاعمرو يفتح ملف الشبكة القديمة</h3>
             <p class="card-top__excerpt">المجلس يقول إن استبدال الأنابيب يحتاج 12 مليون شيكل.</p>
           </a>
@@ -835,9 +882,10 @@
         <h3 class="footer-col__title">الجرمق</h3>
         <div class="footer-col__links">
           <a href="about.html">من نحن</a>
-          <a href="author.html">فريق التحرير</a>
-          <a href="about.html">سياسة التحرير</a>
-          <a href="about.html">إعلن معنا</a>
+          <a href="authors.html">فريق التحرير</a>
+          <a href="editorial-policy.html">سياسة التحرير</a>
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="advertise.html">إعلن معنا</a>
         </div>
       </nav>
 
@@ -845,9 +893,10 @@
         <h3 class="footer-col__title">خدمات</h3>
         <div class="footer-col__links">
           <a href="search.html">البحث في الأرشيف</a>
-          <a href="tag.html">الوسوم</a>
-          <a href="live.html">التغطيات المباشرة</a>
-          <a href="about.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصات الأخبار</span></a>
+          <a href="tags.html">الوسوم</a>
+          <a href="albums.html">الألبومات</a>
+          <a href="live-index.html">التغطيات المباشرة</a>
+          <a href="feed.xml"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصة RSS</span></a>
         </div>
       </nav>
 

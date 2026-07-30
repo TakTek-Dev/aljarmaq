@@ -168,6 +168,56 @@
 
   body { font-size: 15.5px; }
 
+  /* --- ترويسات الأقسام ---------------------------------------------------
+     كل ترويسة تضع العنوان وأدواته (تبويبات، رابط «المزيد»، أزرار) في صفّ
+     واحد. على الجوال لا تتّسع الشاشة لصفّ واحد، فيُخنق العنوان وتركبه
+     الأدوات. الحلّ: تنزل الأدوات سطرًا كاملًا تحت العنوان. */
+
+  .latest__head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  /* التكديس العمودي أضمن من flex-wrap وحده: مع space-between يظلّ العنوان
+     يتقلّص إلى كلمة في السطر بدل أن ينزل جاره سطرًا. */
+  .section-head,
+  .videos__head,
+  .video-archive__head,
+  .album-more,
+  .search-summary,
+  .archive-head,
+  .live-log__head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  /* عنوان + ختم صغير: يبقيان في صفّ واحد لكن ملتصقين — مع space-between
+     يتباعدان فيُخنق العنوان إلى سطرين. */
+  .section-head--baseline {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .live-feed__head { flex-wrap: wrap; gap: 8px 14px; }
+
+  /* الوصف الجانبي يصبح سطرًا كاملًا تحت العنوان */
+  .section-note { max-width: none; }
+
+  /* صفّ التبويبات يأخذ عرض الشاشة كاملًا ويلتفّ بترتيب مقروء */
+  .latest__head .tab-row,
+  .section-head .tab-row,
+  .videos__head .tab-row,
+  .video-archive__head .tab-row { width: 100%; }
+
+  /* ترويسة النمط: الخطّ الفاصل يختفي والوصف ينزل سطرًا */
+  .pattern-head { flex-wrap: wrap; gap: 10px 12px; }
+  .pattern-head__rule { display: none; }
+  .pattern-head .btn-group { margin-inline-start: auto; }
+
   /* --- الشريط العلوي --- */
   .topbar__inner {
     height: auto;
@@ -242,6 +292,22 @@
   /* --- صفحة الخبر --- */
   .article__title { font-size: clamp(26px, 7vw, 34px); }
 
+  /* السابق/التالي: عمودان بعرض 170px يقصّان العناوين — نضعهما فوق بعض */
+  .post-nav { grid-template-columns: minmax(0, 1fr); }
+  .post-nav__link--next { justify-content: flex-start; text-align: right; flex-direction: row-reverse; }
+
+  /* فهرس الصفحة الثابتة يسبق المتن على الجوال ليكون مفيدًا */
+  .static-page__toc { order: -1; }
+
+  /* حقل البحث المضمّن يتمدّد بدل عرضه الثابت 180px */
+  .search-inline { flex: 1; padding-block: 0; }
+  /* الحقل نفسه يحمل الارتفاع، لا الغلاف — وإلا كان النقر على الحشوة بلا أثر */
+  .search-inline input { width: 100%; min-width: 0; min-height: 44px; align-self: stretch; }
+
+  /* رابط الكاتب في سطر البيانات */
+  .meta a { padding-block: 6px; }
+  .video-tools__right { width: 100%; }
+
   /* --- التغطية المباشرة --- */
   .live-update {
     grid-template-columns: minmax(0, 1fr);
@@ -273,6 +339,58 @@
 
 
 /* ==========================================================================
+   أهداف اللمس — تكبير كل عنصر تفاعلي إلى 44px على الأجهزة اللمسية
+   --------------------------------------------------------------------------
+   المعيار (WCAG 2.5.8 / إرشادات آبل وجوجل) هو 44×44px. مقاسات الديسكتوب
+   المبنيّة على مؤشّر الفأرة (34–38px) صغيرة جدًا للإصبع.
+   شرطان معًا: pointer:coarse يلتقط أي جهاز لمس مهما كان عرضه، و680px
+   يلتقط نافذة ضيّقة على جهاز بفأرة (ومعها يصبح السلوك قابلًا للاختبار).
+   ========================================================================== */
+
+@media (pointer: coarse), (max-width: 680px) {
+
+  .icon-btn,
+  .icon-btn--sm,
+  .icon-btn--square,
+  .view-toggle button,
+  .pagination a,
+  .site-footer__social a,
+  .drawer__social a,
+  .gallery__nav { min-width: 44px; min-height: 44px; }
+
+  .tab,
+  .tag-chip,
+  .tag-cloud__item,
+  .error-page__links a { min-height: 44px; display: inline-flex; align-items: center; }
+  .tab { padding-block: 10px; }
+
+  .select-field { min-height: 44px; }
+
+  .player__btn { width: 40px; height: 40px; }
+
+  /* الرابط النصّي يحتاج مساحة نقر رأسية، لا حجمًا أكبر للخطّ */
+  .more-link,
+  .author-box__link { padding-block: 8px 6px; }
+
+  .card-dark__link { padding-block: 12px 8px; }
+
+  .footer-col__links a { padding-block: 9px; }
+  .static-page__toc a { padding-block: 12px; }
+
+  /* نقاط السلايدر: الشكل 4px لكن مساحة اللمس 44px عبر حشوة شفّافة */
+  .slider__dot {
+    height: 44px;
+    padding-block: 20px;
+    background-clip: content-box;
+  }
+  .slider__dots { margin-top: 6px; }
+
+  /* الشرائط المصغّرة في الألبوم أسهل بالإبهام */
+  .gallery-thumbs button { flex-basis: 108px; }
+}
+
+
+/* ==========================================================================
    420px — شاشات صغيرة جدًا
    ========================================================================== */
 
@@ -280,7 +398,9 @@
 
   .latest__item { grid-template-columns: 46px 1fr; }
   .player__time { font-size: 11px; }
-  .pagination a { width: 38px; height: 38px; }
+
+  /* الترقيم يلتفّ بدل أن يضيق */
+  .pagination { flex-wrap: wrap; }
 }
 
 

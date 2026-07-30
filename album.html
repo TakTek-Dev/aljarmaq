@@ -12,7 +12,8 @@
 <meta property="og:locale" content="ar_AR">
 <meta property="og:title" content="موسم الزيتون في دير حنا: يوم كامل بين الأشجار | الجرمق الاخباري">
 <meta property="og:description" content="ألبوم مصوّر من كروم الزيتون في دير حنا — 19 صورة بعدسة سائد عابد.">
-<meta property="og:image" content="images/logo.png">
+<meta property="og:url" content="https://aljarmaq.net/album.html">
+<meta property="og:image" content="https://aljarmaq.net/images/icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#232f47">
 
@@ -21,11 +22,43 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="images/logo.png">
+<link rel="canonical" href="https://aljarmaq.net/album.html">
+<link rel="alternate" type="application/rss+xml" title="خلاصة الجرمق" href="feed.xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 
 <script src="js/navigation.js" defer></script>
 <script src="js/gallery.js" defer></script>
 <script src="js/main.js" defer></script>
+
+<!-- بيانات منظَّمة لمحرّكات البحث (schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://aljarmaq.net/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ألبومات",
+      "item": "https://aljarmaq.net/index.html#albums"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "موسم الزيتون في دير حنا"
+    }
+  ]
+}
+</script>
 </head>
 
 <body data-nav="album">
@@ -40,7 +73,7 @@
     <div class="container topbar__inner">
       <div class="topbar__group">
         <span class="topbar__live"><span class="dot dot--amber"></span>بث مباشر</span>
-        <span class="topbar__date">الثلاثاء 28 تموز 2026 — 13 صفر 1448</span>
+        <time class="topbar__date" datetime="2026-07-28">الثلاثاء 28 تموز 2026 — 13 صفر 1448</time>
       </div>
       <div class="topbar__side">
         <span>الناصرة 31°</span>
@@ -140,7 +173,7 @@
       <div class="meta album-head__meta">
         <span class="meta__strong">تصوير: سائد عابد</span>
         <span class="meta__sep"></span>
-        <span class="lat">28 تموز 2026</span>
+        <time class="lat" datetime="2026-07-28">28 تموز 2026</time>
       </div>
     </div>
 
@@ -267,9 +300,10 @@
         <h3 class="footer-col__title">الجرمق</h3>
         <div class="footer-col__links">
           <a href="about.html">من نحن</a>
-          <a href="author.html">فريق التحرير</a>
-          <a href="about.html">سياسة التحرير</a>
-          <a href="about.html">إعلن معنا</a>
+          <a href="authors.html">فريق التحرير</a>
+          <a href="editorial-policy.html">سياسة التحرير</a>
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="advertise.html">إعلن معنا</a>
         </div>
       </nav>
 
@@ -277,9 +311,10 @@
         <h3 class="footer-col__title">خدمات</h3>
         <div class="footer-col__links">
           <a href="search.html">البحث في الأرشيف</a>
-          <a href="tag.html">الوسوم</a>
-          <a href="live.html">التغطيات المباشرة</a>
-          <a href="about.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصات الأخبار</span></a>
+          <a href="tags.html">الوسوم</a>
+          <a href="albums.html">الألبومات</a>
+          <a href="live-index.html">التغطيات المباشرة</a>
+          <a href="feed.xml"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg><span>خلاصة RSS</span></a>
         </div>
       </nav>
 

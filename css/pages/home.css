@@ -246,7 +246,7 @@
 /* --- 5. رأي وتحليل -------------------------------------------------------- */
 
 .opinion { background: var(--brand-ink); color: var(--text-on-dark); }
-.opinion__inner { padding: 64px 0 68px; }
+.opinion__inner { padding-block: 64px 68px; }
 .opinion__kicker { font-size: 11px; letter-spacing: .16em; color: var(--brand-amber); }
 .opinion__title  { font-size: clamp(28px, 3.4vw, 44px); color: #fff; margin: 10px 0 26px; }
 
@@ -299,7 +299,7 @@
 /* --- 6. المرئيات ---------------------------------------------------------- */
 
 .videos { background: var(--surface-dark); color: var(--text-on-dark); border-top: var(--rule-w) solid var(--rule); }
-.videos__inner { padding: 44px 0 52px; }
+.videos__inner { padding-block: 44px 52px; }
 
 .videos__head {
   display: flex;

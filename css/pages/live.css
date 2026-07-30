@@ -8,7 +8,7 @@
   background: var(--brand-red);
   color: #fff;
 }
-.live-hero__inner { padding: 34px 0 38px; }
+.live-hero__inner { padding-block: 34px 38px; }
 
 .live-hero__flags {
   display: flex;
@@ -44,7 +44,7 @@
 
 /* --- 2. سجلّ التحديثات ---------------------------------------------------- */
 
-.live-body { padding: 36px 0 72px; }
+.live-body { padding-block: 36px 72px; }
 
 .live-log__head {
   display: flex;

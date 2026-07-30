@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
   gap: 40px;
-  padding: 56px 0 28px;
+  padding-block: 56px 28px;
 }
 
 /* العمود الأول: الشعار والوصف والروابط الاجتماعية */
@@ -87,7 +87,7 @@
 /* --- 3. الشريط السفلي ----------------------------------------------------- */
 
 .site-footer__bottom {
-  padding: 18px 0 34px;
+  padding-block: 18px 34px;
   border-top: 1px solid rgba(244, 243, 241, .2);
   display: flex;
   flex-wrap: wrap;

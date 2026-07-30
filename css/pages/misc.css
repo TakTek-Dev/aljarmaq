@@ -89,7 +89,7 @@
   background: var(--paper);
 }
 .guide-header__inner {
-  padding: 26px 0;
+  padding-block: 26px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -98,7 +98,7 @@
 }
 .guide-header__note { font-size: 13px; font-weight: 600; color: var(--ink-62); }
 
-.guide-intro { padding: 44px 0 0; }
+.guide-intro { padding-block: 44px 0; }
 .guide-intro__kicker { font-size: 12px; font-weight: 700; color: var(--brand-amber-deep); }
 .guide-intro__title  { font-size: clamp(32px, 4.6vw, 60px); margin: 12px 0 16px; max-width: 26ch; }
 .guide-intro__lead {

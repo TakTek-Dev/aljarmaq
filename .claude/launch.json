@@ -10,8 +10,8 @@
     {
       "name": "aljarmaq-verify",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8788"],
-      "port": 8788
+      "runtimeArgs": ["-m", "http.server", "9310"],
+      "port": 9310
     }
   ]
 }

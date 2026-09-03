@@ -119,7 +119,7 @@
 /* --- 3. العمود الجانبي ---------------------------------------------------- */
 
 .live-summary {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
   padding: 24px;
 }

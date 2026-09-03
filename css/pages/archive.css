@@ -91,7 +91,7 @@
 /* --- 4. لوحة الوسم (tag.html) -------------------------------------------- */
 
 .tag-hero {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
   padding: 40px 36px;
   margin-top: 22px;
@@ -196,8 +196,8 @@
   font-weight: 600;
 }
 .tag-cloud__item:hover {
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   border-color: var(--brand-ink);
 }
 .tag-cloud__count { font-size: 12px; opacity: .55; }

@@ -13,8 +13,8 @@
   top: -100px;
   right: var(--gut);
   z-index: 100;
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   padding: 12px 20px;
   font-size: 14px;
   font-weight: 700;
@@ -22,13 +22,13 @@
 }
 .skip-link:focus {
   top: 0;
-  color: var(--paper);
+  color: var(--on-fill);
 }
 
 /* --- 1. الشريط العلوي (التاريخ / الطقس / بث مباشر) ------------------------ */
 
 .topbar {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
 }
 
@@ -91,24 +91,43 @@
 
 .site-header__logo { height: 46px; width: auto; }
 
+/* الشعار الفاتح للوضع الليلي والداكن للنهاري. التبديل بالسمة data-theme
+   ثم بتفضيل النظام، بنفس ترتيب variables.css. */
+.site-header__logo--light,
+.drawer__logo.site-header__logo--light { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-header__logo--dark  { display: none; }
+  :root:not([data-theme="light"]) .site-header__logo--light { display: block; }
+}
+:root[data-theme="dark"] .site-header__logo--dark  { display: none; }
+:root[data-theme="dark"] .site-header__logo--light { display: block; }
+:root[data-theme="light"] .site-header__logo--dark  { display: block; }
+:root[data-theme="light"] .site-header__logo--light { display: none; }
+
+/* كل أدوات الهيدر بارتفاع واحد: البحث 40px هو المرجع، فيلتزم به
+   المفتاح وزرّ النشرة بدل ثلاثة ارتفاعات مختلفة في صفّ واحد. */
 .site-header__actions {
+  --control-h: 40px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
+.site-header__actions > * { height: var(--control-h); }
 
 /* زرّ "اشترك في النشرة" في الهيدر */
 .header-cta {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--brand-ink);
-  color: var(--paper);
-  padding: 11px 20px;
+  background: var(--ink-fill);
+  color: var(--on-fill);
+  padding-block: 0;
+  padding-inline: 20px;
   font-size: 14px;
   font-weight: 600;
 }
-.header-cta:hover { background: var(--brand-amber); color: var(--brand-ink); }
+.header-cta:hover { background: var(--brand-amber); color: var(--ink-fill); }
 
 /* زرّ القائمة (البرغر) — مخفي على الديسكتوب، يظهر في responsive.css */
 .burger { display: none; }
@@ -136,55 +155,7 @@
 /* الصفحة الحالية — تُضاف يدويًا في ملف كل صفحة */
 .main-nav__link.is-active { border-bottom-color: var(--brand-amber); }
 
-/* --- 4. شريط الأخبار العاجلة ---------------------------------------------- */
-
-.ticker {
-  background: var(--brand-red);
-  color: #fff;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: stretch;
-  overflow: hidden;
-}
-
-.ticker__label {
-  background: var(--brand-ink);
-  padding: 0 22px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: .04em;
-  white-space: nowrap;
-}
-.ticker__label .dot { width: 7px; height: 7px; }
-
-.ticker__viewport {
-  overflow: hidden;
-  padding-block: 11px;
-}
-
-/* القائمة مكرّرة مرّتين في HTML حتى تبدو الحركة لا نهائية.
-   النسخة الثانية تحمل aria-hidden فلا تُقرأ مرّتين على قارئ الشاشة. */
-.ticker__track {
-  display: flex;
-  gap: 48px;
-  width: max-content;
-  animation: ticker-run 46s linear infinite;
-  font-size: 14.5px;
-  font-weight: 500;
-}
-
-/* المجموعة شفّافة تخطيطيًا: العناصر تدخل مباشرة في flex الشريط
-   فتبقى المسافة 48px موحّدة بين كل العناوين. */
-.ticker__group { display: contents; }
-
-/* WCAG 2.2.2 — إيقاف التمرير عند المرور أو التركيز بالكيبورد */
-.ticker:hover .ticker__track,
-.ticker:focus-within .ticker__track { animation-play-state: paused; }
-
-/* --- 5. القائمة الجانبية للموبايل ----------------------------------------- */
+/* --- 4. القائمة الجانبية للموبايل ----------------------------------------- */
 
 /* الطبقة المعتمة خلف القائمة */
 .drawer-scrim {
@@ -261,13 +232,13 @@ body.is-menu-open .drawer { transform: translateX(0); visibility: visible; }
   align-items: center;
   justify-content: center;
   gap: 9px;
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   padding: 14px;
   font-size: 15px;
   font-weight: 700;
 }
-.drawer__cta:hover { background: var(--brand-amber); color: var(--brand-ink); }
+.drawer__cta:hover { background: var(--brand-amber); color: var(--ink-fill); }
 
 .drawer__social { display: flex; gap: 8px; }
 .drawer__social a {
@@ -277,4 +248,102 @@ body.is-menu-open .drawer { transform: translateX(0); visibility: visible; }
   display: grid;
   place-items: center;
 }
-.drawer__social a:hover { background: var(--brand-ink); color: var(--paper); }
+.drawer__social a:hover { background: var(--ink-fill); color: var(--on-fill); }
+
+/* --- 5. منصات التواصل وزرّ الوضع الليلي ------------------------------ */
+
+/* أيقونات المنصات داخل الشريط العلوي */
+.topbar__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.topbar__social a {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  color: inherit;
+  opacity: .8;
+}
+.topbar__social a:hover { opacity: 1; color: var(--brand-amber); }
+
+/* زرّ التبديل: أيقونة واحدة ظاهرة حسب الوضع الحالي.
+   القاعدة تقرأ الوضع من aria-pressed الذي يضبطه js/theme.js،
+   فلا تحتاج الأيقونة إلى شجرة DOM منفصلة. */
+/* مفتاح ليل/نهار: مسار بحدّ 2px ومقبض مربّع ينزلق — بلا زوايا دائرية
+   التزامًا بلغة الثيم. الأيقونتان داخل المسار، والفعّالة تلبس لون المقبض. */
+.theme-switch {
+  /* الخليّة = نصف المسار: مكان أيقونة واحدة ومكان المقبض */
+  --sw-pad: 4px;
+  --sw-cell: 28px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: calc(var(--sw-cell) * 2 + var(--sw-pad) * 2 + var(--rule-w) * 2);
+  height: var(--control-h, 40px);
+  padding: var(--sw-pad);
+  border: var(--rule-w) solid var(--rule);
+  background: var(--paper-2);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.theme-switch:hover { border-color: var(--brand-amber); }
+.theme-switch:focus-visible { outline: 2px solid var(--brand-amber); outline-offset: 2px; }
+
+/* المقبض يغطّي نصف المسار وينتقل إلى النصف الآخر عند التبديل.
+   RTL: يبدأ من اليمين، فالانتقال بـinset-inline-start. */
+.theme-switch__knob {
+  position: absolute;
+  inset-block: var(--sw-pad);
+  inset-inline-start: var(--sw-pad);
+  width: var(--sw-cell);
+  background: var(--ink-fill);
+  transition: inset-inline-start .22s var(--ease-out), background-color .22s var(--ease-out);
+}
+[data-theme-toggle][aria-checked="true"] .theme-switch__knob,
+.theme-switch[aria-checked="true"] .theme-switch__knob {
+  inset-inline-start: calc(var(--sw-pad) + var(--sw-cell));
+  background: var(--brand-amber);
+}
+
+.theme-switch__icon {
+  position: relative;
+  z-index: 1;
+  width: var(--sw-cell);
+  display: grid;
+  place-items: center;
+  color: var(--ink-62);
+  transition: color .22s var(--ease-out);
+}
+/* الشمس على البداية (يمين في RTL) حيث يقف المقبض في الوضع النهاري،
+   والقمر على النهاية حيث ينتقل إليه ليلًا. */
+.theme-switch__icon--sun  { order: 1; }
+.theme-switch__icon--moon { order: 2; }
+
+/* الأيقونة التي يقف تحتها المقبض تُقرأ فوق لونه */
+[data-theme-toggle][aria-checked="false"] .theme-switch__icon--sun { color: var(--on-fill); }
+[data-theme-toggle][aria-checked="true"]  .theme-switch__icon--moon { color: var(--ink-fill); }
+
+/* نسخة القائمة الجانبية: زرّ بعرض كامل مع نصّ */
+.drawer__theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 16px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line-25);
+  background: transparent;
+  color: var(--brand-ink);
+  font-family: var(--font-ar);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.drawer__theme:hover { border-color: var(--brand-amber); }
+.theme-switch--static { pointer-events: none; --sw-cell: 24px; height: 34px; }

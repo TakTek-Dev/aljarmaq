@@ -68,12 +68,17 @@
 /* حقل بحث مضمّن بأيقونة */
 .search-inline {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 9px;
   border: 1px solid var(--line-30);
-  padding: 9px 13px;
-  background: #fff;
+  /* الحشوة أفقية فقط: الارتفاع يحمله الحقل نفسه لا الغلاف، وإلا كان
+     النقر على الحشوة بلا أثر وارتفاع منطقة الإدخال 17px فقط. */
+  padding-inline: 13px;
+  padding-block: 0;
+  background: var(--paper-3);
+  min-width: 0;
 }
+.search-inline > svg { align-self: center; flex: 0 0 auto; }
 .search-inline input {
   font-family: var(--font-ar);
   font-size: 13.5px;
@@ -81,7 +86,10 @@
   outline: none;
   background: transparent;
   color: var(--brand-ink);
-  width: 180px;
+  /* يتمدّد بما يتاح بدل عرض ثابت 180px كان ينضغط إلى 38px عند 320 */
+  flex: 1 1 150px;
+  min-width: 0;
+  min-height: 42px;
 }
 
 /* --- 3. شبكة المرئيات ----------------------------------------------------- */

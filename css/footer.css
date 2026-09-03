@@ -5,7 +5,7 @@
    ========================================================================== */
 
 .site-footer {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
 }
 
@@ -55,7 +55,7 @@
 }
 .site-footer__social a:hover {
   background: var(--brand-amber);
-  color: var(--brand-ink);
+  color: var(--ink-fill);
   border-color: var(--brand-amber);
 }
 

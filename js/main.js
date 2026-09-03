@@ -19,12 +19,17 @@
 
   /** ترتيب التشغيل — الأسماء نفسها المسجّلة في ملفات الوحدات */
   var MODULES = [
+    'theme',
     'navigation',
+    'breaking',
     'filters',
     'slider',
     'videoPlayer',
+    'reels',
+    'photoRail',
     'gallery',
-    'readingProgress'
+    'readingProgress',
+    'readAloud'
   ];
 
   Aljarmaq.boot = function () {

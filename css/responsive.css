@@ -2,7 +2,7 @@
    responsive.css — كل نقاط الاستجابة في ملف واحد
    --------------------------------------------------------------------------
    يجب أن يبقى آخر ملف في style.css حتى تسبق قواعده ما قبلها بلا !important.
-   النقاط: 1180px · 980px · 680px · 420px  (منهج mobile-last / desktop-first)
+   النقاط: 1180 · 980 · 680 · 480 · 420 + استعلام لمس (coarse أو ≤1023)
    ========================================================================== */
 
 
@@ -16,11 +16,9 @@
 
   /* كل الأعمدة المزدوجة تصبح عمودًا واحدًا */
   .split,
-  .hero,
   .lead-story,
   .about-intro__grid,
   .author-profile,
-  .newsletter__inner,
   .error-page {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
@@ -28,19 +26,33 @@
 
   .lead-story { gap: 0; }
 
-  /* الهيرو: الخطّ الفاصل ينتقل من الجانب إلى الأسفل */
-  .hero__main {
-    padding: 32px 0 36px;
-    border-left: 0;
-    border-bottom: var(--rule-w) solid var(--rule);
+  /* الهيرو: البطاقة الكبيرة فوق والخبران الجانبيان في صفّ تحتها */
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero__side {
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .live-feed__head,
-  .live-feed__item { padding-right: 0; padding-left: 0; }
+  /* بلا صفّ مشترك تحتاج البطاقة الكبيرة نسبتها الخاصّة */
+  .hero__lead-story .hero__card { aspect-ratio: 16 / 9; height: auto; }
 
-  .figure-panel {
-    padding: 26px 24px 28px;
-    margin-top: 24px;
+  .live-feed__item { padding-inline: 18px; }
+
+  /* العاجل: زرّ «كل العاجل» ينزل صفًّا كاملًا تحت العناوين */
+  .breaking { grid-template-columns: auto minmax(0, 1fr); }
+  .breaking__list { grid-column: 2; }
+  .breaking__more {
+    grid-column: 1 / -1;
+    justify-content: center;
+    border-inline-start: 0;
+    border-top: 1px solid var(--line-20);
   }
+
+  .reports  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .articles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 28px; }
+  .reels__strip { grid-auto-columns: 24%; }
+  .photo-card--wide { width: 380px; }
+  .photo-card { width: 270px; }
+  .photo-card--tall { width: 240px; }
 
   .latest__list { gap: 0 32px; }
 
@@ -69,16 +81,15 @@
   }
   .site-header__logo { height: 40px; }
 
-  /* الشريط العلوي يحتفظ بـ"بث مباشر" فقط */
-  .topbar__side > span:first-child,
-  .topbar__side > span:nth-child(2) { display: none; }
+  /* الشريط العلوي: يسقط الفاصل والطقس وتبقى منصّات التواصل.
+     (المحدّدات كانت nth-child ولم تعد تطابق بعد إضافة المنصّات.) */
+  .topbar__divider { display: none; }
 
   /* --- الشبكات: من 3/4/5 أعمدة إلى عمودين --- */
   .grid--4,
   .bento,
   .trend,
   .cat-index,
-  .picks,
   .pattern-grid,
   .values,
   .team,
@@ -106,6 +117,25 @@
 
   .latest__list { grid-template-columns: minmax(0, 1fr); }
 
+  /* اختيارات المحرر: الشريط السفلي عمودان ومدخل الأرشيف يمتدّ تحتهما */
+  .pick-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+  .pick-more { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+  .pick-more__note { flex: 1; }
+  .pick-more__arrow { align-self: center; }
+
+  /* آخر التطورات: من ثلاثة أعمدة إلى عمودين */
+  .live-feed__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* العاجل: العناوين في عمود واحد والأخير يُخفى لضيق المساحة */
+  .breaking__list { grid-template-columns: minmax(0, 1fr); }
+  .breaking__list li + li {
+    border-inline-start: 0;
+    border-top: 1px solid var(--line-20);
+  }
+  .breaking__list li:nth-child(n+3) { display: none; }
+
+  .reels__strip { grid-auto-columns: 32%; }
+
   /* بطاقة الصفّ: الصورة تصغر وعمود التوقيت ينزل لسطر كامل */
   .posts--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -113,16 +143,6 @@
     grid-template-columns: 180px minmax(0, 1fr);
     gap: 20px;
   }
-  .posts--list .post-card__aside {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-right: 0;
-    padding-right: 0;
-    text-align: right;
-  }
-  .posts--list .post-card__read { margin-top: 0; }
 
   .overlap-card__panel { width: 100%; margin-top: -40px; }
 
@@ -202,7 +222,13 @@
     gap: 4px 12px;
   }
 
-  .live-feed__head { flex-wrap: wrap; gap: 8px 14px; }
+  /* العنوان وختم «يُحدَّث تلقائيًا»: يلتفّان من البداية بدل التباعد
+     الذي يخنق العنوان إلى كلمة في السطر. */
+  .live-feed__head {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px 14px;
+  }
 
   /* الوصف الجانبي يصبح سطرًا كاملًا تحت العنوان */
   .section-note { max-width: none; }
@@ -224,14 +250,17 @@
     padding-block: 8px;
     font-size: 11.5px;
   }
-  .topbar__side { display: none; }
+  /* الشريط العلوي على الجوال: يسقط الطقس والفاصل. المنصّات تنتقل إلى
+     القائمة الجانبية (الخمسة موجودة فيها بمقاس لمس) فلا تُفقد وظيفة،
+     ولا يزدحم شريط بعرض 288px بخمس أيقونات 44px. */
+  .topbar__side > span { display: none; }
+  .topbar__social { display: none; }
 
   /* --- كل الشبكات إلى عمود واحد --- */
   .grid--4,
   .bento,
   .trend,
   .cat-index,
-  .picks,
   .pattern-grid,
   .values,
   .team,
@@ -243,6 +272,75 @@
   .contact,
   .contact__form-row,
   .site-footer__cols { grid-template-columns: minmax(0, 1fr); }
+
+  /* شريط النشرة: النموذج يأخذ سطرًا كاملًا تحت العنوان */
+  .newsletter__form { flex: 1 1 100%; }
+  .picks-head { flex-direction: column; align-items: stretch; }
+  .picks-head__note { max-width: none; }
+  .pick--lead { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  /* الشريط على الجوال: بطاقات أضيق وإزاحة رأسية أقلّ حتى لا يطول القسم */
+  .photo-card { width: 230px; }
+  .photo-card--wide { width: 280px; }
+  .photo-card--tall { width: 200px; }
+  .photo-card:nth-child(even) { margin-block-start: 26px; }
+  .photo-card:nth-child(3n)   { margin-block-start: 14px; }
+  .photo-head__side { width: 100%; justify-content: space-between; }
+  .pick-rows { grid-template-columns: minmax(0, 1fr); }
+  .newsletter__inner { padding-block: 18px; }
+
+  /* الهيرو: البطاقات الثلاث في عمود واحد. العنوان فوق الصورة يحتاج أسطرًا
+     أكثر كلّما ضاق العرض، وإلا قُصّ. */
+  .hero__side { grid-template-columns: minmax(0, 1fr); }
+  .hero__lead-story .card-overlay__body,
+  .hero__item .card-overlay__body { inset: auto 18px 18px 18px; }
+  .hero__title {
+    font-size: 20px;
+    max-width: none;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+  .hero__item-title {
+    max-width: none;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  /* آخر التطورات: عمود واحد، والبلاطة تفقد حشوتها الجانبية */
+  .live-feed__list { grid-template-columns: minmax(0, 1fr); }
+  .live-feed__item { padding: 16px 0; }
+
+  /* العاجل: الشارة فوق والعنوان تحتها */
+  .breaking { grid-template-columns: minmax(0, 1fr); }
+  .breaking__list { grid-column: 1; }
+  .breaking__flag { justify-content: center; padding: 9px 16px; }
+
+  .breaking-modal[open] { padding: 0; }
+  .breaking-modal__panel { max-height: 100vh; height: 100%; border: 0; }
+  .breaking-modal__head,
+  .breaking-modal__foot { padding-inline: 18px; }
+  .breaking-row { padding-inline: 18px; font-size: 15px; }
+
+  .reports  { grid-template-columns: minmax(0, 1fr); }
+  .report-card { aspect-ratio: 4 / 3; }
+  .articles { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .reels__strip { grid-auto-columns: 62%; }
+
+  /* مشغّل الريلز: أزرار التنقّل تنزل للأسفل بدل الحافة الجانبية */
+  .reels-viewer__nav {
+    inset-block-start: auto;
+    inset-block-end: 18px;
+    inset-inline-end: 16px;
+    transform: none;
+    flex-direction: row;
+  }
+  .reels-slide__body { inset-block-end: 74px; }
+
+  /* المشغّل المصغّر يلتصق بالحافة ويأخذ عرضًا أكبر */
+  .player-frame.is-docked > .player {
+    inset-block-end: 12px;
+    inset-inline-end: 12px;
+    width: min(260px, 60vw);
+  }
 
   .site-footer__cols { gap: 28px; }
 
@@ -347,7 +445,18 @@
    يلتقط نافذة ضيّقة على جهاز بفأرة (ومعها يصبح السلوك قابلًا للاختبار).
    ========================================================================== */
 
-@media (pointer: coarse), (max-width: 680px) {
+/* ==========================================================================
+   أهداف اللمس — تشمل التابلت
+   --------------------------------------------------------------------------
+   كان الحدّ 680px فكان جهاز 768 اللمسي يأخذ مقاسات الماوس: تبويبات بارتفاع
+   38px وروابط «المزيد» 28px وأيقونات 26px. الحدّ الآن نطاق التابلت كاملًا،
+   ومعه استعلام pointer: coarse لأي شاشة لمسية مهما اتّسعت.
+   ========================================================================== */
+
+@media (pointer: coarse), (max-width: 1023px) {
+
+  /* أدوات الهيدر ترتفع معًا فيبقى الصفّ متناسقًا على اللمس */
+  .site-header__actions { --control-h: 44px; }
 
   .icon-btn,
   .icon-btn--sm,
@@ -356,7 +465,27 @@
   .pagination a,
   .site-footer__social a,
   .drawer__social a,
+  .photo-nav__btn,
+  .reels-viewer__btn,
   .gallery__nav { min-width: 44px; min-height: 44px; }
+
+  /* عناصر نصّية قابلة للنقر: الارتفاع يأتي من الحشوة لا من مقاس ثابت،
+     فيتّسع هدف اللمس بلا تضخيم الشكل. */
+  .tab,
+  .tag-chip { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .more-link { min-height: 44px; align-items: center; }
+
+  /* روابط التذييل والشريط العلوي كانت 25px و26px */
+  .footer-col__links a { min-height: 44px; display: flex; align-items: center; }
+  .topbar__social a { width: 44px; height: 44px; }
+
+  .player__btn { min-width: 40px; min-height: 40px; }
+  .playlist__item { min-height: 60px; }
+
+  /* رابط الكاتب داخل سطر البيانات */
+  .meta__strong,
+  .meta a { min-height: 44px; display: inline-flex; align-items: center; }
 
   .tab,
   .tag-chip,
@@ -393,10 +522,58 @@
 
 
 /* ==========================================================================
-   420px — شاشات صغيرة جدًا
+   480px — نطاق الجوال: ما لم يعد يتّسع في صفّ واحد
+   --------------------------------------------------------------------------
+   الحدّ 480 لا 430: نقطة الفصل يجب أن تقع **بين** أعراض الأجهزة لا عليها.
+   430 هو عرض iPhone Pro Max بالضبط، فكسر بكسل واحد من كثافة الشاشة يقلب
+   الاستعلام على الجهاز نفسه. 480 يترك هامشًا لكل هواتف 320–430.
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  /* الحقل والزرّ لم يعودا يتقاسمان السطر: 288px تترك للحقل 144px فقط.
+     ينزل الزرّ سطرًا كاملًا بدل أن يخنق الحقل. */
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .field-row .btn { justify-content: center; }
+
+  /* شريط أدوات المرئيات: البحث يأخذ سطرًا والفلتر سطرًا */
+  .video-tools__right { flex-wrap: wrap; }
+  .search-inline { flex: 1 1 100%; }
+
+  /* أرضية حجم الخطّ: العناوين الدقيقة كانت 10.5–11px وهي حدّ القراءة
+     على شاشة صغيرة. لا نُصغّر شيئًا هنا — نرفع الأصغر فقط. */
+  .section-kicker,
+  .videos__kicker,
+  .opinion__kicker,
+  .playlist__count,
+  .playlist__num,
+  .playlist__dur,
+  .video-card__dur,
+  .share-rail__label,
+  .bento__label,
+  .picks__num,
+  .pick-more__note,
+  .newsletter__note,
+  .photo-card__by { font-size: 12px; }
+}
+
+
+/* ==========================================================================
+   420px — الجوال القياسي والصغير (320–390)
+   --------------------------------------------------------------------------
+   بنفس المنطق: 420 يقع بين 390 (أعرض جهاز يجب أن يطابق) و430 (أضيق جهاز
+   يجب ألّا يطابق)، فلا يجلس أي جهاز على الحدّ.
    ========================================================================== */
 
 @media (max-width: 420px) {
+
+  /* البطاقة تصير 3:2 كي يتّسع العنوان الطويل فوق الصورة */
+  .hero__item .hero__card,
+  .hero__lead-story .hero__card { aspect-ratio: 3 / 2; }
+  .hero__title { font-size: 18px; }
 
   .latest__item { grid-template-columns: 46px 1fr; }
   .player__time { font-size: 11px; }
@@ -414,7 +591,12 @@
 
   .topbar,
   .site-header,
-  .ticker,
+  .breaking-band,
+  .breaking-modal,
+  .reels,
+  .reels-viewer,
+  .photo-nav,
+  .photo-progress,
   .drawer,
   .drawer-scrim,
   .share-rail,

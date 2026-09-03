@@ -16,6 +16,18 @@ body {
   background: var(--paper);
 }
 
+/* الجذر يقصّ الفائض الأفقي. لماذا هنا لا على .page؟ لأنّ القائمة الجانبية
+   المنزلقة position:fixed، وموضعها المغلق خارج الشاشة، والعناصر الثابتة
+   تتجاوز قصّ أسلافها فتُنتج تمريرًا أفقيًا بمقدار عرض شريط التمرير على
+   الصفحات القصيرة. clip بدل hidden كي لا تُنشأ حاوية تمرير تكسر sticky. */
+html { overflow-x: clip; }
+
+/* يُعلم المتصفّح بالوضع الحالي فتتبعه عناصره الأصلية (مربّعات النصّ،
+   أشرطة التمرير، حقول النماذج). الافتراضي يتبع النظام. */
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
+
 body {
   font-family: var(--font-ar);
   color: var(--brand-ink);
@@ -109,11 +121,6 @@ button {
   to   { opacity: 1; transform: none; }
 }
 
-@keyframes ticker-run {
-  from { transform: translateX(0); }
-  to   { transform: translateX(50%); }
-}
-
 /* احترام تفضيل تقليل الحركة — للحركات الزخرفية فقط. */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -125,13 +132,4 @@ button {
   }
 
   html { scroll-behavior: auto; }
-
-  /* استثناء: الشريط العاجل ليس زخرفة — الحركة هي وسيلة عرضه الوحيدة، إذ
-     يزيد عرضه على ثلاثة أضعاف الشاشة. إيقافه يخفي ثلثي العناوين، لذا يستمرّ
-     في كل الأحوال. البديل المتاح للمستخدم: يتوقّف عند المرور أو التركيز
-     بالكيبورد (قاعدة animation-play-state في header.css). */
-  .ticker__track {
-    animation-duration: 46s !important;
-    animation-iteration-count: infinite !important;
-  }
 }

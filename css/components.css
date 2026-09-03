@@ -20,13 +20,13 @@
   font-weight: 700;
   padding: 14px 28px;
   border: var(--rule-w) solid var(--rule);
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: #fff;
   cursor: pointer;
   text-decoration: none;
 }
 
-.btn:hover { background: var(--brand-amber); color: var(--brand-ink); }
+.btn:hover { background: var(--brand-amber); color: var(--ink-fill); }
 
 /* الزرّ الأساسي داخل النشرة — يبقى كحليًا عند المرور */
 .btn--ink:hover { background: var(--brand-ink-deep); color: #fff; }
@@ -36,7 +36,7 @@
   background: transparent;
   color: var(--brand-ink);
 }
-.btn--outline:hover { background: var(--brand-ink); color: var(--paper); }
+.btn--outline:hover { background: var(--ink-fill); color: var(--on-fill); }
 
 /* زرّ بلا حدود سميكة — للفلاتر الصغيرة */
 .btn--hairline {
@@ -46,7 +46,7 @@
   font-size: 13px;
   padding: 9px 14px;
 }
-.btn--hairline:hover { background: var(--brand-ink); color: var(--paper); }
+.btn--hairline:hover { background: var(--ink-fill); color: var(--on-fill); }
 
 .btn--sm    { font-size: 14px; padding: 13px 26px; }
 .btn--lg    { font-size: 15px; padding: 18px 30px; }
@@ -72,14 +72,14 @@
   align-items: center;
   gap: 8px;
   background: var(--brand-amber);
-  color: var(--brand-ink);
+  color: var(--ink-fill);
   padding: 5px 12px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .03em;
 }
 
-.badge--ink   { background: var(--brand-ink);  color: var(--text-on-dark); }
+.badge--ink   { background: var(--ink-fill);  color: var(--text-on-dark); }
 .badge--red   { background: var(--brand-red);  color: #fff; font-size: 11.5px; padding: 4px 9px; }
 .badge--sm    { font-size: 11.5px; padding: 4px 10px; }
 
@@ -110,8 +110,8 @@
   font-weight: 600;
 }
 .tag-chip:hover {
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   border-color: var(--brand-ink);
 }
 
@@ -163,9 +163,11 @@
 textarea.field { resize: vertical; }
 
 /* صفّ: حقل + زرّ ملتصقان */
+/* صفّ حقل + زرّ. المقاس الأدنى للحقل يمنع انضغاطه خلف الزرّ على الشاشات
+   الضيقة؛ وحين لا يعود يتّسع ينتقل الزرّ إلى سطر كامل تحته. */
 .field-row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(11rem, 1fr) auto;
 }
 
 /* قائمة منسدلة بسهم مرسوم (بلا مظهر المتصفّح الافتراضي) */
@@ -223,7 +225,7 @@ textarea.field { resize: vertical; }
   place-items: center;
   padding: 0;
 }
-.icon-btn:hover { background: var(--brand-ink); color: var(--paper); }
+.icon-btn:hover { background: var(--ink-fill); color: var(--on-fill); }
 
 .icon-btn--sm      { width: 38px; height: 38px; border-width: 1px; border-color: var(--line-30); }
 .icon-btn--square  { width: 42px; height: 42px; border-width: 1px; border-color: color-mix(in srgb, var(--brand-ink) 28%, transparent); }
@@ -244,8 +246,8 @@ textarea.field { resize: vertical; }
   cursor: pointer;
 }
 .tab:hover {
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   border-color: var(--brand-ink);
 }
 
@@ -253,8 +255,8 @@ textarea.field { resize: vertical; }
 
 /* الحالة النشطة تُضاف من js/filters.js */
 .tab.is-active {
-  background: var(--brand-ink);
-  color: var(--paper);
+  background: var(--ink-fill);
+  color: var(--on-fill);
   border-color: var(--brand-ink);
 }
 
@@ -265,7 +267,7 @@ textarea.field { resize: vertical; }
 }
 .tab--on-dark.is-active {
   background: var(--brand-amber);
-  color: var(--brand-ink);
+  color: var(--ink-fill);
   border-color: var(--brand-amber);
 }
 
@@ -283,7 +285,7 @@ textarea.field { resize: vertical; }
   display: grid;
   place-items: center;
 }
-.view-toggle button.is-active { background: var(--brand-ink); color: var(--paper); }
+.view-toggle button.is-active { background: var(--ink-fill); color: var(--on-fill); }
 
 /* --- 6. البطاقات ----------------------------------------------------------- */
 
@@ -307,13 +309,11 @@ textarea.field { resize: vertical; }
   line-height: 1.75;
   color: var(--ink-72);
 }
-.post-card__time { font-size: 15px; font-weight: 800; }
-.post-card__read { font-size: 12px; color: var(--ink-55); margin-top: 4px; }
 
-/* 6.1.أ عرض القائمة: صورة | نصّ | توقيت */
+/* 6.1.أ عرض القائمة: صورة | نصّ */
 .posts--list .post-card {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr) 118px;
+  grid-template-columns: 300px minmax(0, 1fr);
   gap: 28px;
   align-items: center;
   padding: 24px 0;
@@ -323,12 +323,6 @@ textarea.field { resize: vertical; }
 
 .posts--list .post-card__title   { font-size: clamp(19px, 2vw, 25px); max-width: 40ch; }
 .posts--list .post-card__excerpt { font-size: 14.5px; max-width: 62ch; }
-.posts--list .post-card__stamp   { display: none; }
-.posts--list .post-card__aside {
-  text-align: left;
-  border-right: var(--rule-w) solid var(--brand-amber);
-  padding-right: 16px;
-}
 
 /* 6.1.ب عرض الشبكة: صورة فوق نصّ */
 .posts--grid {
@@ -356,7 +350,6 @@ textarea.field { resize: vertical; }
 .posts--grid .post-card__stamp   { margin-inline-start: auto; }
 .posts--grid .post-card__title   { font-size: 19px; line-height: 1.45; }
 .posts--grid .post-card__excerpt { margin: 0; font-size: 14px; line-height: 1.7; color: var(--ink-66); }
-.posts--grid .post-card__aside   { display: none; }
 
 /* 6.3 بطاقة بخطّ علوي (تُستخدم في "ذات صلة" و"اقرأ بدلًا من ذلك") */
 .card-top {
@@ -422,7 +415,7 @@ textarea.field { resize: vertical; }
 
 /* 6.5 بطاقة داكنة (ملفات مفتوحة / إعلان داخلي) */
 .card-dark {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
   padding: 24px;
 }
@@ -472,8 +465,8 @@ textarea.field { resize: vertical; }
   display: grid;
   place-items: center;
 }
-.pagination a:hover { background: var(--brand-ink); color: var(--paper); }
-.pagination a[aria-current="page"] { background: var(--brand-ink); color: var(--paper); }
+.pagination a:hover { background: var(--ink-fill); color: var(--on-fill); }
+.pagination a[aria-current="page"] { background: var(--ink-fill); color: var(--on-fill); }
 .pagination__gap { width: 34px; text-align: center; opacity: .5; }
 
 /* --- 9. مساحة إعلانية ------------------------------------------------------ */
@@ -490,6 +483,12 @@ textarea.field { resize: vertical; }
 .ad-slot--leaderboard { height: 250px; }
 .ad-slot--square      { height: 300px; }
 .ad-slot--square-lg   { height: 320px; }
+.ad-slot--banner      { height: 120px; }
+
+/* مساحة إعلانية اختيارية: ضع hidden على الغلاف [data-ad-region] فلا يشغل
+   القسم أي مساحة حين لا يوجد إعلان، واحذفها لإظهاره. */
+[data-ad-region][hidden],
+.ad-slot[hidden] { display: none; }
 
 /* --- 10. حالة فارغة (لا نتائج / لا مواد) --------------------------------- */
 
@@ -525,31 +524,115 @@ textarea.field { resize: vertical; }
 
 /* --- 11. النشرة البريدية --------------------------------------------------- */
 
-.newsletter { background: var(--brand-amber); color: var(--brand-ink); }
+/* شريط النشرة: صفّ واحد بخلفية هادئة. العنبري لمسة في
+   الأيقونة والخطّ العلوي فقط — لا يفيض على القسم كلّه. */
+.newsletter {
+  background: var(--paper-2);
+  border-top: var(--rule-w) solid var(--brand-amber);
+  border-bottom: var(--rule-w) solid var(--rule);
+}
 
 .newsletter__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 56px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding-block: 56px;
+  justify-content: space-between;
+  gap: 18px 40px;
+  padding-block: 20px;
 }
+
+.newsletter__intro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.newsletter__icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-amber);
+  color: var(--ink-fill);
+}
+
 .newsletter__title {
-  font-size: clamp(28px, 3.4vw, 44px);
-  margin: 16px 0 12px;
-  max-width: 22ch;
-  color: #1b2338;
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 0;
 }
 .newsletter__lead {
-  margin: 0;
-  font-size: 16.5px;
-  line-height: 1.75;
-  max-width: 44ch;
-  color: var(--body-text);
+  margin: 3px 0 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-62);
+  max-width: 46ch;
 }
+
 .newsletter__form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 6px;
+  flex: 0 1 420px;
+  min-width: 0;
 }
-.newsletter__note { font-size: 13px; color: var(--body-text); }
+.newsletter__note { font-size: 11.5px; color: var(--ink-55); }
+
+/* --- العرض المتحرّك (وحدة js/slider.js) -------------------------------- */
+/* انتقل إلى هنا من home.css لمّا حُذف قسم «أنماط العرض» من الرئيسية؛
+   الوحدة عامّة وتصلح لأي صفحة. */
+.slider { overflow: hidden; }
+.slider__track {
+  display: flex;
+  gap: 24px;
+  transition: transform .55s var(--ease-out);
+}
+.slider__item { flex: 0 0 calc(25% - 18px); }
+
+.slider__dots { display: flex; gap: 8px; margin-top: 20px; }
+.slider__dot {
+  width: 34px;
+  height: 4px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: var(--line-25);
+}
+.slider__dot:hover { background: var(--brand-ink); }
+.slider__dot.is-active { background: var(--brand-amber); }
+
+/* --- القراءة الصوتية ------------------------------------------------- */
+/* يظهر في صفحة الخبر. يُخفيه js/read-aloud.js تلقائيًا إن لم يوجد
+   تسجيل ولم يدعم المتصفّح القراءة الآلية. */
+
+.read-aloud { margin-top: 20px; }
+
+.read-aloud__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid var(--line-30);
+  background: var(--paper-2);
+  color: var(--brand-ink);
+  font-family: var(--font-ar);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.read-aloud__btn:hover { background: var(--ink-fill); color: var(--on-fill); border-color: var(--ink-fill); }
+
+.read-aloud__icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: var(--brand-amber);
+  color: var(--ink-fill);
+  flex: 0 0 auto;
+}
+.read-aloud .icon-stop { display: none; }
+.read-aloud.is-playing .icon-stop { display: block; }
+.read-aloud.is-playing .icon-play { display: none; }
+.read-aloud.is-playing .read-aloud__icon { background: var(--brand-red); color: #fff; }

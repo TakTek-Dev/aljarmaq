@@ -49,7 +49,7 @@
 .gallery__nav:hover {
   background: var(--brand-amber);
   border-color: var(--brand-amber);
-  color: var(--brand-ink);
+  color: var(--ink-fill);
 }
 .gallery__nav--prev { right: 16px; }
 .gallery__nav--next { left: 16px; }

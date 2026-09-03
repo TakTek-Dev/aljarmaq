@@ -21,16 +21,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=21">
+<!-- الوضع الليلي: يُطبّق قبل الرسم وإلا ظهرت ومضة بيضاء. المنطق الكامل في js/theme.js -->
+<script>try{var t=localStorage.getItem("aljarmaq-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
 <link rel="alternate" type="application/rss+xml" title="خلاصة الجرمق" href="feed.xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="images/icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
-<script src="js/navigation.js" defer></script>
-<script src="js/filters.js" defer></script>
-<script src="js/main.js" defer></script>
+<script src="js/navigation.js?v=21" defer></script>
+<script src="js/filters.js?v=21" defer></script>
+<script src="js/theme.js?v=21" defer></script>
+<script src="js/main.js?v=21" defer></script>
 
 <!-- بيانات منظَّمة لمحرّكات البحث (schema.org) -->
 <script type="application/ld+json">
@@ -69,9 +72,15 @@
         <time class="topbar__date" datetime="2026-07-28">الثلاثاء 28 تموز 2026 — 13 صفر 1448</time>
       </div>
       <div class="topbar__side">
-        <span>الناصرة 31°</span>
+        <div class="topbar__social" aria-label="منصات الجرمق">
+          <a href="about.html" aria-label="فيسبوك"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="about.html" aria-label="إنستغرام"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
+          <a href="about.html" aria-label="إكس"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
+          <a href="video-archive.html" aria-label="يوتيوب"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+          <a href="about.html" aria-label="تلغرام"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L7.2 12.8l-4.7-1.5c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.3 1.6z"></path></svg></a>
+        </div>
         <span class="topbar__divider"></span>
-        <span>تواصل معنا</span>
+        <span>الناصرة 31°</span>
       </div>
     </div>
   </div>
@@ -80,7 +89,10 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" aria-label="الجرمق الاخباري — الصفحة الرئيسية">
-        <img class="site-header__logo" src="images/logo.png" alt="الجرمق الاخباري" width="152" height="46">
+        <!-- نسختان: الفاتحة تظهر في الوضع الليلي. التبديل بـCSS لا بـJS
+             حتى يظهر الشعار الصحيح من أول رسمة بلا ومضة. -->
+        <img class="site-header__logo site-header__logo--dark" src="images/logo.png" alt="الجرمق الاخباري" width="152" height="46">
+        <img class="site-header__logo site-header__logo--light" src="images/logo-light.png" alt="" aria-hidden="true" width="152" height="46">
       </a>
 
       <!-- #include partials/navigation.html -->
@@ -99,6 +111,16 @@
         <a class="icon-btn" href="search.html" aria-label="بحث">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
         </a>
+        <!-- مفتاح ليل/نهار: مسار بأيقونتين ومقبض ينزلق فوق الوضع الفعّال -->
+        <button class="theme-switch" type="button" data-theme-toggle role="switch" aria-checked="false" aria-label="التبديل إلى الوضع الليلي">
+          <span class="theme-switch__knob" aria-hidden="true"></span>
+          <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path d="m19.1 4.9-1.4 1.4"></path></svg>
+          </span>
+          <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"></path></svg>
+          </span>
+        </button>
         <button class="icon-btn burger" type="button" data-menu-open aria-label="القائمة" aria-expanded="false" aria-controls="site-drawer">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
         </button>
@@ -116,7 +138,8 @@
   <!-- القائمة الجانبية للموبايل -->
   <aside class="drawer" id="site-drawer" aria-hidden="true" aria-label="قائمة التنقّل">
     <div class="drawer__head">
-      <img class="drawer__logo" src="images/logo.png" alt="الجرمق الاخباري" width="112" height="34">
+      <img class="drawer__logo site-header__logo--dark" src="images/logo.png" alt="الجرمق الاخباري" width="112" height="34">
+      <img class="drawer__logo site-header__logo--light" src="images/logo-light.png" alt="" aria-hidden="true" width="112" height="34">
       <button class="icon-btn icon-btn--sm" type="button" data-menu-close aria-label="إغلاق">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
       </button>
@@ -137,10 +160,25 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
         <span>اشترك في النشرة</span>
       </a>
+      <button class="drawer__theme" type="button" data-theme-toggle role="switch" aria-checked="false" aria-label="التبديل إلى الوضع الليلي">
+        <span data-theme-label>الوضع الليلي</span>
+        <span class="theme-switch theme-switch--static" aria-hidden="true">
+          <span class="theme-switch__knob"></span>
+          <span class="theme-switch__icon theme-switch__icon--sun">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path d="m19.1 4.9-1.4 1.4"></path></svg>
+          </span>
+          <span class="theme-switch__icon theme-switch__icon--moon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"></path></svg>
+          </span>
+        </span>
+      </button>
+
       <div class="drawer__social">
         <a href="about.html" aria-label="فيسبوك"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
         <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
         <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+        <a href="about.html" aria-label="إكس"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
+        <a href="about.html" aria-label="تلغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L7.2 12.8l-4.7-1.5c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.3 1.6z"></path></svg></a>
       </div>
     </div>
   </aside>
@@ -173,32 +211,32 @@
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Olive_harvesting.jpg?width=1400" alt="موسم الزيتون في دير حنا" loading="eager"></div>
         <h2>موسم الزيتون في دير حنا: يوم كامل بين الأشجار</h2>
-        <span><span class="lat">19</span> صورة — تصوير: سائد عابد</span>
+        <span>تصوير: سائد عابد</span>
       </a>
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/116990_birya_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="الجليل الأعلى" loading="eager"></div>
         <h2>الجليل الأعلى: قرى على حدود الغابة</h2>
-        <span><span class="lat">26</span> صورة — تصوير: سائد عابد</span>
+        <span>تصوير: سائد عابد</span>
       </a>
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_Mosque_Nazareth_017.JPG?width=1400" alt="الناصرة القديمة" loading="lazy"></div>
         <h2>الناصرة القديمة: السوق والمسجد الأبيض</h2>
-        <span><span class="lat">28</span> صورة — تصوير: ليان صالح</span>
+        <span>تصوير: ليان صالح</span>
       </a>
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/114265_alkosh_in_the_upper_galilee_PikiWiki_Israel.jpg?width=1400" alt="طرق ترابية في الجليل الأعلى" loading="lazy"></div>
         <h2>طرق ترابية في الجليل الأعلى</h2>
-        <span><span class="lat">9</span> صور — تصوير: سائد عابد</span>
+        <span>تصوير: سائد عابد</span>
       </a>
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/PikiWiki_Israel_32275_Shaab_in_Lower_Galilee.jpg?width=1400" alt="شعب في الجليل الأسفل" loading="lazy"></div>
         <h2>شعب: أرض زراعية على حافّة مخطط صناعي</h2>
-        <span><span class="lat">22</span> صورة — تصوير: سائد عابد</span>
+        <span>تصوير: سائد عابد</span>
       </a>
       <a href="album.html">
         <div class="ratio ratio--4-3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nazarets_Stadtpanorama_(3786331918).jpg?width=1400" alt="بانوراما الناصرة" loading="lazy"></div>
         <h2>الناصرة من فوق: المدينة في ساعة الغروب</h2>
-        <span><span class="lat">14</span> صورة — تصوير: ليان صالح</span>
+        <span>تصوير: ليان صالح</span>
       </a>
     </div>
 
@@ -215,25 +253,32 @@
   </main>
 
   <!-- #include partials/footer.html -->
-  <!-- النشرة البريدية -->
+  <!-- النشرة البريدية — شريط مضغوط بصفّ واحد -->
   <section class="newsletter" id="newsletter">
     <div class="container newsletter__inner">
-      <div>
-        <span class="badge badge--ink">تصلك 6:30 صباحًا</span>
-        <h2 class="newsletter__title">نشرة الجرمق الصباحية: كل ما فاتك في خمس دقائق</h2>
-        <p class="newsletter__lead">تقرير واحد مختار، أهم خمسة أخبار، ورقم اليوم — كل صباح إلى بريدك.</p>
+
+      <div class="newsletter__intro">
+        <span class="newsletter__icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
+        </span>
+        <div>
+          <h2 class="newsletter__title">نشرة الجرمق الصباحية</h2>
+          <p class="newsletter__lead">أهم ما فاتك في خمس دقائق — كلّ صباح 6:30 إلى بريدك.</p>
+        </div>
       </div>
+
       <form class="newsletter__form" action="#" method="post">
         <div class="field-row">
           <label class="visually-hidden" for="newsletter-email">بريدك الإلكتروني</label>
-          <input class="field" id="newsletter-email" name="email" type="email" placeholder="بريدك الإلكتروني" required>
+          <input class="field field--sm" id="newsletter-email" name="email" type="email" placeholder="بريدك الإلكتروني" required>
           <button class="btn btn--ink" type="submit">
             <span>اشترك</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
           </button>
         </div>
-        <span class="newsletter__note">28,600 مشترك — يمكنك إلغاء الاشتراك في أي وقت.</span>
+        <span class="newsletter__note"><span class="lat">28,600</span> مشترك — يمكنك إلغاء الاشتراك في أي وقت.</span>
       </form>
+
     </div>
   </section>
 
@@ -250,6 +295,8 @@
           <a href="about.html" aria-label="إنستغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></a>
           <a href="about.html" aria-label="إكس"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-7.1l-5-6.6L5 22H2l7.3-8.3L1.5 2h7.2l4.6 6.1zm-1.2 18h1.7L6.4 3.7H4.6z"></path></svg></a>
           <a href="video-archive.html" aria-label="يوتيوب"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+          <a href="about.html" aria-label="تلغرام"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L7.2 12.8l-4.7-1.5c-1-.3-1-1 .2-1.5l18.4-7.1c.9-.3 1.6.2 1.3 1.6z"></path></svg></a>
+          <a href="about.html" aria-label="واتساب"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0 1 12 4zm-3.4 4.3c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.5l-.7-1.7c-.2-.5-.4-.4-.6-.4z"></path></svg></a>
         </div>
       </div>
 

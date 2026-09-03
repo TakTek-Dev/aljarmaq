@@ -76,7 +76,7 @@
 }
 
 .contact__info {
-  background: var(--brand-ink);
+  background: var(--ink-fill);
   color: var(--text-on-dark);
   padding: 34px;
 }

@@ -90,7 +90,7 @@
   border-right: var(--rule-w) solid var(--rule);
 }
 .share-rail__label {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--ink-55);
   padding-bottom: 4px;

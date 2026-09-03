@@ -132,4 +132,8 @@ button {
   }
 
   html { scroll-behavior: auto; }
+
+  /* شريط العاجل على الجوال: التبديل بين العناوين هو وسيلة الوصول إلى
+     بقيّتها، فلا يجوز إيقافه — نُلغي حركة الدخول فقط ويبقى التبديل. */
+  .breaking__list.is-rotating li.is-current { animation: none !important; }
 }

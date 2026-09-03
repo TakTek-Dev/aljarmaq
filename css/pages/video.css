@@ -33,8 +33,11 @@
 
 /* زرّ التشغيل الكبير في هذه الصفحة أصغر قليلًا */
 .video-archive .player__big-play span { width: 84px; height: 84px; backdrop-filter: none; }
-.video-archive .player__title { inset: auto 22px 64px 22px; }
-.video-archive .player__title h2 {
+/* الموضع الرأسي يأتي من --player-controls-h في home.css.
+   (كان المحدّد .player__title h2 ولم يعد يطابق بعد أن صار العنوان
+   هو الوسم نفسه لا غلافًا حوله.) */
+.video-archive .player__title {
+  inset-inline: 22px;
   color: #fff;
   font-size: clamp(20px, 2.2vw, 30px);
   max-width: 26ch;
@@ -145,7 +148,7 @@
   right: 0;
   background: rgba(0, 0, 0, .72);
   color: #fff;
-  font-size: 11px;
+  font-size: 11.5px;
   padding: 3px 7px;
 }
 

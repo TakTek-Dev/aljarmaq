@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
 
 <!-- أنماط الثيم: ملف واحد يستدعي باقي ملفات css -->
-<link rel="stylesheet" href="css/style.css?v=21">
+<link rel="stylesheet" href="css/style.css?v=33">
 <!-- الوضع الليلي: يُطبّق قبل الرسم وإلا ظهرت ومضة بيضاء. المنطق الكامل في js/theme.js -->
 <script>try{var t=localStorage.getItem("aljarmaq-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
 <link rel="canonical" href="https://aljarmaq.net/index.html">
@@ -36,15 +36,15 @@
 
 <!-- سكربتات الثيم — defer: تحميل متوازٍ وتنفيذ مرتّب بعد بناء الصفحة.
      main.js يبقى الأخير لأنه يشغّل باقي الوحدات. -->
-<script src="js/navigation.js?v=21" defer></script>
-<script src="js/filters.js?v=21" defer></script>
-<script src="js/slider.js?v=21" defer></script>
-<script src="js/video-player.js?v=21" defer></script>
-<script src="js/reels.js?v=21" defer></script>
-<script src="js/photo-rail.js?v=21" defer></script>
-<script src="js/breaking.js?v=21" defer></script>
-<script src="js/theme.js?v=21" defer></script>
-<script src="js/main.js?v=21" defer></script>
+<script src="js/navigation.js?v=33" defer></script>
+<script src="js/filters.js?v=33" defer></script>
+<script src="js/slider.js?v=33" defer></script>
+<script src="js/video-player.js?v=33" defer></script>
+<script src="js/reels.js?v=33" defer></script>
+<script src="js/photo-rail.js?v=33" defer></script>
+<script src="js/breaking.js?v=33" defer></script>
+<script src="js/theme.js?v=33" defer></script>
+<script src="js/main.js?v=33" defer></script>
 
 <!-- بيانات منظَّمة لمحرّكات البحث (schema.org) -->
 <script type="application/ld+json">
@@ -228,7 +228,9 @@
         <span>عاجل</span>
       </div>
 
-      <ul class="breaking__list">
+      <!-- على الجوال يُعرض عنوان واحد يتبدّل تلقائيًا (js/breaking.js)
+           بدل ثلاثة تحت بعضها؛ الثلاثة تبقى في الترميز فلا يضيع محتوى. -->
+      <ul class="breaking__list" data-breaking-rotate>
         <li><a href="article.html"><time class="breaking__time lat" datetime="2026-07-28T15:04">15:04</time><span>لجنة المتابعة تدعو إلى يوم إضراب شامل احتجاجًا على مخططات الهدم في النقب</span></a></li>
         <li><a href="article.html"><time class="breaking__time lat" datetime="2026-07-28T14:47">14:47</time><span>الشرطة تفرض حصارًا على مدخل قرية عارة بعد اعتداء ليلي</span></a></li>
         <li><a href="article.html"><time class="breaking__time lat" datetime="2026-07-28T14:12">14:12</time><span>الجرمق يحصل على وثائق تكشف تفاصيل مخطط التوسع في المنطقة الصناعية</span></a></li>
@@ -518,6 +520,7 @@
         <div>
           <!-- المشغّل: عرض تقديمي بمؤقّت — راجع js/video-player.js لربط فيديو حقيقي -->
           <!-- الإطار يحتفظ بالمساحة حين ينتقل المشغّل إلى الزاوية فلا تقفز الصفحة -->
+          <div class="player-stage">
           <div class="player-frame" data-player-frame>
           <div class="player" data-player data-seconds="760">
             <!-- استبدل src بملفّ الفيديو عندك؛ poster هي صورة الغلاف -->
@@ -533,10 +536,6 @@
             <button class="player__big-play" type="button" data-player-toggle aria-label="تشغيل">
               <span><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
             </button>
-
-            <div class="player__title">
-              <h3 data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h3>
-            </div>
 
             <div class="player__controls">
               <div class="player__bar" data-player-bar>
@@ -574,6 +573,8 @@
               </button>
             </div>
           </div>
+          </div>
+          <h3 class="player__title" data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h3>
           </div>
 
           <div class="player-meta">

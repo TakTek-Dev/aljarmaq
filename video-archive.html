@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;family=Archivo:wght@500;600;800&amp;display=swap">
 
-<link rel="stylesheet" href="css/style.css?v=21">
+<link rel="stylesheet" href="css/style.css?v=33">
 <!-- الوضع الليلي: يُطبّق قبل الرسم وإلا ظهرت ومضة بيضاء. المنطق الكامل في js/theme.js -->
 <script>try{var t=localStorage.getItem("aljarmaq-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
 <link rel="canonical" href="https://aljarmaq.net/video-archive.html">
@@ -31,11 +31,11 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
-<script src="js/navigation.js?v=21" defer></script>
-<script src="js/filters.js?v=21" defer></script>
-<script src="js/video-player.js?v=21" defer></script>
-<script src="js/theme.js?v=21" defer></script>
-<script src="js/main.js?v=21" defer></script>
+<script src="js/navigation.js?v=33" defer></script>
+<script src="js/filters.js?v=33" defer></script>
+<script src="js/video-player.js?v=33" defer></script>
+<script src="js/theme.js?v=33" defer></script>
+<script src="js/main.js?v=33" defer></script>
 </head>
 
 <body data-nav="video">
@@ -187,6 +187,7 @@
       <div class="split split--lead split--gap-sm video-archive__stage">
         <div>
           <!-- الإطار يحتفظ بالمساحة حين ينتقل المشغّل إلى الزاوية -->
+          <div class="player-stage">
           <div class="player-frame" data-player-frame>
           <div class="player" data-player data-seconds="760">
             <!-- استبدل src بملفّ الفيديو عندك؛ poster هي صورة الغلاف -->
@@ -200,10 +201,6 @@
             <button class="player__big-play" type="button" data-player-toggle aria-label="تشغيل">
               <span><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 3 14 9-14 9V3z"></path></svg></span>
             </button>
-
-            <div class="player__title">
-              <h2 data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h2>
-            </div>
 
             <div class="player__controls">
               <div class="player__bar" data-player-bar>
@@ -232,6 +229,8 @@
               </button>
             </div>
           </div>
+          </div>
+          <h2 class="player__title" data-player-title>«على حدود الخط الأخضر» — فيلم قصير من إنتاج الجرمق</h2>
           </div>
         </div>
 

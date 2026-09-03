@@ -98,6 +98,16 @@
   .guide-cards,
   .site-footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
+  /* روابط التذييل تتدفّق في صفوف بدل عمود: أسماء قصيرة وارتفاع 44px
+     لكلّ رابط كان يجعل التذييل أطول من الشاشة بلا داعٍ. */
+  .footer-col__links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 22px;
+    row-gap: 0;
+  }
+  .footer-col__links a { min-width: 44px; }
+
   .bento__item,
   .bento__item--wide,
   .bento__item--tall {
@@ -390,12 +400,6 @@
     padding-block: 34px 18px;
   }
   .footer-col__title { margin-bottom: 6px; }
-  .footer-col__links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 22px;
-    row-gap: 0;
-  }
   .site-footer__mark { margin-top: 14px; }
   .site-footer__about { margin-top: 12px; }
   .site-footer__social { margin-top: 16px; flex-wrap: wrap; }

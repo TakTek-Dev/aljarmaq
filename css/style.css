@@ -23,24 +23,24 @@
  */
 
 /* --- 1. الأساس ------------------------------------------------------------ */
-@import url("variables.css?v=33");
-@import url("base.css?v=33");
-@import url("layout.css?v=33");
+@import url("variables.css?v=34");
+@import url("base.css?v=34");
+@import url("layout.css?v=34");
 
 /* --- 2. المكوّنات --------------------------------------------------------- */
-@import url("components.css?v=33");
-@import url("header.css?v=33");
-@import url("footer.css?v=33");
+@import url("components.css?v=34");
+@import url("header.css?v=34");
+@import url("footer.css?v=34");
 
 /* --- 3. الصفحات ----------------------------------------------------------- */
-@import url("pages/home.css?v=33");
-@import url("pages/article.css?v=33");
-@import url("pages/archive.css?v=33");
-@import url("pages/video.css?v=33");
-@import url("pages/album.css?v=33");
-@import url("pages/live.css?v=33");
-@import url("pages/about.css?v=33");
-@import url("pages/misc.css?v=33");
+@import url("pages/home.css?v=34");
+@import url("pages/article.css?v=34");
+@import url("pages/archive.css?v=34");
+@import url("pages/video.css?v=34");
+@import url("pages/album.css?v=34");
+@import url("pages/live.css?v=34");
+@import url("pages/about.css?v=34");
+@import url("pages/misc.css?v=34");
 
 /* --- 4. الاستجابة (يبقى الأخير دائمًا) ------------------------------------ */
-@import url("responsive.css?v=33");
+@import url("responsive.css?v=34");
